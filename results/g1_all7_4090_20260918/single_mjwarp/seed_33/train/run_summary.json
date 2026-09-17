@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "next_iteration": 1200,
+  "backend_counts": {
+    "mjwarp": 224
+  },
+  "backend_stats": {
+    "mjwarp": {
+      "samples": 6451200.0,
+      "reward_sum": 5543.557516122237,
+      "episodes": 194303.0,
+      "censored_episodes": 224.0,
+      "episode_reward_sum": 5771.960835838079,
+      "episode_length_sum": 6435315.0,
+      "step_seconds": 174.9357535469535,
+      "interrupted_episodes": 0.0
+    }
+  },
+  "samples_per_iteration": 5376,
+  "mixed_fingerprint": "81548f6e87b67b586b9b3a9b5c6c82eae52b511e03a973ff1488768ec07b7d87",
+  "adaptive": null,
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "algo": "ppo",
+  "task": "G1WalkFlat",
+  "sim_backend": "mixed",
+  "log_dir": "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_4090_20260918/single_mjwarp/seed_33/train",
+  "start_time_utc": "2026-09-17T20:42:26.866102+00:00",
+  "end_time_utc": "2026-09-17T20:47:18.140920+00:00",
+  "wall_time_sec": 291.27481475400054,
+  "wandb_run_url": null,
+  "configured_seed": 33,
+  "configured_seed_source": "algo.seed",
+  "effective_seed": 33
+}

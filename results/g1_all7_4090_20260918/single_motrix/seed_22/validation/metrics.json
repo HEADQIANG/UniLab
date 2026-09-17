@@ -1,0 +1,172 @@
+{
+  "status": "completed",
+  "backend": "mujoco",
+  "split": "validation",
+  "seeds": [
+    3001,
+    3002,
+    3003
+  ],
+  "checkpoint_sha256": "c13f26db731d1eaaaf0e5e894c20e6c46bce4c3667e13e9422dc119cf6da7c9b",
+  "episodes": [
+    {
+      "seed": 3001,
+      "episode": 0,
+      "episode_return": 27.554767033085227,
+      "length_steps": 1000,
+      "survival_fraction": 1.0,
+      "survived_horizon": true,
+      "tracking_lin_vel": 0.5501234967261552,
+      "tracking_ang_vel": 0.22397340687275574
+    },
+    {
+      "seed": 3001,
+      "episode": 1,
+      "episode_return": 20.604157059453428,
+      "length_steps": 1000,
+      "survival_fraction": 1.0,
+      "survived_horizon": true,
+      "tracking_lin_vel": 0.32842992681264876,
+      "tracking_ang_vel": 0.8568817606661469
+    },
+    {
+      "seed": 3001,
+      "episode": 2,
+      "episode_return": 14.600210554897785,
+      "length_steps": 509,
+      "survival_fraction": 0.509,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.5526232779143133,
+      "tracking_ang_vel": 0.3600671845857623
+    },
+    {
+      "seed": 3001,
+      "episode": 3,
+      "episode_return": 35.77232451364398,
+      "length_steps": 1000,
+      "survival_fraction": 1.0,
+      "survived_horizon": true,
+      "tracking_lin_vel": 0.6827452052533627,
+      "tracking_ang_vel": 0.8449158420227468
+    },
+    {
+      "seed": 3001,
+      "episode": 4,
+      "episode_return": 23.084759740158916,
+      "length_steps": 907,
+      "survival_fraction": 0.907,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.43757923609498056,
+      "tracking_ang_vel": 0.8035854786222146
+    },
+    {
+      "seed": 3002,
+      "episode": 0,
+      "episode_return": 33.76505386643112,
+      "length_steps": 1000,
+      "survival_fraction": 1.0,
+      "survived_horizon": true,
+      "tracking_lin_vel": 0.6523069621622563,
+      "tracking_ang_vel": 0.8039974220003933
+    },
+    {
+      "seed": 3002,
+      "episode": 1,
+      "episode_return": 17.296489018946886,
+      "length_steps": 925,
+      "survival_fraction": 0.925,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.35113572921301867,
+      "tracking_ang_vel": 0.18965142097607698
+    },
+    {
+      "seed": 3002,
+      "episode": 2,
+      "episode_return": 35.06111495010555,
+      "length_steps": 1000,
+      "survival_fraction": 1.0,
+      "survived_horizon": true,
+      "tracking_lin_vel": 0.6754099459350109,
+      "tracking_ang_vel": 0.9014825075119733
+    },
+    {
+      "seed": 3002,
+      "episode": 3,
+      "episode_return": 36.34639400988817,
+      "length_steps": 833,
+      "survival_fraction": 0.833,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.9530695730424514,
+      "tracking_ang_vel": 0.22899141111742372
+    },
+    {
+      "seed": 3002,
+      "episode": 4,
+      "episode_return": 5.771837619133294,
+      "length_steps": 204,
+      "survival_fraction": 0.204,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.5864166011120758,
+      "tracking_ang_vel": 0.22695197973428555
+    },
+    {
+      "seed": 3003,
+      "episode": 0,
+      "episode_return": 1.7876035701483488,
+      "length_steps": 70,
+      "survival_fraction": 0.07,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.4559743766273771,
+      "tracking_ang_vel": 0.5800750436693696
+    },
+    {
+      "seed": 3003,
+      "episode": 1,
+      "episode_return": 16.280903325416148,
+      "length_steps": 738,
+      "survival_fraction": 0.738,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.3525313474540788,
+      "tracking_ang_vel": 0.8516400053105437
+    },
+    {
+      "seed": 3003,
+      "episode": 2,
+      "episode_return": 24.21216682996601,
+      "length_steps": 1000,
+      "survival_fraction": 1.0,
+      "survived_horizon": true,
+      "tracking_lin_vel": 0.4182565426528454,
+      "tracking_ang_vel": 0.8601836620643735
+    },
+    {
+      "seed": 3003,
+      "episode": 3,
+      "episode_return": 23.697769631631672,
+      "length_steps": 618,
+      "survival_fraction": 0.618,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.742860126794349,
+      "tracking_ang_vel": 0.8350700429869774
+    },
+    {
+      "seed": 3003,
+      "episode": 4,
+      "episode_return": 12.220427769934759,
+      "length_steps": 1000,
+      "survival_fraction": 1.0,
+      "survived_horizon": true,
+      "tracking_lin_vel": 0.20406635500490666,
+      "tracking_ang_vel": 0.1424427327855665
+    }
+  ],
+  "metrics": {
+    "episode_return": 21.870398632856087,
+    "survival_fraction": 0.7869333333333334,
+    "tracking_lin_vel": 0.5295685801866554,
+    "tracking_ang_vel": 0.580660660061774,
+    "survived_horizon": 0.4666666666666667
+  },
+  "protocol": "seeded_common_task_deterministic_cpu_policy_complete_episodes",
+  "identity": "93bf26e5e3f0d6726f01fc32ed5502dec3b8da6053ba7485eb609b3247e67dd3"
+}

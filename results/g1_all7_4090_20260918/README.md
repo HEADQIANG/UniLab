@@ -1,13 +1,14 @@
 # G1 七后端正式实验：运行协议与阶段性结果
 
-截至 2026-09-18 03:20:42（Asia/Shanghai），正式训练已完成 **4/131**：
-自适应搜索 seed 11、22、33 和 Motrix 单后端 seed 11 均通过训练审计。
+截至 2026-09-18 03:37:54（Asia/Shanghai），正式训练已完成 **6/131**：
+自适应搜索和 Motrix 单后端的 seed 11、22、33 均通过训练审计。
 三种子汇总的 `frozen_adaptive` 仍是待重训、待验证候选，不是推荐或最佳比例。
-Motrix seed 11 已完成 15 个 MuJoCo validation 回合；正式 test 尚未开始。
-Motrix seed 22 正在运行（PID 507805），后台启动 PID 1080640 仍存活；
+Motrix 三个训练种子各完成 15 个 MuJoCo validation 回合；正式 test 尚未开始。
+Drake seed 11 正在运行（PID 516785），已完成 606/1200 次更新；
+后台启动 PID 1080640 仍存活；
 SSH 断开不会结束作业。目前没有多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、四个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、六个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -148,6 +149,35 @@ validation seeds 3001、3002、3003，每个 seed 五个完整 episode；
 
 ```bash
 gzip -dk results/g1_all7_4090_20260918/single_motrix/seed_11/train/mix_events.jsonl.gz
+```
+
+## Motrix 三个训练 seed 的 validation 结果
+
+新增 [seed 22 审计](single_motrix/seed_22/completed_trial_audit.json) 和
+[seed 33 审计](single_motrix/seed_33/completed_trial_audit.json)，保留各自的
+原始训练配置、进程回执、逐轮事件以及 15 个 MuJoCo validation 回合。
+每次训练均完成 1200 次更新和 6,451,200 transitions；三个种子的完整
+`config.algo` 与 sim2sim 合同分别和同种子的自适应训练完全相等。
+
+| 训练 seed | 训练进程耗时（秒） | 平均 episode return | 平均存活时间占比 | 完整存活 20 秒 |
+| --- | ---: | ---: | ---: | ---: |
+| 11 | 307.2626 | 22.1336813 | 73.5467% | 8/15 |
+| 22 | 306.4071 | 21.8703986 | 78.6933% | 7/15 |
+| 33 | 304.2063 | 28.6143521 | 98.1200% | 14/15 |
+
+[三种子汇总](single_motrix/discovery_validation_summary.json) 按训练种子
+等权计算，平均 return 为 24.2061440，平均存活占比为 83.4533%。
+45 个评估回合中 29 个完整存活 20 秒，但这里只包含 **3 个独立训练重复**；
+45 回合不能作为 45 个独立训练样本用于统计推断。结果来自 discovery
+种子的 validation split，尚无混合候选的共同验证，也未开展新种子的
+confirmation/test，不能据此得出比例优劣或多后端优势结论。
+
+从仓库根目录恢复新增种子的逐轮事件（保留压缩原文）：
+
+```bash
+for seed in 22 33; do
+  gzip -dk "results/g1_all7_4090_20260918/single_motrix/seed_${seed}/train/mix_events.jsonl.gz"
+done
 ```
 
 ## 规模校准（独立于正式训练）

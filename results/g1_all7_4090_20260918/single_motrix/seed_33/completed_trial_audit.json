@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "status": "completed_training_and_validation_trial",
+  "observation_started_at_utc": "2026-09-17T19:36:05.583651+00:00",
+  "observation_started_at_local": "2026-09-18T03:36:05.583651+08:00",
+  "study_id": "ecf9ca19ecfb54a9b0e63134a37b0d9c2d1f8b5fc63688b3aafd8632102925b5",
+  "candidate": "single_motrix",
+  "training_seed": 33,
+  "process_identity": "973c20e3dca10c342ebcf547f144619bb57e240377e56190e9f48285abe2cbe8",
+  "archive_preparation_base_commit": "73cc96e4886d0f164d3dc0b3b9e86877ceb89009",
+  "remote_trial_directory": "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_4090_20260918/single_motrix/seed_33",
+  "canonical_remote_audit": {
+    "function": "unilab.training.mix_benchmark.training_result",
+    "passed": true,
+    "read_only": true,
+    "process_returncode": 0,
+    "whole_process_wall_seconds": 304.2063034929997,
+    "checkpoint_relative_path": "train/model_1199.pt",
+    "checkpoint_sha256": "6cbbb8812d00b35fd5c8a493c99e7bfdf3aee04fdb71b9d61c61c409ffe2cace",
+    "checkpoint_copied": false,
+    "final_ratios": {
+      "motrix": 1.0
+    }
+  },
+  "independent_event_and_summary_checks": {
+    "run_summary_status": "completed",
+    "next_iteration": 1200,
+    "iteration_records": 1200,
+    "iteration_indices_contiguous_from": 0,
+    "iteration_indices_contiguous_through": 1199,
+    "samples_per_iteration": 5376,
+    "summed_iteration_transitions": 6451200,
+    "summed_backend_summary_transitions": 6451200,
+    "every_iteration_only_motrix": true,
+    "every_iteration_motrix_environment_count": 224,
+    "every_iteration_motrix_requested_and_actual_ratio": 1.0,
+    "training_seed_snapshot_and_summary_match": true,
+    "training_process_identity_matches_study_candidate_and_seed": true,
+    "training_process_command_budget_and_seed_match": true,
+    "contract_snapshot_present": true,
+    "held_out_backends": [
+      "mujoco"
+    ],
+    "event_counts": {
+      "allocation": 1,
+      "iteration": 1200
+    },
+    "manual_control_events": 0,
+    "adaptive_update_events": 0,
+    "reconfiguration_events": 0,
+    "adaptive_controller": null,
+    "adaptive_state_file_applicable": false,
+    "adaptive_state_note": "This fixed single-backend candidate has no adaptive controller; train/adaptive_mix.json does not exist and is not synthesized.",
+    "manifest_fingerprint_matches_summary": true,
+    "manifest_control_seen_version": 0,
+    "final_backend_counts": {
+      "motrix": 224
+    }
+  },
+  "canonical_remote_validation_audit": {
+    "function": "unilab.training.mix_benchmark.read_evaluation",
+    "passed": true,
+    "read_only": true,
+    "status": "completed",
+    "backend": "mujoco",
+    "split": "validation",
+    "identity": "b32d5847ff29636ae9f509c9b47719639b6cdceda1fbfd8d6851ceb271a16875",
+    "checkpoint_sha256": "6cbbb8812d00b35fd5c8a493c99e7bfdf3aee04fdb71b9d61c61c409ffe2cace",
+    "protocol": "seeded_common_task_deterministic_cpu_policy_complete_episodes"
+  },
+  "independent_validation_checks": {
+    "process_returncode": 0,
+    "whole_process_wall_seconds": 20.35861464000118,
+    "process_and_metrics_identity_match_study_checkpoint_split_and_seeds": true,
+    "process_command_matches_study_checkpoint_split_output_and_identity": true,
+    "episode_count": 15,
+    "evaluation_seeds": [
+      3001,
+      3002,
+      3003
+    ],
+    "episode_counts_by_seed": {
+      "3001": 5,
+      "3002": 5,
+      "3003": 5
+    },
+    "episode_indices_per_seed": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "all_episode_identities_unique_and_expected": true,
+    "all_episode_metric_values_finite": true,
+    "all_lengths_within_horizon": true,
+    "all_survival_fractions_match_length_divided_by_horizon": true,
+    "all_survived_horizon_flags_have_full_length": true,
+    "horizon_source": "train/run_config.json config.env.max_episode_seconds and config.env.ctrl_dt",
+    "horizon_seconds": 20.0,
+    "control_dt_seconds": 0.02,
+    "horizon_steps": 1000,
+    "full_horizon_episodes": 14,
+    "recomputed_arithmetic_mean_metrics": {
+      "episode_return": 28.614352122073374,
+      "survival_fraction": 0.9812,
+      "tracking_lin_vel": 0.5066128934454093,
+      "tracking_ang_vel": 0.5881541129522506,
+      "survived_horizon": 0.9333333333333333
+    },
+    "aggregate_metric_max_absolute_difference": 0.0
+  },
+  "original_files": {
+    "process.json": {
+      "bytes": 845,
+      "sha256": "a16f2e3c74b6e07cd7bbc15f47e1959125debaa68e00507dcad00f4fd3114267"
+    },
+    "train/mix_events.jsonl": {
+      "bytes": 490292,
+      "sha256": "8edeef426fd7efed1cbddbbf7f4819f95189b984b04d76c7b17988884e48ab87",
+      "archived_as": "train/mix_events.jsonl.gz",
+      "compression_command": "gzip -n -9 train/mix_events.jsonl",
+      "compressed_bytes": 75642,
+      "compressed_sha256": "a429e98b7e7bded87ad4c8b4b8936fab91d59a5648b8c1ba34fe8384c003dd67",
+      "jsonl_records": 1201,
+      "decompressed_bytes_and_sha256_verified": true
+    },
+    "train/mix_manifest.json": {
+      "bytes": 285,
+      "sha256": "1a99a13d9fdd181613ceb48d20d1f56cdedb52f1421a76c1b667e7ade2c014ed"
+    },
+    "train/mixed_config.json": {
+      "bytes": 11881,
+      "sha256": "79b2f47cc1e28e247e79007d99278ea1bed5e5b1aa73edf97670c002f272130e"
+    },
+    "train/run_config.json": {
+      "bytes": 20723,
+      "sha256": "14945f4379acf59d9855840ed2ed4d3398421e02987a16036083f96af2c47739"
+    },
+    "train/run_summary.json": {
+      "bytes": 1062,
+      "sha256": "e8508e08d13057e340558f477ba039fecd091da6fd7a57fb3b46ba23be0279f7"
+    },
+    "validation/metrics.json": {
+      "bytes": 4821,
+      "sha256": "b926d76ca6ab407afe11b33648891032e7ab126638287cff6b4b910774d981ab"
+    },
+    "validation/process.json": {
+      "bytes": 757,
+      "sha256": "dc12adaabf2e25a0672cb95295d16fd0d53b30355c3d632040552ae1916ca948"
+    }
+  },
+  "all_original_file_hashes_match_remote": true,
+  "limitations": [
+    "This is one completed fixed Motrix training seed and its MuJoCo validation, not a completed study or fresh confirmation result.",
+    "The 15 evaluation episodes share one trained policy and are not 15 independent training replicates.",
+    "14 of 15 episodes survived the full 20-second horizon; this does not establish consistently reliable walking.",
+    "No mixed-backend advantage, recommended ratio, global optimum or equal-wall-time policy-quality conclusion is established.",
+    "Model weights, full stdout, TensorBoard and external runtimes are omitted.",
+    "The compact local archive cannot rerun checkpoint validation or resume training without the omitted model and runtime artifacts."
+  ]
+}

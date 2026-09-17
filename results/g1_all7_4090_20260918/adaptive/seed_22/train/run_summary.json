@@ -1,0 +1,175 @@
+{
+  "status": "completed",
+  "next_iteration": 1200,
+  "backend_counts": {
+    "motrix": 29,
+    "drake": 32,
+    "mjwarp": 26,
+    "isaacgym": 31,
+    "isaacsim": 40,
+    "genesis": 18,
+    "newton": 48
+  },
+  "backend_stats": {
+    "motrix": {
+      "samples": 1207200.0,
+      "reward_sum": 3958.6750476678717,
+      "episodes": 25954.0,
+      "censored_episodes": 32.0,
+      "episode_reward_sum": 3797.2838123270776,
+      "episode_length_sum": 1189764.0,
+      "step_seconds": 448.5816278671464,
+      "interrupted_episodes": 404.0
+    },
+    "drake": {
+      "samples": 1171200.0,
+      "reward_sum": 4142.153399535688,
+      "episodes": 24026.0,
+      "censored_episodes": 32.0,
+      "episode_reward_sum": 3978.4104492798215,
+      "episode_length_sum": 1153144.0,
+      "step_seconds": 475.45523978324854,
+      "interrupted_episodes": 384.0
+    },
+    "mjwarp": {
+      "samples": 832800.0,
+      "reward_sum": 665.2684218259528,
+      "episodes": 19186.0,
+      "censored_episodes": 32.0,
+      "episode_reward_sum": 620.9322773758613,
+      "episode_length_sum": 823280.0,
+      "step_seconds": 248.5517470177474,
+      "interrupted_episodes": 255.0
+    },
+    "isaacgym": {
+      "samples": 1116000.0,
+      "reward_sum": 4553.3814914827235,
+      "episodes": 22140.0,
+      "censored_episodes": 32.0,
+      "episode_reward_sum": 4395.885116702324,
+      "episode_length_sum": 1098617.0,
+      "step_seconds": 1963.9409887539896,
+      "interrupted_episodes": 367.0
+    },
+    "isaacsim": {
+      "samples": 717600.0,
+      "reward_sum": 556.9371306884568,
+      "episodes": 15892.0,
+      "censored_episodes": 32.0,
+      "episode_reward_sum": 474.34009283641353,
+      "episode_length_sum": 705935.0,
+      "step_seconds": 2218.4583507529533,
+      "interrupted_episodes": 182.0
+    },
+    "genesis": {
+      "samples": 631200.0,
+      "reward_sum": 217.10439539258368,
+      "episodes": 14975.0,
+      "censored_episodes": 32.0,
+      "episode_reward_sum": 169.22840284742415,
+      "episode_length_sum": 621899.0,
+      "step_seconds": 1695.13309181759,
+      "interrupted_episodes": 192.0
+    },
+    "newton": {
+      "samples": 775200.0,
+      "reward_sum": 840.7074617927428,
+      "episodes": 16720.0,
+      "censored_episodes": 32.0,
+      "episode_reward_sum": 782.8769341312,
+      "episode_length_sum": 765227.0,
+      "step_seconds": 2142.661023879926,
+      "interrupted_episodes": 190.0
+    }
+  },
+  "samples_per_iteration": 5376,
+  "mixed_fingerprint": "81548f6e87b67b586b9b3a9b5c6c82eae52b511e03a973ff1488768ec07b7d87",
+  "adaptive": {
+    "version": 1,
+    "config": {
+      "metric": "mean_step_reward",
+      "strategy": "learning_progress",
+      "interval": 100,
+      "warmup": 100,
+      "ema_alpha": 0.2,
+      "temperature": 1.0,
+      "min_ratio": 0.05,
+      "max_ratio": 0.5,
+      "smoothing": 0.3,
+      "freeze_after": 1100
+    },
+    "names": [
+      "motrix",
+      "drake",
+      "mjwarp",
+      "isaacgym",
+      "isaacsim",
+      "genesis",
+      "newton"
+    ],
+    "total": 224,
+    "ratios": {
+      "motrix": 0.12785146364402222,
+      "drake": 0.14240224488084124,
+      "mjwarp": 0.11818880438540671,
+      "isaacgym": 0.14046560545073217,
+      "isaacsim": 0.1785896782189566,
+      "genesis": 0.07859026944455448,
+      "newton": 0.21391193397548647
+    },
+    "ema": {
+      "motrix": 0.002826568674153683,
+      "drake": 0.0030914637794877088,
+      "mjwarp": 0.0018297470696617597,
+      "isaacgym": 0.003247191161291089,
+      "isaacsim": 0.0010974061590649745,
+      "genesis": 0.001955165896233431,
+      "newton": 0.0009154230665709413
+    },
+    "scale": {
+      "motrix": 0.007624950177138895,
+      "drake": 0.00788200103463549,
+      "mjwarp": 0.007031020698825033,
+      "isaacgym": 0.0076732726943202715,
+      "isaacsim": 0.007221918350716432,
+      "genesis": 0.0072008598643316865,
+      "newton": 0.006431200122737766
+    },
+    "sums": {
+      "motrix": 0.0,
+      "drake": 0.0,
+      "mjwarp": 0.0,
+      "isaacgym": 0.0,
+      "isaacsim": 0.0,
+      "genesis": 0.0,
+      "newton": 0.0
+    },
+    "weights": {
+      "motrix": 0.0,
+      "drake": 0.0,
+      "mjwarp": 0.0,
+      "isaacgym": 0.0,
+      "isaacsim": 0.0,
+      "genesis": 0.0,
+      "newton": 0.0
+    },
+    "window_iterations": 0,
+    "last_iteration": 1199,
+    "updates": 10,
+    "frozen": true
+  },
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "algo": "ppo",
+  "task": "G1WalkFlat",
+  "sim_backend": "mixed",
+  "log_dir": "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_4090_20260918/adaptive/seed_22/train",
+  "start_time_utc": "2026-09-17T17:43:36.878218+00:00",
+  "end_time_utc": "2026-09-17T18:26:37.548310+00:00",
+  "wall_time_sec": 2580.6700892069985,
+  "wandb_run_url": null,
+  "configured_seed": 22,
+  "configured_seed_source": "algo.seed",
+  "effective_seed": 22
+}

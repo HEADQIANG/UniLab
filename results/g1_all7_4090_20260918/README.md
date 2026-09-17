@@ -1,12 +1,12 @@
 # G1 七后端正式实验：运行协议与前置校准
 
-截至 2026-09-18 01:46:48（Asia/Shanghai），正式训练已完成 **1/131**：
-自适应搜索 seed 11 通过退出、采样预算、比例事件和最终 checkpoint 审计。
-seed 22 正在运行（PID 2555679），后台启动 PID 1080640 仍存活；SSH 断开
+截至 2026-09-18 02:27:12（Asia/Shanghai），正式训练已完成 **2/131**：
+自适应搜索 seed 11、22 通过退出、采样预算、比例事件和最终 checkpoint 审计。
+seed 33 正在运行（PID 204532），后台启动 PID 1080640 仍存活；SSH 断开
 不会结束作业。此时尚无正式 MuJoCo validation/test 评估，没有比例推荐或
 多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、首个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、两个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -48,6 +48,29 @@ gzip -dk results/g1_all7_4090_20260918/adaptive/seed_11/train/mix_events.jsonl.g
 归档还保留原始 `run_config.json`、`mixed_config.json` 和 `adaptive_mix.json`。
 缺少模型及完整运行目录时，不能对本地紧凑归档直接重跑完整 checkpoint
 审计或恢复训练；上述解压只恢复比例事件文件，不补回省略的工件。
+
+## 第二个完成的正式 trial：adaptive / seed 22
+
+[进程回执](adaptive/seed_22/process.json) 记录退出码 0，完整进程耗时
+2583.0349342209993 秒。原始摘要和逐轮事件分别确认 1200 次 PPO 更新、
+6,451,200 个实际 transitions；每轮 5376 个样本，七个后端持续正采样。
+控制器完成 10 次更新、9 次实际重配置并冻结。
+
+末尾实际环境数按同一后端顺序为 `29/32/26/31/40/18/48`，总计 224。
+这仍是单条自适应搜索轨迹的最终分配，不是经独立确认的推荐比例。
+截至本次观测，正式 MuJoCo validation/test 工件均未产生。
+
+[完成审计](adaptive/seed_22/completed_trial_audit.json) 保存带时间的远程
+`training_result` 检查、checkpoint hash 和六个原始文件的完整校验值。
+未复制模型，也没有根据训练过程数值添加策略质量或多后端优势结论。
+原始 JSON 保持不变；[比例事件](adaptive/seed_22/train/mix_events.jsonl.gz)
+由 3,064,115 字节无损压缩至 448,746 字节，可按以下命令校验或解压：
+
+```bash
+gzip -dc results/g1_all7_4090_20260918/adaptive/seed_22/train/mix_events.jsonl.gz | sha256sum
+# f71639ba01fc448b1749b07c2733d949408180b1cd02729f3cf15b958fed65a6
+gzip -dk results/g1_all7_4090_20260918/adaptive/seed_22/train/mix_events.jsonl.gz
+```
 
 ## 规模校准（独立于正式训练）
 

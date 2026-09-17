@@ -17,6 +17,22 @@ MuJoCo 只用于选择和独立评估。安装及外部 Isaac 路径设置见
 最终必须同时报告学习程度、所有单后端比较、配对统计及时间成本。
 不能从 448 样本的集成测试中直接推荐正式训练比例。
 
+作为预算参照，项目 [G1 MuJoCo owner](../src/unilab/conf/ppo/task/g1_walk_flat/mujoco.yaml)
+默认使用 2048 个环境、2200 次更新，配合 [PPO 默认配置](../src/unilab/conf/ppo/config.yaml)
+的 24 步 rollout，共 108,134,400 transitions。本研究单次训练约为该预算的
+5.97%；默认配置本身也不是已收敛的证据。
+
+报告的 `mixed_advantage_supported_at_equal_samples` 检验的是 episode return
+的相对优势，没有内置绝对行走质量门槛。必须同时检查 `survived_horizon`
+和 `survival_fraction`；如果所有方案都在短时间内终止，即使回报差异显著，
+也只能报告该预算下的相对改进，不能据此宣称可靠行走。带探索噪声的训练
+回合统计与确定性策略评估应分开解释。
+
+训练日志的 `Metrics/twist/error_vel_xy`、`error_vel_yaw` 将累计误差除以
+固定命令周期的步数，短回合中的值不能直接解释为实际每步平均误差。
+正式评估中的 `tracking_lin_vel`、`tracking_ang_vel` 则是去除权重后的
+追踪奖励得分，也不是 m/s 或 rad/s 单位的误差，见 [指标说明](mix_benchmark.md)。
+
 自适应配置见 [adaptive_g1_4090.yaml](examples/adaptive_g1_4090.yaml)：
 以训练 reward 的学习进展调整比例，每 100 次 PPO 更新观察一次，100 次
 warmup，第 1100 次后冻结；每个后端的请求比例限制在 5%–50%，实际整数

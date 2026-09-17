@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "status": "completed_training_trial",
+  "observation_started_at_utc": "2026-09-17T18:27:12.271322+00:00",
+  "observation_started_at_local": "2026-09-18T02:27:12.271322+08:00",
+  "study_id": "ecf9ca19ecfb54a9b0e63134a37b0d9c2d1f8b5fc63688b3aafd8632102925b5",
+  "candidate": "adaptive",
+  "training_seed": 22,
+  "process_identity": "6391a31ad8434aad3a7352fd291634750a2791b890d86dde467c0c3389b1f457",
+  "archive_preparation_base_commit": "4166f3fd2924ba78c7d88b4b23ab9964ceaf85dd",
+  "remote_trial_directory": "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_4090_20260918/adaptive/seed_22",
+  "canonical_remote_audit": {
+    "function": "unilab.training.mix_benchmark.training_result",
+    "passed": true,
+    "read_only": true,
+    "process_returncode": 0,
+    "whole_process_wall_seconds": 2583.0349342209993,
+    "checkpoint_relative_path": "train/model_1199.pt",
+    "checkpoint_sha256": "0e016be94beecb9fa44f69f162e276ad103a536f6507d8bb7cbf3c87d93b34f1",
+    "checkpoint_copied": false
+  },
+  "independent_event_and_summary_checks": {
+    "run_summary_status": "completed",
+    "next_iteration": 1200,
+    "iteration_records": 1200,
+    "iteration_indices_contiguous_from": 0,
+    "iteration_indices_contiguous_through": 1199,
+    "samples_per_iteration": 5376,
+    "summed_iteration_transitions": 6451200,
+    "summed_backend_summary_transitions": 6451200,
+    "all_seven_backends_positive_at_every_iteration": true,
+    "held_out_backends": [
+      "mujoco"
+    ],
+    "event_counts": {
+      "allocation": 10,
+      "iteration": 1200,
+      "adaptive_updated": 10,
+      "reconfigured": 9,
+      "adaptive_frozen": 1
+    },
+    "adaptive_state_updates": 10,
+    "adaptive_state_frozen": true,
+    "final_backend_counts": {
+      "motrix": 29,
+      "drake": 32,
+      "mjwarp": 26,
+      "isaacgym": 31,
+      "isaacsim": 40,
+      "genesis": 18,
+      "newton": 48
+    }
+  },
+  "original_files": {
+    "process.json": {
+      "bytes": 1019,
+      "sha256": "1db04cee98f2ba752004554f36240ba687acc041378c1eea4ed7e3cc630df7e1"
+    },
+    "train/run_summary.json": {
+      "bytes": 4820,
+      "sha256": "d81d17bdc6e4afbdc6beee999ff9c3948f9eabe167e3af99c7e5cb0994d14542"
+    },
+    "train/run_config.json": {
+      "bytes": 20885,
+      "sha256": "b1c9240bfecb957b2e848b2b8c8c5456df67aa0e3cffd5f270563e1f3e7512f9"
+    },
+    "train/mixed_config.json": {
+      "bytes": 13956,
+      "sha256": "c8f52fbf9338cd8a395e0f9ce93bd98c330907b8e25bdb0d94ff798fd6a1d0e7"
+    },
+    "train/adaptive_mix.json": {
+      "bytes": 1368,
+      "sha256": "8c0da63c284eccd6c0361d3f94928e88b0e280abd19a44b83b10c17c1b94b4f6"
+    },
+    "train/mix_events.jsonl": {
+      "bytes": 3064115,
+      "sha256": "f71639ba01fc448b1749b07c2733d949408180b1cd02729f3cf15b958fed65a6",
+      "archived_as": "train/mix_events.jsonl.gz",
+      "compression_command": "gzip -n -9 train/mix_events.jsonl",
+      "compressed_bytes": 448746,
+      "compressed_sha256": "f8121924133126d69ede668e8f53c8ccb60581bfbc53ab2428b1e6306fa70f15",
+      "jsonl_records": 1230,
+      "decompressed_bytes_and_sha256_verified": true
+    }
+  },
+  "all_original_file_hashes_match_remote": true,
+  "study_state_observed": {
+    "completed_training_trials": 2,
+    "planned_training_trials": 131,
+    "completed_trial_paths": [
+      "adaptive/seed_11",
+      "adaptive/seed_22"
+    ],
+    "active_candidate": "adaptive",
+    "active_training_seed": 33,
+    "active_training_pid": 204532,
+    "active_launcher_pid": 1080640,
+    "both_active_pids_verified_live": true,
+    "formal_validation_metric_files": 0,
+    "formal_test_metric_files": 0,
+    "ratio_recommendation_available": false
+  },
+  "limitations": [
+    "Two successful training trials do not complete the 131-run study.",
+    "The final allocation of this adaptive search trajectory is not a recommended fixed ratio.",
+    "No formal MuJoCo validation/test result or multi-backend advantage is claimed at the observation time.",
+    "Model weights, full stdout, TensorBoard and external runtimes are omitted.",
+    "The compact local archive cannot rerun checkpoint validation or resume training without the omitted model and runtime artifacts."
+  ]
+}

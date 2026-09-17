@@ -1,0 +1,11 @@
+{
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "backends": {
+    "motrix": {
+      "device": "cpu",
+      "timeout_s": 300
+    }
+  }
+}

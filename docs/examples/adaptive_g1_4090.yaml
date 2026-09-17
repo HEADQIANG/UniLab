@@ -1,0 +1,22 @@
+# Bounded single-4090 study: 224 environments, 24 steps, 1200 PPO updates.
+# Match these training settings across every mixed and single-backend arm.
+held_out_backends: [mujoco]
+backends:
+  motrix: {device: cpu, timeout_s: 300}
+  drake: {device: cpu, timeout_s: 300}
+  mjwarp: {device: 'cuda:0', timeout_s: 600}
+  isaacgym: {device: 'cuda:0', timeout_s: 600}
+  isaacsim: {device: 'cuda:0', timeout_s: 600}
+  genesis: {device: 'cuda:0', timeout_s: 600}
+  newton: {device: 'cuda:0', timeout_s: 600}
+adaptive:
+  metric: mean_step_reward
+  strategy: learning_progress
+  interval: 100
+  warmup: 100
+  ema_alpha: 0.2
+  temperature: 1.0
+  min_ratio: 0.05
+  max_ratio: 0.5
+  smoothing: 0.3
+  freeze_after: 1100

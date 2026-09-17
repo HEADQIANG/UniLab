@@ -1,0 +1,447 @@
+{
+  "status": "completed",
+  "study_id": "e64a258b0fe80dab10c81e37a651cc6ed17a402f2fb30c7a331cba4fbd934ced",
+  "selection": {
+    "study_id": "e64a258b0fe80dab10c81e37a651cc6ed17a402f2fb30c7a331cba4fbd934ced",
+    "validation_scores": {
+      "single_motrix": 0.9766334230080247,
+      "single_drake": 1.12646503187716,
+      "single_mjwarp": 0.9339800248853862,
+      "single_isaacgym": 0.7034908784553409,
+      "single_isaacsim": 1.1697740675881505,
+      "single_genesis": 0.9261551788076758,
+      "single_newton": 0.9584598243236542,
+      "equal": 1.0619459464214742,
+      "adaptive": 0.9617694988846779,
+      "favor_motrix": 0.9296963876113296,
+      "favor_drake": 0.9605588540434837,
+      "favor_mjwarp": 0.8244017311371863,
+      "favor_isaacgym": 0.863766077440232,
+      "favor_isaacsim": 1.0115148765034974,
+      "favor_genesis": 0.9954242426902056,
+      "favor_newton": 0.9368255729787052,
+      "frozen_adaptive": 1.0852926077786833
+    },
+    "best_fixed_mixture": "frozen_adaptive",
+    "best_single": "single_isaacsim"
+  },
+  "provenance": {
+    "source_sha256": {
+      "unilab": "0059e7bcc2e8b1655da9103804c7439e7c361b21efd94619bb0e4ca8b7764d65",
+      "uni_rl": "c46551251bfa75cba880d03429b9f548024a000a055120e31d31fb56a4b31cf7",
+      "unisim": "c193490b915245e2af13a88b00c2c40ff7901406d1d906f151932a6ede4bb93f",
+      "drake_uni": "fc91cfbf6a5ed3b0c7c8eec00676e6e4a9116c56fcbb4f6e8fd2535843df01a6"
+    },
+    "module_roots": {
+      "unilab": "/home/hpf/yuelk/UniLab/src/unilab",
+      "uni_rl": "/home/hpf/yuelk/UniLab/vendor/unilab-rl/src/uni_rl",
+      "unisim": "/home/hpf/yuelk/UniLab/.venv/lib/python3.12/site-packages/unisim",
+      "drake_uni": "/home/hpf/yuelk/unilab-runtimes/drake/unilabsim-drake_uni-4cdc9ba/src/drake_uni"
+    },
+    "source_git_commits": {
+      "unilab": "9e3bb6b814d694d52bfff0f074d0a2b8ede6f032",
+      "uni_rl": "9e3bb6b814d694d52bfff0f074d0a2b8ede6f032",
+      "unisim": "9e3bb6b814d694d52bfff0f074d0a2b8ede6f032",
+      "drake_uni": null
+    },
+    "packages": {
+      "unisim-core": "1.1.4",
+      "unilab-rl": "1.1.1",
+      "rsl-rl-lib": "5.0.1",
+      "torch": "2.8.0+cu128",
+      "numpy": "2.4.4",
+      "mujoco": "3.11.0",
+      "mujoco-uni-runtime": "0.5.0",
+      "drake-uni": "0.1.0",
+      "motrixsim-core": "0.8.2",
+      "mujoco-warp": "3.11.0",
+      "genesis-world": "1.3.3",
+      "newton": "1.5.1",
+      "warp-lang": "1.16.0"
+    },
+    "install_provenance": {
+      "unilab-rl": {
+        "url": "file:///home/hpf/yuelk/UniLab/vendor/unilab-rl",
+        "dir_info": {
+          "editable": true
+        }
+      },
+      "drake-uni": {
+        "url": "file:///home/hpf/yuelk/unilab-runtimes/drake/unilabsim-drake_uni-4cdc9ba",
+        "dir_info": {
+          "editable": true
+        }
+      }
+    },
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "external_runtime_limitations": "IsaacGym/IsaacSim external worker environments, system shared libraries and GPU drivers are not fingerprinted; keep them unchanged within a study."
+  },
+  "best_observed_fixed_ratios": {
+    "motrix": 0.2857142857142857,
+    "drake": 0.32142857142857145,
+    "mjwarp": 0.07142857142857142,
+    "isaacgym": 0.14285714285714285,
+    "isaacsim": 0.03571428571428571,
+    "genesis": 0.07142857142857142,
+    "newton": 0.07142857142857142
+  },
+  "test_results": {
+    "frozen_adaptive": {
+      "per_training_seed": [
+        {
+          "episode_return": 0.4008164466358721,
+          "survival_fraction": 0.057,
+          "tracking_lin_vel": 0.30729465676765694,
+          "tracking_ang_vel": 0.767482121131922,
+          "survived_horizon": 0
+        }
+      ],
+      "mean": {
+        "episode_return": 0.4008164466358721,
+        "survival_fraction": 0.057,
+        "tracking_lin_vel": 0.30729465676765694,
+        "tracking_ang_vel": 0.767482121131922,
+        "survived_horizon": 0
+      },
+      "training_wall_seconds": [
+        17.91511047899985
+      ],
+      "mean_transitions_per_second": 25.00682318008293
+    },
+    "single_motrix": {
+      "per_training_seed": [
+        {
+          "episode_return": 0.5801069247536361,
+          "survival_fraction": 0.055,
+          "tracking_lin_vel": 0.34900688793171536,
+          "tracking_ang_vel": 0.7433138435537164,
+          "survived_horizon": 0
+        }
+      ],
+      "mean": {
+        "episode_return": 0.5801069247536361,
+        "survival_fraction": 0.055,
+        "tracking_lin_vel": 0.34900688793171536,
+        "tracking_ang_vel": 0.7433138435537164,
+        "survived_horizon": 0
+      },
+      "training_wall_seconds": [
+        4.503794666999966
+      ],
+      "mean_transitions_per_second": 99.47167513709466
+    },
+    "single_drake": {
+      "per_training_seed": [
+        {
+          "episode_return": 0.38677961053326726,
+          "survival_fraction": 0.057,
+          "tracking_lin_vel": 0.31148685900527134,
+          "tracking_ang_vel": 0.7461334554184424,
+          "survived_horizon": 0
+        }
+      ],
+      "mean": {
+        "episode_return": 0.38677961053326726,
+        "survival_fraction": 0.057,
+        "tracking_lin_vel": 0.31148685900527134,
+        "tracking_ang_vel": 0.7461334554184424,
+        "survived_horizon": 0
+      },
+      "training_wall_seconds": [
+        6.016590424998867
+      ],
+      "mean_transitions_per_second": 74.4607773430222
+    },
+    "single_mjwarp": {
+      "per_training_seed": [
+        {
+          "episode_return": 0.4358939006924629,
+          "survival_fraction": 0.055,
+          "tracking_lin_vel": 0.31703279959884556,
+          "tracking_ang_vel": 0.704223950647495,
+          "survived_horizon": 0
+        }
+      ],
+      "mean": {
+        "episode_return": 0.4358939006924629,
+        "survival_fraction": 0.055,
+        "tracking_lin_vel": 0.31703279959884556,
+        "tracking_ang_vel": 0.704223950647495,
+        "survived_horizon": 0
+      },
+      "training_wall_seconds": [
+        6.479954925000129
+      ],
+      "mean_transitions_per_second": 69.13628338240193
+    },
+    "single_isaacgym": {
+      "per_training_seed": [
+        {
+          "episode_return": -0.24512297473847866,
+          "survival_fraction": 0.061,
+          "tracking_lin_vel": 0.26643250028404303,
+          "tracking_ang_vel": 0.6755126324161643,
+          "survived_horizon": 0
+        }
+      ],
+      "mean": {
+        "episode_return": -0.24512297473847866,
+        "survival_fraction": 0.061,
+        "tracking_lin_vel": 0.26643250028404303,
+        "tracking_ang_vel": 0.6755126324161643,
+        "survived_horizon": 0
+      },
+      "training_wall_seconds": [
+        8.551766311000392
+      ],
+      "mean_transitions_per_second": 52.38683842701878
+    },
+    "single_isaacsim": {
+      "per_training_seed": [
+        {
+          "episode_return": 0.5742585640400648,
+          "survival_fraction": 0.055,
+          "tracking_lin_vel": 0.3247820860282941,
+          "tracking_ang_vel": 0.7791223227977753,
+          "survived_horizon": 0
+        }
+      ],
+      "mean": {
+        "episode_return": 0.5742585640400648,
+        "survival_fraction": 0.055,
+        "tracking_lin_vel": 0.3247820860282941,
+        "tracking_ang_vel": 0.7791223227977753,
+        "survived_horizon": 0
+      },
+      "training_wall_seconds": [
+        15.136715698999978
+      ],
+      "mean_transitions_per_second": 29.596909191443526
+    },
+    "single_genesis": {
+      "per_training_seed": [
+        {
+          "episode_return": 0.4117710334248841,
+          "survival_fraction": 0.055,
+          "tracking_lin_vel": 0.3323710525239056,
+          "tracking_ang_vel": 0.6357958172871307,
+          "survived_horizon": 0
+        }
+      ],
+      "mean": {
+        "episode_return": 0.4117710334248841,
+        "survival_fraction": 0.055,
+        "tracking_lin_vel": 0.3323710525239056,
+        "tracking_ang_vel": 0.6357958172871307,
+        "survived_horizon": 0
+      },
+      "training_wall_seconds": [
+        11.97337259500091
+      ],
+      "mean_transitions_per_second": 37.41635837734205
+    },
+    "single_newton": {
+      "per_training_seed": [
+        {
+          "episode_return": 0.19732241961173713,
+          "survival_fraction": 0.059,
+          "tracking_lin_vel": 0.29174582948276806,
+          "tracking_ang_vel": 0.7351925752867582,
+          "survived_horizon": 0
+        }
+      ],
+      "mean": {
+        "episode_return": 0.19732241961173713,
+        "survival_fraction": 0.059,
+        "tracking_lin_vel": 0.29174582948276806,
+        "tracking_ang_vel": 0.7351925752867582,
+        "survived_horizon": 0
+      },
+      "training_wall_seconds": [
+        8.685486930999105
+      ],
+      "mean_transitions_per_second": 51.58029751919342
+    }
+  },
+  "paired_test_reward_vs_each_single": {
+    "single_motrix": {
+      "mean_difference": -0.179290478117764,
+      "n_training_seeds": 1,
+      "descriptive_bootstrap_interval95": null,
+      "bootstrap_note": "descriptive_only_not_used_for_significance",
+      "permutation_test": {
+        "p_value": 1.0,
+        "alternative": "mixed_greater_than_single",
+        "method": "exact_paired_sign_flip",
+        "n_confirmation_training_seeds": 1,
+        "null_assumption": "paired_reward_differences_are_sign_exchangeable"
+      },
+      "holm_adjusted_p_value": 1.0
+    },
+    "single_drake": {
+      "mean_difference": 0.014036836102604866,
+      "n_training_seeds": 1,
+      "descriptive_bootstrap_interval95": null,
+      "bootstrap_note": "descriptive_only_not_used_for_significance",
+      "permutation_test": {
+        "p_value": 0.5,
+        "alternative": "mixed_greater_than_single",
+        "method": "exact_paired_sign_flip",
+        "n_confirmation_training_seeds": 1,
+        "null_assumption": "paired_reward_differences_are_sign_exchangeable"
+      },
+      "holm_adjusted_p_value": 1.0
+    },
+    "single_mjwarp": {
+      "mean_difference": -0.035077454056590796,
+      "n_training_seeds": 1,
+      "descriptive_bootstrap_interval95": null,
+      "bootstrap_note": "descriptive_only_not_used_for_significance",
+      "permutation_test": {
+        "p_value": 1.0,
+        "alternative": "mixed_greater_than_single",
+        "method": "exact_paired_sign_flip",
+        "n_confirmation_training_seeds": 1,
+        "null_assumption": "paired_reward_differences_are_sign_exchangeable"
+      },
+      "holm_adjusted_p_value": 1.0
+    },
+    "single_isaacgym": {
+      "mean_difference": 0.6459394213743508,
+      "n_training_seeds": 1,
+      "descriptive_bootstrap_interval95": null,
+      "bootstrap_note": "descriptive_only_not_used_for_significance",
+      "permutation_test": {
+        "p_value": 0.5,
+        "alternative": "mixed_greater_than_single",
+        "method": "exact_paired_sign_flip",
+        "n_confirmation_training_seeds": 1,
+        "null_assumption": "paired_reward_differences_are_sign_exchangeable"
+      },
+      "holm_adjusted_p_value": 1.0
+    },
+    "single_isaacsim": {
+      "mean_difference": -0.17344211740419269,
+      "n_training_seeds": 1,
+      "descriptive_bootstrap_interval95": null,
+      "bootstrap_note": "descriptive_only_not_used_for_significance",
+      "permutation_test": {
+        "p_value": 1.0,
+        "alternative": "mixed_greater_than_single",
+        "method": "exact_paired_sign_flip",
+        "n_confirmation_training_seeds": 1,
+        "null_assumption": "paired_reward_differences_are_sign_exchangeable"
+      },
+      "holm_adjusted_p_value": 1.0
+    },
+    "single_genesis": {
+      "mean_difference": -0.010954586789011955,
+      "n_training_seeds": 1,
+      "descriptive_bootstrap_interval95": null,
+      "bootstrap_note": "descriptive_only_not_used_for_significance",
+      "permutation_test": {
+        "p_value": 1.0,
+        "alternative": "mixed_greater_than_single",
+        "method": "exact_paired_sign_flip",
+        "n_confirmation_training_seeds": 1,
+        "null_assumption": "paired_reward_differences_are_sign_exchangeable"
+      },
+      "holm_adjusted_p_value": 1.0
+    },
+    "single_newton": {
+      "mean_difference": 0.203494027024135,
+      "n_training_seeds": 1,
+      "descriptive_bootstrap_interval95": null,
+      "bootstrap_note": "descriptive_only_not_used_for_significance",
+      "permutation_test": {
+        "p_value": 0.5,
+        "alternative": "mixed_greater_than_single",
+        "method": "exact_paired_sign_flip",
+        "n_confirmation_training_seeds": 1,
+        "null_assumption": "paired_reward_differences_are_sign_exchangeable"
+      },
+      "holm_adjusted_p_value": 1.0
+    }
+  },
+  "confirmation_protocol": {
+    "study_id": "e64a258b0fe80dab10c81e37a651cc6ed17a402f2fb30c7a331cba4fbd934ced",
+    "selection_sha256": "0b351a2e546325d2ebd9d62512851445e148103e1767aaadc992f76a8b7526c8",
+    "training_seeds": [
+      101
+    ],
+    "candidates": [
+      {
+        "name": "frozen_adaptive",
+        "ratios": {
+          "motrix": 0.2857142857142857,
+          "drake": 0.32142857142857145,
+          "mjwarp": 0.07142857142857142,
+          "isaacgym": 0.14285714285714285,
+          "isaacsim": 0.03571428571428571,
+          "genesis": 0.07142857142857142,
+          "newton": 0.07142857142857142
+        },
+        "source_checkpoint_sha256": [
+          "afe6c02d9469e6dbd7e227f0f3c348d8fb738627ca7e13c34efc00931a7d2ce9"
+        ]
+      },
+      {
+        "name": "single_motrix",
+        "ratios": {
+          "motrix": 1.0
+        }
+      },
+      {
+        "name": "single_drake",
+        "ratios": {
+          "drake": 1.0
+        }
+      },
+      {
+        "name": "single_mjwarp",
+        "ratios": {
+          "mjwarp": 1.0
+        }
+      },
+      {
+        "name": "single_isaacgym",
+        "ratios": {
+          "isaacgym": 1.0
+        }
+      },
+      {
+        "name": "single_isaacsim",
+        "ratios": {
+          "isaacsim": 1.0
+        }
+      },
+      {
+        "name": "single_genesis",
+        "ratios": {
+          "genesis": 1.0
+        }
+      },
+      {
+        "name": "single_newton",
+        "ratios": {
+          "newton": 1.0
+        }
+      }
+    ],
+    "transitions_per_run": 448,
+    "test_seeds": [
+      2001
+    ],
+    "decision_rule": "positive_mean_and_Holm_adjusted_exact_sign_flip_p_le_0.05_against_every_single"
+  },
+  "mixed_advantage_supported_at_equal_samples": false,
+  "full_backend_study": true,
+  "claim": "mixed_advantage_not_established",
+  "limitations": [
+    "Best observed candidate; no global-optimum claim.",
+    "Wall-time throughput is measured; equal-wall-time policy quality is not tested.",
+    "Bootstrap intervals are descriptive; exact sign-flip tests assume paired sign exchangeability.",
+    "Inference uses fresh confirmation training seeds; evaluation episodes are not independent training replicates.",
+    "Adaptive discovery/search compute is additional to each equal-sample refit."
+  ]
+}

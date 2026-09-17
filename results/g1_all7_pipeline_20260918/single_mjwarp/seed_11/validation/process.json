@@ -1,0 +1,22 @@
+{
+  "identity": "68b8758a7a3ea31c95f5d5e3b5ef52be52f8b408d9230678f46f9fadf6a0b5e4",
+  "command": [
+    "/home/hpf/yuelk/UniLab/.venv/bin/python3",
+    "-m",
+    "unilab.training.mix_benchmark",
+    "evaluate",
+    "--study",
+    "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_pipeline_20260918",
+    "--checkpoint",
+    "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_pipeline_20260918/single_mjwarp/seed_11/train/model_3.pt",
+    "--split",
+    "validation",
+    "--output",
+    "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_pipeline_20260918/single_mjwarp/seed_11/validation/metrics.json",
+    "--identity",
+    "68b8758a7a3ea31c95f5d5e3b5ef52be52f8b408d9230678f46f9fadf6a0b5e4"
+  ],
+  "pid": 614039,
+  "returncode": 0,
+  "wall_seconds": 2.3508502839995344
+}

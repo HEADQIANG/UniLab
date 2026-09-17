@@ -115,6 +115,13 @@ for this fork, including external simulator setup, tests, and experiment command
 The [experiment protocol](docs/mix_benchmark.md) explains selection, uncertainty,
 and why a completed experiment may still find no multi-backend advantage.
 
+The [seven-backend integration results](docs/adaptive_g1_validation_20260918.md)
+include all single-backend comparisons and raw evidence; these short runs do
+not establish learned locomotion or a training advantage. The separately
+[declared 4090 study](docs/g1_4090_study.md) uses 131 training runs and fresh
+confirmation seeds; its [recorded status and calibration](results/g1_all7_4090_20260918/README.md)
+distinguish completed checks from the ongoing longer experiment.
+
 ## Ecosystem
 
 UniLab is designed to be a shared task and training surface for robot-specific

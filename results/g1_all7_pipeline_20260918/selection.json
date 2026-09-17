@@ -1,0 +1,24 @@
+{
+  "study_id": "e64a258b0fe80dab10c81e37a651cc6ed17a402f2fb30c7a331cba4fbd934ced",
+  "validation_scores": {
+    "single_motrix": 0.9766334230080247,
+    "single_drake": 1.12646503187716,
+    "single_mjwarp": 0.9339800248853862,
+    "single_isaacgym": 0.7034908784553409,
+    "single_isaacsim": 1.1697740675881505,
+    "single_genesis": 0.9261551788076758,
+    "single_newton": 0.9584598243236542,
+    "equal": 1.0619459464214742,
+    "adaptive": 0.9617694988846779,
+    "favor_motrix": 0.9296963876113296,
+    "favor_drake": 0.9605588540434837,
+    "favor_mjwarp": 0.8244017311371863,
+    "favor_isaacgym": 0.863766077440232,
+    "favor_isaacsim": 1.0115148765034974,
+    "favor_genesis": 0.9954242426902056,
+    "favor_newton": 0.9368255729787052,
+    "frozen_adaptive": 1.0852926077786833
+  },
+  "best_fixed_mixture": "frozen_adaptive",
+  "best_single": "single_isaacsim"
+}

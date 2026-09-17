@@ -1,0 +1,24 @@
+{
+  "identity": "41a45cb4f7739597b1685cdfcea535077abe1945428668c663d852ee292e477e",
+  "command": [
+    "/home/hpf/yuelk/UniLab/.venv/bin/python3",
+    "/home/hpf/yuelk/UniLab/src/unilab/scripts/train_rsl_rl.py",
+    "task=g1_walk_flat/mixed",
+    "training.mix_task=g1_walk_flat",
+    "training.mix_ratios=\"newton=1.0\"",
+    "training.mix_config=\"/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_pipeline_20260918/configs/single_newton.json\"",
+    "algo.policy.actor_hidden_dims=[32,32]",
+    "algo.policy.critic_hidden_dims=[32,32]",
+    "algo.seed=101",
+    "algo.num_envs=28",
+    "algo.num_steps_per_env=4",
+    "algo.max_iterations=4",
+    "algo.save_interval=4",
+    "training.device=cuda:0",
+    "training.log_dir=\"/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_pipeline_20260918/confirmation/single_newton/seed_101/train\"",
+    "training.logger=tensorboard"
+  ],
+  "pid": 641797,
+  "returncode": 0,
+  "wall_seconds": 8.685486930999105
+}

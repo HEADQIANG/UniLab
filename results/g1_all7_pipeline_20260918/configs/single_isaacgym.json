@@ -1,0 +1,11 @@
+{
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "backends": {
+    "isaacgym": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "frozen_adaptive",
+  "ratios": {
+    "motrix": 0.2857142857142857,
+    "drake": 0.32142857142857145,
+    "mjwarp": 0.07142857142857142,
+    "isaacgym": 0.14285714285714285,
+    "isaacsim": 0.03571428571428571,
+    "genesis": 0.07142857142857142,
+    "newton": 0.07142857142857142
+  },
+  "source_checkpoint_sha256": [
+    "afe6c02d9469e6dbd7e227f0f3c348d8fb738627ca7e13c34efc00931a7d2ce9"
+  ]
+}

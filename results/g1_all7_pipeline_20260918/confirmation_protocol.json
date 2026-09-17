@@ -1,0 +1,71 @@
+{
+  "study_id": "e64a258b0fe80dab10c81e37a651cc6ed17a402f2fb30c7a331cba4fbd934ced",
+  "selection_sha256": "0b351a2e546325d2ebd9d62512851445e148103e1767aaadc992f76a8b7526c8",
+  "training_seeds": [
+    101
+  ],
+  "candidates": [
+    {
+      "name": "frozen_adaptive",
+      "ratios": {
+        "motrix": 0.2857142857142857,
+        "drake": 0.32142857142857145,
+        "mjwarp": 0.07142857142857142,
+        "isaacgym": 0.14285714285714285,
+        "isaacsim": 0.03571428571428571,
+        "genesis": 0.07142857142857142,
+        "newton": 0.07142857142857142
+      },
+      "source_checkpoint_sha256": [
+        "afe6c02d9469e6dbd7e227f0f3c348d8fb738627ca7e13c34efc00931a7d2ce9"
+      ]
+    },
+    {
+      "name": "single_motrix",
+      "ratios": {
+        "motrix": 1.0
+      }
+    },
+    {
+      "name": "single_drake",
+      "ratios": {
+        "drake": 1.0
+      }
+    },
+    {
+      "name": "single_mjwarp",
+      "ratios": {
+        "mjwarp": 1.0
+      }
+    },
+    {
+      "name": "single_isaacgym",
+      "ratios": {
+        "isaacgym": 1.0
+      }
+    },
+    {
+      "name": "single_isaacsim",
+      "ratios": {
+        "isaacsim": 1.0
+      }
+    },
+    {
+      "name": "single_genesis",
+      "ratios": {
+        "genesis": 1.0
+      }
+    },
+    {
+      "name": "single_newton",
+      "ratios": {
+        "newton": 1.0
+      }
+    }
+  ],
+  "transitions_per_run": 448,
+  "test_seeds": [
+    2001
+  ],
+  "decision_rule": "positive_mean_and_Holm_adjusted_exact_sign_flip_p_le_0.05_against_every_single"
+}

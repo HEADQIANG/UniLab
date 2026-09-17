@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "audit_date": "2026-09-18",
+  "study_id": "e64a258b0fe80dab10c81e37a651cc6ed17a402f2fb30c7a331cba4fbd934ced",
+  "source_code_commit": "31be361fb0f172626bf5de2027ca7000a15bd809",
+  "remote_original_git_head": "9e3bb6b814d694d52bfff0f074d0a2b8ede6f032",
+  "remote_source_state": "Modified working tree; source hashes match the published code commit.",
+  "recomputed_local_source_hashes": {
+    "unilab": {
+      "sha256": "0059e7bcc2e8b1655da9103804c7439e7c361b21efd94619bb0e4ca8b7764d65",
+      "source_files": 373
+    },
+    "uni_rl": {
+      "sha256": "c46551251bfa75cba880d03429b9f548024a000a055120e31d31fb56a4b31cf7",
+      "source_files": 94
+    }
+  },
+  "source_hash_method": "The source_identity algorithm in src/unilab/training/mix_benchmark.py, using sorted relative paths, individual file SHA-256 values, and Git-tracked XML files.",
+  "raw_study_artifacts": {
+    "files": 231,
+    "bytes": 1154538,
+    "relative_sha256_listing_digest": "ddff9653cb38941f3bf357b3b464d8c3941dbb3c449bfc183ba763eced9dc285",
+    "remote_and_local_digests_equal": true,
+    "digest_method": "SHA-256 of the sha256sum listing for all original .json/.jsonl paths under the study, prefixed ./ and sorted using LC_ALL=C; validation_evidence is excluded."
+  },
+  "all_copied_raw_artifacts": {
+    "files": 243,
+    "bytes": 1627078,
+    "extensions": {
+      ".json": 210,
+      ".jsonl": 27,
+      ".log": 4,
+      ".xml": 2
+    },
+    "note": "Counts exclude this derived audit and authored Markdown documentation. Original JSON content was preserved."
+  },
+  "pipeline_checks": {
+    "report_status": "completed",
+    "claim": "mixed_advantage_not_established",
+    "full_backend_study": true,
+    "study_id_digest_valid": true,
+    "training_trials": 25,
+    "transitions_per_training_trial": 448,
+    "training_transitions_excluding_preflight": 11200,
+    "preflight_transitions": 112,
+    "successful_process_records_including_preflight": 52,
+    "mujoco_evaluations_including_preflight": 26,
+    "all_trial_returncodes_zero": true,
+    "all_trial_budgets_and_backend_sets_verified": true,
+    "adaptive_updates": 2,
+    "adaptive_frozen": true,
+    "confirmation_training_seeds": 1,
+    "supervising_task_observed_orchestrator_returncode": 0
+  },
+  "junit_checks": {
+    "non_slow_final_20260918_run_with_drake.xml": {
+      "tests": 1755,
+      "failures": 0,
+      "errors": 0,
+      "skipped_including_xfail": 5
+    },
+    "uni_rl_20260918.xml": {
+      "tests": 505,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 8
+    }
+  },
+  "all7_cleanup_checks": {
+    "run_summary_status": "completed",
+    "transitions": 448,
+    "adaptive_updates": 2,
+    "adaptive_frozen": true,
+    "resource_tracker_warning_in_saved_console": false,
+    "pid_596264_absent_on_read_only_recheck": true,
+    "supervising_task_observed_returncode": 0,
+    "shared_memory_note": "The supervising task observed no new shared-memory residuals; raw before/after shared-memory listings are not included in this archive."
+  },
+  "limitations": [
+    "Mechanical validation only: one confirmation training seed and four PPO iterations per run.",
+    "No training advantage, stable locomotion, or globally optimal ratio is established.",
+    "Checkpoints are omitted; their recorded SHA-256 values cannot be recomputed from this compact archive.",
+    "External simulator packages and native binaries were not copied; their hashes and installed versions remain in the original study provenance.",
+    "Isaac external workers, system libraries, and GPU drivers are not fully fingerprinted by the study."
+  ]
+}

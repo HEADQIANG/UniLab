@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "next_iteration": 4,
+  "backend_counts": {
+    "motrix": 28
+  },
+  "backend_stats": {
+    "motrix": {
+      "samples": 448.0,
+      "reward_sum": -3.371532566845417,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.04345383899817534,
+      "interrupted_episodes": 0.0
+    }
+  },
+  "samples_per_iteration": 112,
+  "mixed_fingerprint": "0d186b575d70541cb10b44114c89f18485382580d86e28cbbf3d554ec142cdbc",
+  "adaptive": null,
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "algo": "ppo",
+  "task": "G1WalkFlat",
+  "sim_backend": "mixed",
+  "log_dir": "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_pipeline_20260918/single_motrix/seed_11/train",
+  "start_time_utc": "2026-09-17T16:43:53.348283+00:00",
+  "end_time_utc": "2026-09-17T16:43:55.773856+00:00",
+  "wall_time_sec": 2.4255689440014976,
+  "wandb_run_url": null,
+  "configured_seed": 11,
+  "configured_seed_source": "algo.seed",
+  "effective_seed": 11
+}

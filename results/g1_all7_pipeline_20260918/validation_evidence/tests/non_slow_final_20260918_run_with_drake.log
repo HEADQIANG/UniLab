@@ -1,0 +1,197 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0
+rootdir: /home/hpf/yuelk/UniLab
+configfile: pyproject.toml
+testpaths: tests
+collected 2652 items / 897 deselected / 1755 selected
+
+tests/algos/test_hora_contract.py ...................                    [  1%]
+tests/algos/test_hora_distill_config.py ....                             [  1%]
+tests/algos/test_offpolicy_double_buffer_runner.py ..................... [  2%]
+..............                                                           [  3%]
+tests/algos/test_offpolicy_dp_sync.py ............................       [  4%]
+tests/algos/test_rsl_rl_runner.py .                                      [  4%]
+tests/assets/test_hub.py .......................                         [  6%]
+tests/base/backend/test_drake_batch_pool.py .................            [  7%]
+tests/base/backend/test_mujoco_chunk_size_wiring.py .......              [  7%]
+tests/base/backend/test_mujoco_cpu_affinity_wiring.py .................  [  8%]
+tests/base/backend/test_mujoco_scene_context_visual.py ...               [  8%]
+tests/base/backend/test_mujoco_site_jacobian.py .......                  [  9%]
+tests/base/backend/test_process_device.py .............................. [ 10%]
+.                                                                        [ 10%]
+tests/base/test_backend_conformance.py ..........................        [ 12%]
+tests/base/test_backend_imports.py ....                                  [ 12%]
+tests/base/test_backend_pre_step_control.py .............                [ 13%]
+tests/base/test_backend_sensor_view.py ............                      [ 14%]
+tests/base/test_body_state_copy.py .                                     [ 14%]
+tests/base/test_cpu_runtime.py ..........                                [ 14%]
+tests/base/test_drake_mujoco_render_contract.py .                        [ 14%]
+tests/base/test_entity_facade.py ...............................         [ 16%]
+tests/base/test_genesis_backend.py ..........................            [ 18%]
+tests/base/test_isaacgym_backend.py .................................... [ 20%]
+.......                                                                  [ 20%]
+tests/base/test_isaacsim_backend.py ..............................       [ 22%]
+tests/base/test_manager_config_overlay.py ....................           [ 23%]
+tests/base/test_mjwarp_cuda_graph.py ..............                      [ 24%]
+tests/base/test_mjwarp_host_cache.py .....                               [ 24%]
+tests/base/test_mjwarp_identity.py .....                                 [ 24%]
+tests/base/test_mjwarp_playback.py ......                                [ 25%]
+tests/base/test_motrix_backend_options.py ....................           [ 26%]
+tests/base/test_mujoco_batch_env_jacobian.py ....x.                      [ 26%]
+tests/base/test_mujoco_batch_env_randomization.py ..........             [ 27%]
+tests/base/test_newton_identity.py ..                                    [ 27%]
+tests/base/test_np_env.py .............................................. [ 29%]
+.                                                                        [ 29%]
+tests/base/test_registry.py ...............................              [ 31%]
+tests/base/test_reset_state.py ........................................  [ 33%]
+tests/base/test_reward_override.py .                                     [ 33%]
+tests/base/test_run_control.py .                                         [ 34%]
+tests/base/test_sim_backend_set_state_timing.py ....                     [ 34%]
+tests/base/test_sim_backend_smoke.py .......................             [ 35%]
+tests/benchmark/test_env_step_config_contract.py .......                 [ 35%]
+tests/benchmark/test_mem_profile.py ..                                   [ 36%]
+tests/benchmark/test_np_env_shard_throughput_benchmark.py ..........     [ 36%]
+tests/benchmark/test_offpolicy_collector_active_benchmark.py ........... [ 37%]
+..........                                                               [ 37%]
+tests/benchmark/test_offpolicy_dp_scaling_benchmark.py ..........        [ 38%]
+tests/benchmark/test_replay_buffer_placement_benchmark.py .............. [ 39%]
+                                                                         [ 39%]
+tests/benchmark/test_sac_replay_buffer_sampling_benchmark.py .........s  [ 39%]
+tests/benchmark/test_sharpa_init_dr_benchmark.py .                       [ 39%]
+tests/config/test_manager_reward_routing.py .......                      [ 40%]
+tests/config/test_mixed_profiles.py ..........................           [ 41%]
+tests/config/test_reward_injection.py ....                               [ 41%]
+tests/dr/test_manager.py ...............                                 [ 42%]
+tests/envs/locomotion/a2/test_a2_joystick_contract.py ......             [ 43%]
+tests/envs/locomotion/go1/test_manager_based_flat_cfg.py ..........      [ 43%]
+tests/envs/locomotion/go2/test_manager_based_cfg.py ............s        [ 44%]
+tests/envs/locomotion/go2w/test_go2w_manager_based_flat_cfg.py ......... [ 44%]
+..                                                                       [ 45%]
+tests/envs/locomotion/test_gait_terms.py ...................             [ 46%]
+tests/envs/locomotion/test_go2_footstand.py .........s.                  [ 46%]
+tests/envs/locomotion/test_manager_gait_terms.py ...............         [ 47%]
+tests/envs/locomotion/test_sensor_reward_terms.py ........               [ 48%]
+tests/envs/locomotion/test_terrain_spawn.py .............                [ 48%]
+tests/envs/mdp/test_command_terms.py ..                                  [ 48%]
+tests/envs/mdp/test_curriculums.py .............................         [ 50%]
+tests/envs/mdp/test_events.py .......................................... [ 52%]
+..                                                                       [ 53%]
+tests/envs/mdp/test_joint_position_action.py ................            [ 54%]
+tests/envs/mdp/test_observations.py .....................                [ 55%]
+tests/envs/mdp/test_rewards.py .............                             [ 55%]
+tests/envs/mdp/test_terminations.py ..........                           [ 56%]
+tests/envs/mdp/test_uniform_velocity_command.py ...........              [ 57%]
+tests/envs/test_manager_based_rl_env.py ................................ [ 58%]
+...........................                                              [ 60%]
+tests/envs/test_motion_command_partial_reset.py ..                       [ 60%]
+tests/envs/test_motion_interpolation.py ......                           [ 60%]
+tests/envs/test_motion_loader.py .........                               [ 61%]
+tests/envs/test_sharpa.py ..............                                 [ 62%]
+tests/envs/test_stewart.py ...........                                   [ 62%]
+tests/integration/test_reward_injection_integration.py .                 [ 62%]
+tests/ipc/test_dp_launcher.py .......................................... [ 65%]
+.......                                                                  [ 65%]
+tests/ipc/test_nan_guard_spawn_pickle.py .                               [ 65%]
+tests/managers/test_core_managers.py ...............                     [ 66%]
+tests/managers/test_event_command_metrics_recorder.py .........          [ 67%]
+tests/managers/test_isaac_lab_migration_fixture.py .....                 [ 67%]
+tests/managers/test_mjlab_migration_fixture.py ....                      [ 67%]
+tests/managers/test_observation_buffers_noise.py ....................... [ 69%]
+                                                                         [ 69%]
+tests/managers/test_observation_partial_reset.py ......                  [ 69%]
+tests/managers/test_stage_curriculum_demo.py ...                         [ 69%]
+tests/scripts/test_audit_sim2sim_contracts.py .......                    [ 69%]
+tests/scripts/test_check_docs.py ....................                    [ 71%]
+tests/scripts/test_mixed_cli.py ....................................     [ 73%]
+tests/scripts/test_mujoco_only_tooling_markers.py .                      [ 73%]
+tests/scripts/test_obs_alignment_g1_wbt.py ......                        [ 73%]
+tests/scripts/test_repo_hygiene.py .....                                 [ 73%]
+tests/scripts/test_torch_cuda_source.py ..                               [ 73%]
+tests/scripts/test_train_script_configs.py .                             [ 73%]
+tests/tasks/test_legacy_task_compatibility.py ..........                 [ 74%]
+tests/tasks/test_migration_matrix.py ........                            [ 74%]
+tests/tasks/test_motion_term_parity.py ................                  [ 75%]
+tests/tasks/test_package_boundary.py ...                                 [ 76%]
+tests/tasks/test_production_registry_closeout.py ...                     [ 76%]
+tests/terrains/test_terrain_generator.py ...................             [ 77%]
+tests/test_bones_seed_csv.py .............                               [ 78%]
+tests/test_cli.py ..................................................     [ 80%]
+tests/test_cli_runtime_requirements.py .....                             [ 81%]
+tests/test_completion.py .................                               [ 82%]
+tests/test_export_scene.py .....                                         [ 82%]
+tests/test_import_robot.py ........                                      [ 82%]
+tests/test_library_import_boundary.py .........                          [ 83%]
+tests/test_pull_assets.py ....                                           [ 83%]
+tests/test_render_teaser.py ...                                          [ 83%]
+tests/test_sharpa.py ...                                                 [ 83%]
+tests/training/test_mix_benchmark.py ................................... [ 85%]
+..............                                                           [ 86%]
+tests/training/test_mixed_config.py ......................               [ 88%]
+tests/training/test_onnx_export.py .....                                 [ 88%]
+tests/training/test_resume_logger_state.py ....                          [ 88%]
+tests/training/test_seed_contract.py ...........                         [ 89%]
+tests/training/test_sim2sim_resolver.py ................................ [ 90%]
+................                                                         [ 91%]
+tests/training/test_training_helpers.py ...............................  [ 93%]
+tests/utils/test_algo_utils.py ...........                               [ 94%]
+tests/utils/test_experiment_tracking.py ....................             [ 95%]
+tests/utils/test_math_utils.py ...........                               [ 96%]
+tests/utils/test_mjspec_sensor_compile.py .                              [ 96%]
+tests/utils/test_motion_export.py ...                                    [ 96%]
+tests/utils/test_render_many.py ..............                           [ 97%]
+tests/utils/test_utils_package_policy.py ....                            [ 97%]
+tests/utils/test_viser_scene.py s.                                       [ 97%]
+tests/utils/test_xml_utils.py ..........                                 [ 98%]
+tests/visualization/test_interactive_playback.py ....................... [ 99%]
+............                                                             [100%]
+
+=============================== warnings summary ===============================
+tests/training/test_onnx_export.py::test_export_policy_onnx_writes_expected_graph
+tests/training/test_onnx_export.py::test_verify_policy_onnx_matches_pytorch
+tests/training/test_onnx_export.py::test_verify_policy_onnx_warns_on_divergence
+tests/training/test_onnx_export.py::test_verify_policy_onnx_supports_extra_named_inputs
+tests/training/test_onnx_export.py::test_verify_policy_onnx_compares_first_element_of_tuple_output
+  /home/hpf/yuelk/UniLab/src/unilab/training/onnx_export.py:31: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter will be the default. To switch now, set dynamo=True in torch.onnx.export. This new exporter supports features like exporting LLMs with DynamicCache. We encourage you to try it and share feedback to help improve the experience. Learn more about the new export logic: https://pytorch.org/docs/stable/onnx_dynamo.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html.
+    torch.onnx.export(
+
+tests/training/test_onnx_export.py::test_export_policy_onnx_writes_expected_graph
+tests/training/test_onnx_export.py::test_verify_policy_onnx_matches_pytorch
+tests/training/test_onnx_export.py::test_verify_policy_onnx_warns_on_divergence
+tests/training/test_onnx_export.py::test_verify_policy_onnx_supports_extra_named_inputs
+tests/training/test_onnx_export.py::test_verify_policy_onnx_compares_first_element_of_tuple_output
+  /home/hpf/yuelk/UniLab/.venv/lib/python3.12/site-packages/torch/onnx/utils.py:179: DeprecationWarning: The feature will be removed. Please remove usage of this function
+    setup_onnx_logging(verbose) as log_ctx,
+
+tests/utils/test_xml_utils.py::test_materialize_mujoco_hfield_attached_scene_composes_robot_and_task_fragment
+  /home/hpf/yuelk/UniLab/.venv/lib/python3.12/site-packages/unisim/backend/mujoco/xml.py:482: UserWarning: Attach conflict when attaching 'go2', policy is 'warning'
+  timestep: parent has 0.002 (default), child has 0.01, keeping parent value
+  ccd_iterations: parent has 35 (default), child has 500, keeping parent value
+  impratio: parent has 1 (default), child has 100, keeping parent value
+  cone: parent has 0 (default), child has 1, keeping parent value
+    root = ET.fromstring(spec.to_xml())
+
+tests/utils/test_xml_utils.py::test_materialize_mujoco_hfield_attached_scene_preserves_go1_collision_xml
+  /home/hpf/yuelk/UniLab/.venv/lib/python3.12/site-packages/unisim/backend/mujoco/xml.py:482: UserWarning: Attach conflict when attaching 'go1', policy is 'warning'
+  timestep: parent has 0.002 (default), child has 0.01, keeping parent value
+  ccd_iterations: parent has 35 (default), child has 500, keeping parent value
+  impratio: parent has 1 (default), child has 100, keeping parent value
+  cone: parent has 0 (default), child has 1, keeping parent value
+    root = ET.fromstring(spec.to_xml())
+
+tests/utils/test_xml_utils.py::test_materialize_mujoco_hfield_attached_scene_preserves_go2w_collision_xml
+  /home/hpf/yuelk/UniLab/.venv/lib/python3.12/site-packages/unisim/backend/mujoco/xml.py:482: UserWarning: Attach conflict when attaching 'go2', policy is 'warning'
+  ccd_iterations: parent has 35 (default), child has 500, keeping parent value
+  impratio: parent has 1 (default), child has 100, keeping parent value
+  cone: parent has 0 (default), child has 1, keeping parent value
+    root = ET.fromstring(spec.to_xml())
+
+tests/utils/test_xml_utils.py::test_materialize_mujoco_hfield_attached_scene_accepts_repo_relative_fragments
+  /home/hpf/yuelk/UniLab/.venv/lib/python3.12/site-packages/unisim/backend/mujoco/xml.py:482: UserWarning: Attach conflict when attaching 'go2', policy is 'warning'
+  timestep: parent has 0.002 (default), child has 0.02, keeping parent value
+  impratio: parent has 1 (default), child has 100, keeping parent value
+  cone: parent has 0 (default), child has 1, keeping parent value
+    root = ET.fromstring(spec.to_xml())
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/hpf/yuelk/UniLab/logs/adaptive_validation/non_slow_final_20260918_run_with_drake.xml -
+= 1750 passed, 4 skipped, 897 deselected, 1 xfailed, 14 warnings in 69.25s (0:01:09) =

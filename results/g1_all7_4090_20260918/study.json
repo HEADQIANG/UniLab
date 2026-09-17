@@ -1,0 +1,297 @@
+{
+  "schema": 2,
+  "task": "g1_walk_flat",
+  "backends": [
+    "motrix",
+    "drake",
+    "mjwarp",
+    "isaacgym",
+    "isaacsim",
+    "genesis",
+    "newton"
+  ],
+  "full_backend_study": true,
+  "training_seeds": [
+    11,
+    22,
+    33
+  ],
+  "validation_seeds": [
+    3001,
+    3002,
+    3003
+  ],
+  "test_seeds": [
+    4001,
+    4002,
+    4003
+  ],
+  "confirmation_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
+  ],
+  "num_envs": 224,
+  "rollout_steps": 24,
+  "iterations": 1200,
+  "transitions": 6451200,
+  "episodes_per_evaluation_seed": 5,
+  "learner_device": "cuda:0",
+  "backend_settings": {
+    "motrix": {
+      "device": "cpu",
+      "timeout_s": 300
+    },
+    "drake": {
+      "device": "cpu",
+      "timeout_s": 300
+    },
+    "mjwarp": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    },
+    "isaacgym": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    },
+    "isaacsim": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    },
+    "genesis": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    },
+    "newton": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    }
+  },
+  "adaptive": {
+    "metric": "mean_step_reward",
+    "strategy": "learning_progress",
+    "interval": 100,
+    "warmup": 100,
+    "ema_alpha": 0.2,
+    "temperature": 1.0,
+    "min_ratio": 0.05,
+    "max_ratio": 0.5,
+    "smoothing": 0.3,
+    "freeze_after": 1100
+  },
+  "overrides": [],
+  "candidates": [
+    {
+      "name": "single_motrix",
+      "ratios": {
+        "motrix": 1.0
+      }
+    },
+    {
+      "name": "single_drake",
+      "ratios": {
+        "drake": 1.0
+      }
+    },
+    {
+      "name": "single_mjwarp",
+      "ratios": {
+        "mjwarp": 1.0
+      }
+    },
+    {
+      "name": "single_isaacgym",
+      "ratios": {
+        "isaacgym": 1.0
+      }
+    },
+    {
+      "name": "single_isaacsim",
+      "ratios": {
+        "isaacsim": 1.0
+      }
+    },
+    {
+      "name": "single_genesis",
+      "ratios": {
+        "genesis": 1.0
+      }
+    },
+    {
+      "name": "single_newton",
+      "ratios": {
+        "newton": 1.0
+      }
+    },
+    {
+      "name": "equal",
+      "ratios": {
+        "motrix": 0.14285714285714285,
+        "drake": 0.14285714285714285,
+        "mjwarp": 0.14285714285714285,
+        "isaacgym": 0.14285714285714285,
+        "isaacsim": 0.14285714285714285,
+        "genesis": 0.14285714285714285,
+        "newton": 0.14285714285714285
+      }
+    },
+    {
+      "name": "adaptive",
+      "ratios": {
+        "motrix": 0.14285714285714285,
+        "drake": 0.14285714285714285,
+        "mjwarp": 0.14285714285714285,
+        "isaacgym": 0.14285714285714285,
+        "isaacsim": 0.14285714285714285,
+        "genesis": 0.14285714285714285,
+        "newton": 0.14285714285714285
+      }
+    },
+    {
+      "name": "favor_motrix",
+      "ratios": {
+        "motrix": 0.5,
+        "drake": 0.08333333333333333,
+        "mjwarp": 0.08333333333333333,
+        "isaacgym": 0.08333333333333333,
+        "isaacsim": 0.08333333333333333,
+        "genesis": 0.08333333333333333,
+        "newton": 0.08333333333333333
+      }
+    },
+    {
+      "name": "favor_drake",
+      "ratios": {
+        "motrix": 0.08333333333333333,
+        "drake": 0.5,
+        "mjwarp": 0.08333333333333333,
+        "isaacgym": 0.08333333333333333,
+        "isaacsim": 0.08333333333333333,
+        "genesis": 0.08333333333333333,
+        "newton": 0.08333333333333333
+      }
+    },
+    {
+      "name": "favor_mjwarp",
+      "ratios": {
+        "motrix": 0.08333333333333333,
+        "drake": 0.08333333333333333,
+        "mjwarp": 0.5,
+        "isaacgym": 0.08333333333333333,
+        "isaacsim": 0.08333333333333333,
+        "genesis": 0.08333333333333333,
+        "newton": 0.08333333333333333
+      }
+    },
+    {
+      "name": "favor_isaacgym",
+      "ratios": {
+        "motrix": 0.08333333333333333,
+        "drake": 0.08333333333333333,
+        "mjwarp": 0.08333333333333333,
+        "isaacgym": 0.5,
+        "isaacsim": 0.08333333333333333,
+        "genesis": 0.08333333333333333,
+        "newton": 0.08333333333333333
+      }
+    },
+    {
+      "name": "favor_isaacsim",
+      "ratios": {
+        "motrix": 0.08333333333333333,
+        "drake": 0.08333333333333333,
+        "mjwarp": 0.08333333333333333,
+        "isaacgym": 0.08333333333333333,
+        "isaacsim": 0.5,
+        "genesis": 0.08333333333333333,
+        "newton": 0.08333333333333333
+      }
+    },
+    {
+      "name": "favor_genesis",
+      "ratios": {
+        "motrix": 0.08333333333333333,
+        "drake": 0.08333333333333333,
+        "mjwarp": 0.08333333333333333,
+        "isaacgym": 0.08333333333333333,
+        "isaacsim": 0.08333333333333333,
+        "genesis": 0.5,
+        "newton": 0.08333333333333333
+      }
+    },
+    {
+      "name": "favor_newton",
+      "ratios": {
+        "motrix": 0.08333333333333333,
+        "drake": 0.08333333333333333,
+        "mjwarp": 0.08333333333333333,
+        "isaacgym": 0.08333333333333333,
+        "isaacsim": 0.08333333333333333,
+        "genesis": 0.08333333333333333,
+        "newton": 0.5
+      }
+    }
+  ],
+  "selection_metric": "episode_return",
+  "held_out_backend": "mujoco",
+  "frozen_ratio_recipe": "mean_final_realized_adaptive_ratios_across_training_seeds",
+  "source_identity": {
+    "source_sha256": {
+      "unilab": "0059e7bcc2e8b1655da9103804c7439e7c361b21efd94619bb0e4ca8b7764d65",
+      "uni_rl": "c46551251bfa75cba880d03429b9f548024a000a055120e31d31fb56a4b31cf7",
+      "unisim": "c193490b915245e2af13a88b00c2c40ff7901406d1d906f151932a6ede4bb93f",
+      "drake_uni": "fc91cfbf6a5ed3b0c7c8eec00676e6e4a9116c56fcbb4f6e8fd2535843df01a6"
+    },
+    "module_roots": {
+      "unilab": "/home/hpf/yuelk/UniLab/src/unilab",
+      "uni_rl": "/home/hpf/yuelk/UniLab/vendor/unilab-rl/src/uni_rl",
+      "unisim": "/home/hpf/yuelk/UniLab/.venv/lib/python3.12/site-packages/unisim",
+      "drake_uni": "/home/hpf/yuelk/unilab-runtimes/drake/unilabsim-drake_uni-4cdc9ba/src/drake_uni"
+    },
+    "source_git_commits": {
+      "unilab": "9e3bb6b814d694d52bfff0f074d0a2b8ede6f032",
+      "uni_rl": "9e3bb6b814d694d52bfff0f074d0a2b8ede6f032",
+      "unisim": "9e3bb6b814d694d52bfff0f074d0a2b8ede6f032",
+      "drake_uni": null
+    },
+    "packages": {
+      "unisim-core": "1.1.4",
+      "unilab-rl": "1.1.1",
+      "rsl-rl-lib": "5.0.1",
+      "torch": "2.8.0+cu128",
+      "numpy": "2.4.4",
+      "mujoco": "3.11.0",
+      "mujoco-uni-runtime": "0.5.0",
+      "drake-uni": "0.1.0",
+      "motrixsim-core": "0.8.2",
+      "mujoco-warp": "3.11.0",
+      "genesis-world": "1.3.3",
+      "newton": "1.5.1",
+      "warp-lang": "1.16.0"
+    },
+    "install_provenance": {
+      "unilab-rl": {
+        "url": "file:///home/hpf/yuelk/UniLab/vendor/unilab-rl",
+        "dir_info": {
+          "editable": true
+        }
+      },
+      "drake-uni": {
+        "url": "file:///home/hpf/yuelk/unilab-runtimes/drake/unilabsim-drake_uni-4cdc9ba",
+        "dir_info": {
+          "editable": true
+        }
+      }
+    },
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "external_runtime_limitations": "IsaacGym/IsaacSim external worker environments, system shared libraries and GPU drivers are not fingerprinted; keep them unchanged within a study."
+  },
+  "id": "ecf9ca19ecfb54a9b0e63134a37b0d9c2d1f8b5fc63688b3aafd8632102925b5"
+}

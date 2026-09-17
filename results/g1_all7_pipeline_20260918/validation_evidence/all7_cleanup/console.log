@@ -1,0 +1,958 @@
+Mixed PPO run: /home/hpf/yuelk/UniLab/logs/adaptive_validation/g1_all7_cleanup_20260918
+Requested ratios: {'motrix': 1.0, 'drake': 1.0, 'mjwarp': 1.0, 'isaacgym': 1.0, 'isaacsim': 1.0, 'genesis': 1.0, 'newton': 1.0}; environment counts: {'motrix': 4, 'drake': 4, 'mjwarp': 4, 'isaacgym': 4, 'isaacsim': 4, 'genesis': 4, 'newton': 4}; learner: cuda:0
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: newton ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+Motphys profiler initialized: disabled
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: isaacsim ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: isaacgym ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: genesis ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: mjwarp ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+[2026-09-18 00:39:49.252] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'timestep' found in a 'option' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.252] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'integrator' found in a 'option' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.252] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:13: warning: The texture element is not supported, see https://drake.mit.edu/troubleshooting.html for additional resources.
+[2026-09-18 00:39:49.252] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The tag 'light' found as a child of 'worldbody' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.252] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.252] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.253] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.254] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.255] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.255] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.255] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.255] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:4: warning: The tag 'statistic' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.255] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:0: warning: The tag 'sensor' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.255] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:34: warning: The tag 'keyframe' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.255] [console] [warning] /tmp/drake_uni_mjcf_wjk0w0mm/g1/scene_flat.xml:6: warning: The tag 'visual' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:39:49.257] [console] [warning] Rigid (non-deformable) half spaces are not currently supported for deformable contact; registration is allowed, but no contact data will be reported.
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:39:52] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+/home/hpf/yuelk/UniLab/.venv/lib/python3.12/site-packages/rsl_rl/utils/utils.py:243: UserWarning: The observation configuration dictionary 'obs_groups' does not contain the 'critic' key. As an observation group with the name 'critic' was found, this is assumed to be the appropriate observation. Consider adding the 'critic' key to the 'obs_groups' dictionary for clarity. This behavior will be removed in a future version.
+  warnings.warn(
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+Warp 1.16.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 4090" (23 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/hpf/.cache/warp/1.16.0
+Module mujoco_warp._src.smooth c4020f1 load on device 'cuda:0' took 9.24 ms  (cached)
+Module _nxn_broadphase__locals__kernel_9d2eea59 9d2eea5 load on device 'cuda:0' took 0.35 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_e91dd55d e91dd55 load on device 'cuda:0' took 0.67 ms  (cached)
+Module mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _friction_dof__locals__kernel_7cd24d9b 7cd24d9 load on device 'cuda:0' took 0.36 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_f0b85ba4 f0b85ba load on device 'cuda:0' took 0.45 ms  (cached)
+Module _efc_contact_init__locals__kernel_517b063b 517b063 load on device 'cuda:0' took 0.41 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c9492143 c949214 load on device 'cuda:0' took 0.41 ms  (cached)
+Module _efc_contact_update__locals__kernel_8c34abe6 8c34abe load on device 'cuda:0' took 0.38 ms  (cached)
+Module mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 1.69 ms  (cached)
+Module mujoco_warp._src.forward bfd9fb5 load on device 'cuda:0' took 0.80 ms  (cached)
+Module mujoco_warp._src.passive d8c18c6 load on device 'cuda:0' took 1.25 ms  (cached)
+Module mujoco_warp._src.forward b068ad6 load on device 'cuda:0' took 1.31 ms  (cached)
+Module _qfrc_smooth__locals__kernel_b98573a2 b98573a load on device 'cuda:0' took 0.33 ms  (cached)
+Module mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.39 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_261a098f 3bf2aae load on device 'cuda:0' took 24.13 ms  (cached)
+Module _solve_init_dof__locals__kernel_43b50934 43b5093 load on device 'cuda:0' took 0.30 ms  (cached)
+Module mujoco_warp._src.solver 3a105a0 load on device 'cuda:0' took 1.25 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_0a3bf9f9 0a3bf9f load on device 'cuda:0' took 0.28 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.30 ms  (cached)
+Module _update_constraint_efc__locals__kernel_64b75440 64b7544 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_9de65e8f 9de65e8 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_817148e6 817148e load on device 'cuda:0' took 0.37 ms  (cached)
+Module _update_gradient_grad__locals__kernel_00c9ca8d 00c9ca8 load on device 'cuda:0' took 0.40 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_474f4a87 474f4a8 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 317c632 load on device 'cuda:0' took 0.28 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 79f35ed load on device 'cuda:0' took 0.48 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_0387d6d7 89d545c load on device 'cuda:0' took 51.88 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_9cd9bef4 9cd9bef load on device 'cuda:0' took 0.41 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_273b7969 0a8a16a load on device 'cuda:0' took 0.61 ms  (cached)
+Module _update_constraint_efc__locals__kernel_dc2dbb33 dc2dbb3 load on device 'cuda:0' took 0.41 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_932c92ad 932c92a load on device 'cuda:0' took 0.32 ms  (cached)
+Module _update_gradient_grad__locals__kernel_4c37eb70 4c37eb7 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_1f3edd9a 1f3edd9 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_f4d46d30 8d11576 load on device 'cuda:0' took 56.91 ms  (cached)
+Module _contact_sort__locals__contact_sort_2e4ee59c 999ac3c load on device 'cuda:0' took 0.37 ms  (cached)
+Module mujoco_warp._src.derivative 833f5d0 load on device 'cuda:0' took 0.72 ms  (cached)
+Module _next_time_builder__locals___next_time_a67f49d6 a67f49d load on device 'cuda:0' took 0.30 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_fe5fcb03 fe5fcb0 load on device 'cuda:0' took 0.28 ms  (cached)
+Module reset_data__locals__reset_M_e5e6cdd0 e5e6cdd load on device 'cuda:0' took 0.23 ms  (cached)
+Module reset_data__locals__reset_mocap_9faa71ef 9faa71e load on device 'cuda:0' took 0.22 ms  (cached)
+Module reset_data__locals__reset_contact_7aad0792 7aad079 load on device 'cuda:0' took 0.23 ms  (cached)
+Module reset_data__locals__reset_sleep_4dc3e6fb 4dc3e6f load on device 'cuda:0' took 0.21 ms  (cached)
+Module reset_data__locals__reset_nworld_bb6e9693 bb6e969 load on device 'cuda:0' took 0.36 ms  (cached)
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+Warp 1.16.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 4090" (23 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/hpf/.cache/warp/1.16.0
+Module newton._src.geometry.inertia f54b3d2 load on device 'cuda:0' took 0.92 ms  (cached)
+Module validate_and_correct_inertia_kernel_5e18b3cd 5e18b3c load on device 'cuda:0' took 0.34 ms  (cached)
+Module newton._src.geometry.bvh cca3a6c load on device 'cuda:0' took 0.45 ms  (cached)
+Module newton._src.solvers.mujoco.kernels 9bf0320 load on device 'cuda:0' took 11.05 ms  (cached)
+Module repeat_array_kernel_132d2489 2b476ae load on device 'cuda:0' took 0.30 ms  (cached)
+Module repeat_array_kernel_132d2489 f018f4b load on device 'cuda:0' took 0.24 ms  (cached)
+Module repeat_array_kernel_132d2489 f67ebb7 load on device 'cuda:0' took 0.25 ms  (cached)
+Module repeat_array_kernel_132d2489 44fc066 load on device 'cuda:0' took 0.80 ms  (cached)
+Module repeat_array_kernel_132d2489 4e9a0aa load on device 'cuda:0' took 0.27 ms  (cached)
+Module repeat_array_kernel_132d2489 128fe77 load on device 'cuda:0' took 0.29 ms  (cached)
+Module repeat_array_kernel_132d2489 45dcc23 load on device 'cuda:0' took 0.33 ms  (cached)
+Module mujoco_warp._src.io b4940be load on device 'cuda:0' took 1.84 ms  (cached)
+Module mujoco_warp._src.smooth c4020f1 load on device 'cuda:0' took 2.23 ms  (cached)
+Module _tile_cholesky_factorize_block__locals__kernel_f85f6d77 0d20273 load on device 'cuda:0' took 15.44 ms  (cached)
+Module _tile_cholesky_solve_block__locals__kernel_7caaebf2 eb03c6d load on device 'cuda:0' took 15.72 ms  (cached)
+Module newton._src.utils.selection d9a051c load on device 'cuda:0' took 4.45 ms  (cached)
+Module newton._src.sim.articulation daa0137 load on device 'cuda:0' took 4.97 ms  (cached)
+Module _nxn_broadphase__locals__kernel_585598c3 585598c load on device 'cuda:0' took 0.34 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_e91dd55d e91dd55 load on device 'cuda:0' took 0.58 ms  (cached)
+Module mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _friction_dof__locals__kernel_7cd24d9b 7cd24d9 load on device 'cuda:0' took 0.41 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_f0b85ba4 f0b85ba load on device 'cuda:0' took 0.44 ms  (cached)
+Module _efc_contact_init__locals__kernel_517b063b 517b063 load on device 'cuda:0' took 0.37 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c9492143 c949214 load on device 'cuda:0' took 0.33 ms  (cached)
+Module _efc_contact_update__locals__kernel_8c34abe6 8c34abe load on device 'cuda:0' took 0.34 ms  (cached)
+Module mujoco_warp._src.forward bfd9fb5 load on device 'cuda:0' took 0.82 ms  (cached)
+Module mujoco_warp._src.passive d8c18c6 load on device 'cuda:0' took 1.01 ms  (cached)
+Module mujoco_warp._src.forward b068ad6 load on device 'cuda:0' took 0.81 ms  (cached)
+Module _qfrc_smooth__locals__kernel_b98573a2 b98573a load on device 'cuda:0' took 0.27 ms  (cached)
+Module mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_261a098f 3bf2aae load on device 'cuda:0' took 25.30 ms  (cached)
+Module _solve_init_dof__locals__kernel_43b50934 43b5093 load on device 'cuda:0' took 0.33 ms  (cached)
+Module mujoco_warp._src.solver 3a105a0 load on device 'cuda:0' took 1.31 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_0a3bf9f9 0a3bf9f load on device 'cuda:0' took 0.32 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_constraint_efc__locals__kernel_64b75440 64b7544 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_9de65e8f 9de65e8 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_817148e6 817148e load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_grad__locals__kernel_00c9ca8d 00c9ca8 load on device 'cuda:0' took 0.47 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_474f4a87 474f4a8 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 317c632 load on device 'cuda:0' took 0.28 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 79f35ed load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_0387d6d7 89d545c load on device 'cuda:0' took 50.67 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_9cd9bef4 9cd9bef load on device 'cuda:0' took 0.35 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_273b7969 0a8a16a load on device 'cuda:0' took 0.56 ms  (cached)
+Module _update_constraint_efc__locals__kernel_dc2dbb33 dc2dbb3 load on device 'cuda:0' took 0.35 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_932c92ad 932c92a load on device 'cuda:0' took 0.28 ms  (cached)
+Module _update_gradient_grad__locals__kernel_4c37eb70 4c37eb7 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_1f3edd9a 1f3edd9 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_f4d46d30 8d11576 load on device 'cuda:0' took 57.50 ms  (cached)
+Module mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 1.61 ms  (cached)
+Module mujoco_warp._src.derivative 833f5d0 load on device 'cuda:0' took 0.75 ms  (cached)
+Module _next_time_builder__locals___next_time_a67f49d6 a67f49d load on device 'cuda:0' took 0.32 ms  (cached)
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 default :  ['policy']
+	 actor :  ['actor']
+	 critic :  ['critic']
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): Identity()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=98, out_features=32, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=32, out_features=32, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=32, out_features=29, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): Identity()
+  (mlp): MLP(
+    (0): Linear(in_features=101, out_features=32, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=32, out_features=32, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+Storing git diff for 'UniLab' in: logs/adaptive_validation/g1_all7_cleanup_20260918/git/UniLab.diff
+################################################################################
+[1m                             Learning iteration 0/4                             [0m 
+
+                            Total steps: 112 
+                       Steps per second: 210 
+                        Collection time: 0.381s 
+                          Learning time: 0.150s 
+                        Mean value loss: 0.1218
+                    Mean surrogate loss: -0.0940
+                      Mean entropy loss: 41.1333
+                            Mean reward: 0.02
+                    Mean episode length: 2.50
+                        Mean action std: 1.00
+   Mixed/mjwarp/reward/tracking_lin_vel: 0.9044
+   Mixed/mjwarp/reward/tracking_ang_vel: 0.0555
+         Mixed/mjwarp/reward/feet_phase: 0.4517
+          Mixed/mjwarp/reward/lin_vel_z: -0.0090
+         Mixed/mjwarp/reward/ang_vel_xy: -0.2006
+        Mixed/mjwarp/reward/base_height: -0.0027
+        Mixed/mjwarp/reward/orientation: -0.0055
+        Mixed/mjwarp/reward/action_rate: -0.5039
+               Mixed/mjwarp/reward/pose: -0.3550
+    Mixed/drake/reward/tracking_lin_vel: 1.0015
+    Mixed/drake/reward/tracking_ang_vel: 0.0439
+          Mixed/drake/reward/feet_phase: 0.3946
+           Mixed/drake/reward/lin_vel_z: -0.0360
+          Mixed/drake/reward/ang_vel_xy: -0.1777
+         Mixed/drake/reward/base_height: -0.0297
+         Mixed/drake/reward/orientation: -0.0033
+         Mixed/drake/reward/action_rate: -0.5169
+                Mixed/drake/reward/pose: -0.2707
+   Mixed/motrix/reward/tracking_lin_vel: 0.6707
+   Mixed/motrix/reward/tracking_ang_vel: 0.0409
+         Mixed/motrix/reward/feet_phase: 0.4769
+          Mixed/motrix/reward/lin_vel_z: -0.0312
+         Mixed/motrix/reward/ang_vel_xy: -0.1706
+        Mixed/motrix/reward/base_height: -0.0162
+        Mixed/motrix/reward/orientation: -0.0039
+        Mixed/motrix/reward/action_rate: -0.4513
+               Mixed/motrix/reward/pose: -0.2946
+Mixed/motrix/Metrics/twist/error_vel_xy: 0.0009
+Mixed/motrix/Metrics/twist/error_vel_yaw: 0.0009
+Mixed/motrix/Episode_Reward/tracking_lin_vel: 0.0010
+Mixed/motrix/Episode_Reward/tracking_ang_vel: 0.0002
+ Mixed/motrix/Episode_Reward/feet_phase: 0.0004
+  Mixed/motrix/Episode_Reward/lin_vel_z: -0.0000
+ Mixed/motrix/Episode_Reward/ang_vel_xy: -0.0001
+Mixed/motrix/Episode_Reward/base_height: -0.0000
+Mixed/motrix/Episode_Reward/orientation: -0.0000
+Mixed/motrix/Episode_Reward/action_rate: -0.0002
+       Mixed/motrix/Episode_Reward/pose: -0.0000
+Mixed/motrix/Episode_Termination/time_out: 1.0000
+  Mixed/motrix/Episode_Termination/tilt: 0.0000
+Mixed/motrix/Episode_Termination/base_height: 0.0000
+ Mixed/isaacgym/reward/tracking_lin_vel: 1.2486
+ Mixed/isaacgym/reward/tracking_ang_vel: 0.0427
+       Mixed/isaacgym/reward/feet_phase: 0.5014
+        Mixed/isaacgym/reward/lin_vel_z: -0.0215
+       Mixed/isaacgym/reward/ang_vel_xy: -0.2220
+      Mixed/isaacgym/reward/base_height: -0.0119
+      Mixed/isaacgym/reward/orientation: -0.0040
+      Mixed/isaacgym/reward/action_rate: -0.5072
+             Mixed/isaacgym/reward/pose: -0.3375
+ Mixed/isaacsim/reward/tracking_lin_vel: 1.0355
+ Mixed/isaacsim/reward/tracking_ang_vel: 0.0542
+       Mixed/isaacsim/reward/feet_phase: 0.4399
+        Mixed/isaacsim/reward/lin_vel_z: -0.0302
+       Mixed/isaacsim/reward/ang_vel_xy: -0.3683
+      Mixed/isaacsim/reward/base_height: -0.0158
+      Mixed/isaacsim/reward/orientation: -0.0050
+      Mixed/isaacsim/reward/action_rate: -0.5689
+             Mixed/isaacsim/reward/pose: -0.4065
+   Mixed/newton/reward/tracking_lin_vel: 0.4613
+   Mixed/newton/reward/tracking_ang_vel: 0.0675
+         Mixed/newton/reward/feet_phase: 0.4521
+          Mixed/newton/reward/lin_vel_z: -0.0190
+         Mixed/newton/reward/ang_vel_xy: -0.2801
+        Mixed/newton/reward/base_height: -0.0079
+        Mixed/newton/reward/orientation: -0.0038
+        Mixed/newton/reward/action_rate: -0.6028
+               Mixed/newton/reward/pose: -0.3011
+  Mixed/genesis/reward/tracking_lin_vel: 0.3334
+  Mixed/genesis/reward/tracking_ang_vel: 0.0811
+        Mixed/genesis/reward/feet_phase: 0.4889
+         Mixed/genesis/reward/lin_vel_z: -0.0226
+        Mixed/genesis/reward/ang_vel_xy: -0.1915
+       Mixed/genesis/reward/base_height: -0.0318
+       Mixed/genesis/reward/orientation: -0.0034
+       Mixed/genesis/reward/action_rate: -0.6279
+              Mixed/genesis/reward/pose: -0.2411
+--------------------------------------------------------------------------------
+                         Iteration time: 0.53s
+                           Time elapsed: 00:00:00
+                                    ETA: 00:00:01
+
+Motphys profiler initialized: disabled
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: newton ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: isaacgym ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: isaacsim ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: genesis ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: mjwarp ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+[2026-09-18 00:40:07.553] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'timestep' found in a 'option' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.553] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'integrator' found in a 'option' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.553] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:13: warning: The texture element is not supported, see https://drake.mit.edu/troubleshooting.html for additional resources.
+[2026-09-18 00:40:07.553] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The tag 'light' found as a child of 'worldbody' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.554] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.555] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:4: warning: The tag 'statistic' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:0: warning: The tag 'sensor' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:34: warning: The tag 'keyframe' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.556] [console] [warning] /tmp/drake_uni_mjcf_fgpb60cq/g1/scene_flat.xml:6: warning: The tag 'visual' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:40:07.558] [console] [warning] Rigid (non-deformable) half spaces are not currently supported for deformable contact; registration is allowed, but no contact data will be reported.
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:10] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+Warp 1.16.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 4090" (23 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/hpf/.cache/warp/1.16.0
+Module newton._src.geometry.inertia f54b3d2 load on device 'cuda:0' took 1.01 ms  (cached)
+Module validate_and_correct_inertia_kernel_5e18b3cd 5e18b3c load on device 'cuda:0' took 0.34 ms  (cached)
+Module newton._src.geometry.bvh cca3a6c load on device 'cuda:0' took 0.48 ms  (cached)
+Module newton._src.solvers.mujoco.kernels 9bf0320 load on device 'cuda:0' took 10.65 ms  (cached)
+Module repeat_array_kernel_132d2489 2b476ae load on device 'cuda:0' took 0.30 ms  (cached)
+Module repeat_array_kernel_132d2489 f018f4b load on device 'cuda:0' took 0.25 ms  (cached)
+Module repeat_array_kernel_132d2489 f67ebb7 load on device 'cuda:0' took 0.26 ms  (cached)
+Module repeat_array_kernel_132d2489 44fc066 load on device 'cuda:0' took 0.27 ms  (cached)
+Module repeat_array_kernel_132d2489 4e9a0aa load on device 'cuda:0' took 0.38 ms  (cached)
+Module repeat_array_kernel_132d2489 128fe77 load on device 'cuda:0' took 0.30 ms  (cached)
+Module repeat_array_kernel_132d2489 45dcc23 load on device 'cuda:0' took 0.31 ms  (cached)
+Module mujoco_warp._src.io b4940be load on device 'cuda:0' took 2.01 ms  (cached)
+Module mujoco_warp._src.smooth c4020f1 load on device 'cuda:0' took 2.28 ms  (cached)
+Module _tile_cholesky_factorize_block__locals__kernel_f85f6d77 0d20273 load on device 'cuda:0' took 15.49 ms  (cached)
+Module _tile_cholesky_solve_block__locals__kernel_7caaebf2 eb03c6d load on device 'cuda:0' took 16.03 ms  (cached)
+Module newton._src.utils.selection d9a051c load on device 'cuda:0' took 4.43 ms  (cached)
+Module newton._src.sim.articulation daa0137 load on device 'cuda:0' took 4.86 ms  (cached)
+Module _nxn_broadphase__locals__kernel_1c06cd65 1c06cd6 load on device 'cuda:0' took 0.33 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_e91dd55d e91dd55 load on device 'cuda:0' took 0.55 ms  (cached)
+Module mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _friction_dof__locals__kernel_7cd24d9b 7cd24d9 load on device 'cuda:0' took 0.37 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_f0b85ba4 f0b85ba load on device 'cuda:0' took 0.94 ms  (cached)
+Module _efc_contact_init__locals__kernel_517b063b 517b063 load on device 'cuda:0' took 0.30 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c9492143 c949214 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _efc_contact_update__locals__kernel_8c34abe6 8c34abe load on device 'cuda:0' took 0.31 ms  (cached)
+Module mujoco_warp._src.forward bfd9fb5 load on device 'cuda:0' took 0.76 ms  (cached)
+Module mujoco_warp._src.passive d8c18c6 load on device 'cuda:0' took 0.95 ms  (cached)
+Module mujoco_warp._src.forward b068ad6 load on device 'cuda:0' took 0.76 ms  (cached)
+Module _qfrc_smooth__locals__kernel_b98573a2 b98573a load on device 'cuda:0' took 0.25 ms  (cached)
+Module mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_261a098f 3bf2aae load on device 'cuda:0' took 25.99 ms  (cached)
+Module _solve_init_dof__locals__kernel_43b50934 43b5093 load on device 'cuda:0' took 0.29 ms  (cached)
+Module mujoco_warp._src.solver 3a105a0 load on device 'cuda:0' took 1.26 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_0a3bf9f9 0a3bf9f load on device 'cuda:0' took 0.32 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_constraint_efc__locals__kernel_64b75440 64b7544 load on device 'cuda:0' took 0.33 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_9de65e8f 9de65e8 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_817148e6 817148e load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_grad__locals__kernel_00c9ca8d 00c9ca8 load on device 'cuda:0' took 0.24 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_474f4a87 474f4a8 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 317c632 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 79f35ed load on device 'cuda:0' took 1.45 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_0387d6d7 89d545c load on device 'cuda:0' took 50.21 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_9cd9bef4 9cd9bef load on device 'cuda:0' took 0.34 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_273b7969 0a8a16a load on device 'cuda:0' took 0.46 ms  (cached)
+Module _update_constraint_efc__locals__kernel_dc2dbb33 dc2dbb3 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_932c92ad 932c92a load on device 'cuda:0' took 0.27 ms  (cached)
+Module _update_gradient_grad__locals__kernel_4c37eb70 4c37eb7 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_1f3edd9a 1f3edd9 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_f4d46d30 8d11576 load on device 'cuda:0' took 56.32 ms  (cached)
+Module mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 1.61 ms  (cached)
+Module mujoco_warp._src.derivative 833f5d0 load on device 'cuda:0' took 0.69 ms  (cached)
+Module _next_time_builder__locals___next_time_a67f49d6 a67f49d load on device 'cuda:0' took 0.30 ms  (cached)
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+Warp 1.16.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 4090" (23 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/hpf/.cache/warp/1.16.0
+Module mujoco_warp._src.smooth c4020f1 load on device 'cuda:0' took 29.41 ms  (cached)
+Module _nxn_broadphase__locals__kernel_3e896ca5 3e896ca load on device 'cuda:0' took 409.80 ms  (compiled)
+Module _primitive_narrowphase__locals__primitive_narrowphase_e91dd55d e91dd55 load on device 'cuda:0' took 0.55 ms  (cached)
+Module mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.30 ms  (cached)
+Module _friction_dof__locals__kernel_7cd24d9b 7cd24d9 load on device 'cuda:0' took 0.39 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_f0b85ba4 f0b85ba load on device 'cuda:0' took 0.39 ms  (cached)
+Module _efc_contact_init__locals__kernel_517b063b 517b063 load on device 'cuda:0' took 0.33 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c9492143 c949214 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _efc_contact_update__locals__kernel_8c34abe6 8c34abe load on device 'cuda:0' took 0.32 ms  (cached)
+Module mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 1.74 ms  (cached)
+Module mujoco_warp._src.forward bfd9fb5 load on device 'cuda:0' took 0.83 ms  (cached)
+Module mujoco_warp._src.passive d8c18c6 load on device 'cuda:0' took 0.98 ms  (cached)
+Module mujoco_warp._src.forward b068ad6 load on device 'cuda:0' took 0.82 ms  (cached)
+Module _qfrc_smooth__locals__kernel_b98573a2 b98573a load on device 'cuda:0' took 0.30 ms  (cached)
+Module mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_261a098f 3bf2aae load on device 'cuda:0' took 22.42 ms  (cached)
+Module _solve_init_dof__locals__kernel_43b50934 43b5093 load on device 'cuda:0' took 0.30 ms  (cached)
+Module mujoco_warp._src.solver 3a105a0 load on device 'cuda:0' took 1.26 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_0a3bf9f9 0a3bf9f load on device 'cuda:0' took 0.30 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_constraint_efc__locals__kernel_64b75440 64b7544 load on device 'cuda:0' took 0.28 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_9de65e8f 9de65e8 load on device 'cuda:0' took 0.47 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_817148e6 817148e load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_grad__locals__kernel_00c9ca8d 00c9ca8 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_474f4a87 474f4a8 load on device 'cuda:0' took 0.37 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 317c632 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 79f35ed load on device 'cuda:0' took 0.50 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_0387d6d7 89d545c load on device 'cuda:0' took 49.43 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_9cd9bef4 9cd9bef load on device 'cuda:0' took 0.34 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_273b7969 0a8a16a load on device 'cuda:0' took 0.50 ms  (cached)
+Module _update_constraint_efc__locals__kernel_dc2dbb33 dc2dbb3 load on device 'cuda:0' took 0.32 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_932c92ad 932c92a load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_grad__locals__kernel_4c37eb70 4c37eb7 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_1f3edd9a 1f3edd9 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_f4d46d30 8d11576 load on device 'cuda:0' took 53.87 ms  (cached)
+Module _contact_sort__locals__contact_sort_2e4ee59c 999ac3c load on device 'cuda:0' took 0.38 ms  (cached)
+Module mujoco_warp._src.derivative 833f5d0 load on device 'cuda:0' took 0.76 ms  (cached)
+Module _next_time_builder__locals___next_time_a67f49d6 a67f49d load on device 'cuda:0' took 0.31 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_fe5fcb03 fe5fcb0 load on device 'cuda:0' took 0.30 ms  (cached)
+Module reset_data__locals__reset_M_e5e6cdd0 e5e6cdd load on device 'cuda:0' took 0.22 ms  (cached)
+Module reset_data__locals__reset_mocap_9faa71ef 9faa71e load on device 'cuda:0' took 0.22 ms  (cached)
+Module reset_data__locals__reset_contact_7aad0792 7aad079 load on device 'cuda:0' took 0.22 ms  (cached)
+Module reset_data__locals__reset_sleep_4dc3e6fb 4dc3e6f load on device 'cuda:0' took 0.22 ms  (cached)
+Module reset_data__locals__reset_nworld_bb6e9693 bb6e969 load on device 'cuda:0' took 0.28 ms  (cached)
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+################################################################################
+[1m                             Learning iteration 1/4                             [0m 
+
+                            Total steps: 224 
+                       Steps per second: 349 
+                        Collection time: 0.283s 
+                          Learning time: 0.038s 
+                        Mean value loss: 0.0132
+                    Mean surrogate loss: -0.0613
+                      Mean entropy loss: 41.1423
+                            Mean reward: 0.02
+                    Mean episode length: 2.50
+                        Mean action std: 1.00
+   Mixed/mjwarp/reward/tracking_lin_vel: 1.3630
+   Mixed/mjwarp/reward/tracking_ang_vel: 0.0734
+         Mixed/mjwarp/reward/feet_phase: 0.3774
+          Mixed/mjwarp/reward/lin_vel_z: -0.0414
+         Mixed/mjwarp/reward/ang_vel_xy: -0.0385
+        Mixed/mjwarp/reward/base_height: -0.0336
+        Mixed/mjwarp/reward/orientation: -0.0010
+        Mixed/mjwarp/reward/action_rate: -0.5244
+               Mixed/mjwarp/reward/pose: -0.2040
+    Mixed/drake/reward/tracking_lin_vel: 1.4959
+    Mixed/drake/reward/tracking_ang_vel: 0.0671
+          Mixed/drake/reward/feet_phase: 0.4628
+           Mixed/drake/reward/lin_vel_z: -0.0171
+          Mixed/drake/reward/ang_vel_xy: -0.3230
+         Mixed/drake/reward/base_height: -0.0056
+         Mixed/drake/reward/orientation: -0.0064
+         Mixed/drake/reward/action_rate: -0.6085
+                Mixed/drake/reward/pose: -0.2882
+   Mixed/motrix/reward/tracking_lin_vel: 0.4010
+   Mixed/motrix/reward/tracking_ang_vel: 0.0472
+         Mixed/motrix/reward/feet_phase: 0.3781
+          Mixed/motrix/reward/lin_vel_z: -0.0350
+         Mixed/motrix/reward/ang_vel_xy: -0.1031
+        Mixed/motrix/reward/base_height: -0.0257
+        Mixed/motrix/reward/orientation: -0.0020
+        Mixed/motrix/reward/action_rate: -0.4921
+               Mixed/motrix/reward/pose: -0.3846
+ Mixed/isaacgym/reward/tracking_lin_vel: 1.5793
+ Mixed/isaacgym/reward/tracking_ang_vel: 0.0030
+       Mixed/isaacgym/reward/feet_phase: 0.3797
+        Mixed/isaacgym/reward/lin_vel_z: -0.0058
+       Mixed/isaacgym/reward/ang_vel_xy: -0.5482
+      Mixed/isaacgym/reward/base_height: -0.0056
+      Mixed/isaacgym/reward/orientation: -0.0188
+      Mixed/isaacgym/reward/action_rate: -0.4605
+             Mixed/isaacgym/reward/pose: -0.4124
+ Mixed/isaacsim/reward/tracking_lin_vel: 0.6191
+ Mixed/isaacsim/reward/tracking_ang_vel: 0.0600
+       Mixed/isaacsim/reward/feet_phase: 0.5145
+        Mixed/isaacsim/reward/lin_vel_z: -0.0392
+       Mixed/isaacsim/reward/ang_vel_xy: -0.2455
+      Mixed/isaacsim/reward/base_height: -0.0322
+      Mixed/isaacsim/reward/orientation: -0.0025
+      Mixed/isaacsim/reward/action_rate: -0.5551
+             Mixed/isaacsim/reward/pose: -0.3600
+   Mixed/newton/reward/tracking_lin_vel: 0.9105
+   Mixed/newton/reward/tracking_ang_vel: 0.0519
+         Mixed/newton/reward/feet_phase: 0.4653
+          Mixed/newton/reward/lin_vel_z: -0.0301
+         Mixed/newton/reward/ang_vel_xy: -0.3017
+        Mixed/newton/reward/base_height: -0.0121
+        Mixed/newton/reward/orientation: -0.0072
+        Mixed/newton/reward/action_rate: -0.5156
+               Mixed/newton/reward/pose: -0.3454
+  Mixed/genesis/reward/tracking_lin_vel: 0.7855
+  Mixed/genesis/reward/tracking_ang_vel: 0.0533
+        Mixed/genesis/reward/feet_phase: 0.4517
+         Mixed/genesis/reward/lin_vel_z: -0.0241
+        Mixed/genesis/reward/ang_vel_xy: -0.2264
+       Mixed/genesis/reward/base_height: -0.0128
+       Mixed/genesis/reward/orientation: -0.0046
+       Mixed/genesis/reward/action_rate: -0.5568
+              Mixed/genesis/reward/pose: -0.3053
+--------------------------------------------------------------------------------
+                         Iteration time: 0.32s
+                           Time elapsed: 00:00:00
+                                    ETA: 00:00:00
+
+Motphys profiler initialized: disabled
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: newton ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: isaacgym ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: isaacsim ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: genesis ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+/home/hpf/yuelk/UniLab/src/unilab/base/backend_factory.py:132: UserWarning: mjwarp ignores non-default MuJoCo-only backend options: post_step_forward_sensor=False, adaptive_chunk_size=True, bench_nsteps=3
+  return unisim.create_backend(backend_type, scene, num_envs, sim_dt, **kwargs)
+[2026-09-18 00:40:28.493] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'timestep' found in a 'option' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'integrator' found in a 'option' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:13: warning: The texture element is not supported, see https://drake.mit.edu/troubleshooting.html for additional resources.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The tag 'light' found as a child of 'worldbody' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.494] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.495] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The attribute 'frictionloss' found in a 'joint' tag is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The tag 'site' found as a child of 'body' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:4: warning: The tag 'statistic' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:0: warning: The tag 'sensor' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:34: warning: The tag 'keyframe' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.496] [console] [warning] /tmp/drake_uni_mjcf_uwi7emkc/g1/scene_flat.xml:6: warning: The tag 'visual' found as a child of 'mujoco' is currently unsupported and will be ignored.
+[2026-09-18 00:40:28.498] [console] [warning] Rigid (non-deformable) half spaces are not currently supported for deformable contact; registration is allowed, but no contact data will be reported.
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+[38;5;226m[Genesis] [00:40:31] [WARNING] Mesh is not watertight. Falling back to convex hull for estimating inertial properties.[0m
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+Warp 1.16.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 4090" (23 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/hpf/.cache/warp/1.16.0
+Module mujoco_warp._src.smooth c4020f1 load on device 'cuda:0' took 14.80 ms  (cached)
+Module _nxn_broadphase__locals__kernel_3e896ca5 3e896ca load on device 'cuda:0' took 0.31 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_e91dd55d e91dd55 load on device 'cuda:0' took 0.53 ms  (cached)
+Module mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _friction_dof__locals__kernel_7cd24d9b 7cd24d9 load on device 'cuda:0' took 0.37 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_f0b85ba4 f0b85ba load on device 'cuda:0' took 0.36 ms  (cached)
+Module _efc_contact_init__locals__kernel_517b063b 517b063 load on device 'cuda:0' took 0.32 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c9492143 c949214 load on device 'cuda:0' took 0.30 ms  (cached)
+Module _efc_contact_update__locals__kernel_8c34abe6 8c34abe load on device 'cuda:0' took 0.40 ms  (cached)
+Module mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 1.72 ms  (cached)
+Module mujoco_warp._src.forward bfd9fb5 load on device 'cuda:0' took 0.80 ms  (cached)
+Module mujoco_warp._src.passive d8c18c6 load on device 'cuda:0' took 1.38 ms  (cached)
+Module mujoco_warp._src.forward b068ad6 load on device 'cuda:0' took 0.83 ms  (cached)
+Module _qfrc_smooth__locals__kernel_b98573a2 b98573a load on device 'cuda:0' took 0.25 ms  (cached)
+Module mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_261a098f 3bf2aae load on device 'cuda:0' took 23.78 ms  (cached)
+Module _solve_init_dof__locals__kernel_43b50934 43b5093 load on device 'cuda:0' took 0.30 ms  (cached)
+Module mujoco_warp._src.solver 3a105a0 load on device 'cuda:0' took 1.25 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_0a3bf9f9 0a3bf9f load on device 'cuda:0' took 0.29 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_constraint_efc__locals__kernel_64b75440 64b7544 load on device 'cuda:0' took 0.28 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_9de65e8f 9de65e8 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_817148e6 817148e load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_grad__locals__kernel_00c9ca8d 00c9ca8 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_474f4a87 474f4a8 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 317c632 load on device 'cuda:0' took 0.28 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 79f35ed load on device 'cuda:0' took 0.93 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_0387d6d7 89d545c load on device 'cuda:0' took 49.86 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_9cd9bef4 9cd9bef load on device 'cuda:0' took 0.57 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_273b7969 0a8a16a load on device 'cuda:0' took 0.48 ms  (cached)
+Module _update_constraint_efc__locals__kernel_dc2dbb33 dc2dbb3 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_932c92ad 932c92a load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_grad__locals__kernel_4c37eb70 4c37eb7 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_1f3edd9a 1f3edd9 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_f4d46d30 8d11576 load on device 'cuda:0' took 66.45 ms  (cached)
+Module _contact_sort__locals__contact_sort_2e4ee59c 999ac3c load on device 'cuda:0' took 0.45 ms  (cached)
+Module mujoco_warp._src.derivative 833f5d0 load on device 'cuda:0' took 0.83 ms  (cached)
+Module _next_time_builder__locals___next_time_a67f49d6 a67f49d load on device 'cuda:0' took 0.37 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_fe5fcb03 fe5fcb0 load on device 'cuda:0' took 0.49 ms  (cached)
+Module reset_data__locals__reset_M_e5e6cdd0 e5e6cdd load on device 'cuda:0' took 0.29 ms  (cached)
+Module reset_data__locals__reset_mocap_9faa71ef 9faa71e load on device 'cuda:0' took 0.29 ms  (cached)
+Module reset_data__locals__reset_contact_7aad0792 7aad079 load on device 'cuda:0' took 0.31 ms  (cached)
+Module reset_data__locals__reset_sleep_4dc3e6fb 4dc3e6f load on device 'cuda:0' took 0.31 ms  (cached)
+Module reset_data__locals__reset_nworld_bb6e9693 bb6e969 load on device 'cuda:0' took 0.37 ms  (cached)
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+Warp 1.16.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 4090" (23 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/hpf/.cache/warp/1.16.0
+Module newton._src.geometry.inertia f54b3d2 load on device 'cuda:0' took 0.85 ms  (cached)
+Module validate_and_correct_inertia_kernel_5e18b3cd 5e18b3c load on device 'cuda:0' took 0.34 ms  (cached)
+Module newton._src.geometry.bvh cca3a6c load on device 'cuda:0' took 0.47 ms  (cached)
+Module newton._src.solvers.mujoco.kernels 9bf0320 load on device 'cuda:0' took 10.72 ms  (cached)
+Module repeat_array_kernel_132d2489 2b476ae load on device 'cuda:0' took 0.31 ms  (cached)
+Module repeat_array_kernel_132d2489 f018f4b load on device 'cuda:0' took 0.25 ms  (cached)
+Module repeat_array_kernel_132d2489 f67ebb7 load on device 'cuda:0' took 0.25 ms  (cached)
+Module repeat_array_kernel_132d2489 44fc066 load on device 'cuda:0' took 0.28 ms  (cached)
+Module repeat_array_kernel_132d2489 4e9a0aa load on device 'cuda:0' took 0.28 ms  (cached)
+Module repeat_array_kernel_132d2489 128fe77 load on device 'cuda:0' took 0.29 ms  (cached)
+Module repeat_array_kernel_132d2489 45dcc23 load on device 'cuda:0' took 0.30 ms  (cached)
+Module mujoco_warp._src.io b4940be load on device 'cuda:0' took 1.94 ms  (cached)
+Module mujoco_warp._src.smooth c4020f1 load on device 'cuda:0' took 2.42 ms  (cached)
+Module _tile_cholesky_factorize_block__locals__kernel_f85f6d77 0d20273 load on device 'cuda:0' took 15.59 ms  (cached)
+Module _tile_cholesky_solve_block__locals__kernel_7caaebf2 eb03c6d load on device 'cuda:0' took 15.69 ms  (cached)
+Module newton._src.utils.selection d9a051c load on device 'cuda:0' took 4.43 ms  (cached)
+Module newton._src.sim.articulation daa0137 load on device 'cuda:0' took 4.81 ms  (cached)
+Module _nxn_broadphase__locals__kernel_bcb985f4 bcb985f load on device 'cuda:0' took 394.81 ms  (compiled)
+Module _primitive_narrowphase__locals__primitive_narrowphase_e91dd55d e91dd55 load on device 'cuda:0' took 0.57 ms  (cached)
+Module mujoco_warp._src.constraint 36c8060 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _friction_dof__locals__kernel_7cd24d9b 7cd24d9 load on device 'cuda:0' took 0.37 ms  (cached)
+Module _limit_slide_hinge__locals__kernel_f0b85ba4 f0b85ba load on device 'cuda:0' took 0.35 ms  (cached)
+Module _efc_contact_init__locals__kernel_517b063b 517b063 load on device 'cuda:0' took 0.31 ms  (cached)
+Module _efc_contact_jac_sparse__locals__kernel_c9492143 c949214 load on device 'cuda:0' took 0.30 ms  (cached)
+Module _efc_contact_update__locals__kernel_8c34abe6 8c34abe load on device 'cuda:0' took 0.33 ms  (cached)
+Module mujoco_warp._src.forward bfd9fb5 load on device 'cuda:0' took 0.78 ms  (cached)
+Module mujoco_warp._src.passive d8c18c6 load on device 'cuda:0' took 0.95 ms  (cached)
+Module mujoco_warp._src.forward b068ad6 load on device 'cuda:0' took 0.77 ms  (cached)
+Module _qfrc_smooth__locals__kernel_b98573a2 b98573a load on device 'cuda:0' took 0.26 ms  (cached)
+Module mujoco_warp._src.support ca784c5 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _tile_cholesky_factorize_solve_block__locals__kernel_261a098f 3bf2aae load on device 'cuda:0' took 22.56 ms  (cached)
+Module _solve_init_dof__locals__kernel_43b50934 43b5093 load on device 'cuda:0' took 0.33 ms  (cached)
+Module mujoco_warp._src.solver 3a105a0 load on device 'cuda:0' took 1.40 ms  (cached)
+Module _solve_init_jaref_kernel__locals__kernel_0a3bf9f9 0a3bf9f load on device 'cuda:0' took 0.31 ms  (cached)
+Module mul_m_kernel__locals___mul_m_dc7994af dc7994a load on device 'cuda:0' took 0.31 ms  (cached)
+Module _update_constraint_efc__locals__kernel_64b75440 64b7544 load on device 'cuda:0' took 0.30 ms  (cached)
+Module _update_constraint_init_qfrc_constraint_sparse__locals__kernel_9de65e8f 9de65e8 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_817148e6 817148e load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_grad__locals__kernel_00c9ca8d 00c9ca8 load on device 'cuda:0' took 0.25 ms  (cached)
+Module _update_gradient_init_h_sparse__locals__kernel_474f4a87 474f4a8 load on device 'cuda:0' took 0.26 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 317c632 load on device 'cuda:0' took 0.29 ms  (cached)
+Module _JTDAJ_sparse__locals__kernel_317c6322 79f35ed load on device 'cuda:0' took 0.27 ms  (cached)
+Module _update_gradient_cholesky_blocked__locals__kernel_0387d6d7 89d545c load on device 'cuda:0' took 52.11 ms  (cached)
+Module _linesearch_jv_fused_kernel__locals__kernel_9cd9bef4 9cd9bef load on device 'cuda:0' took 0.35 ms  (cached)
+Module _linesearch_iterative_kernel__locals__kernel_273b7969 0a8a16a load on device 'cuda:0' took 0.54 ms  (cached)
+Module _update_constraint_efc__locals__kernel_dc2dbb33 dc2dbb3 load on device 'cuda:0' took 0.38 ms  (cached)
+Module _update_gradient_zero_grad_dot__locals__kernel_932c92ad 932c92a load on device 'cuda:0' took 0.29 ms  (cached)
+Module _update_gradient_grad__locals__kernel_4c37eb70 4c37eb7 load on device 'cuda:0' took 0.27 ms  (cached)
+Module _update_gradient_h_incremental_sparse__locals__kernel_1f3edd9a 1f3edd9 load on device 'cuda:0' took 0.28 ms  (cached)
+Module _update_gradient_cholesky_blocked_skip_unchanged__locals__kernel_f4d46d30 8d11576 load on device 'cuda:0' took 55.01 ms  (cached)
+Module mujoco_warp._src.sensor de892d8 load on device 'cuda:0' took 1.84 ms  (cached)
+Module mujoco_warp._src.derivative 833f5d0 load on device 'cuda:0' took 0.90 ms  (cached)
+Module _next_time_builder__locals___next_time_a67f49d6 a67f49d load on device 'cuda:0' took 0.48 ms  (cached)
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+term: reset_root_state_uniform set to None, skipping...
+term: pd_gains set to None, skipping...
+term: feet_air_time set to None, skipping...
+################################################################################
+[1m                             Learning iteration 2/4                             [0m 
+
+                            Total steps: 336 
+                       Steps per second: 356 
+                        Collection time: 0.280s 
+                          Learning time: 0.034s 
+                        Mean value loss: 0.0056
+                    Mean surrogate loss: -0.0927
+                      Mean entropy loss: 41.1759
+                            Mean reward: 0.02
+                    Mean episode length: 2.50
+                        Mean action std: 1.00
+   Mixed/mjwarp/reward/tracking_lin_vel: 1.8148
+   Mixed/mjwarp/reward/tracking_ang_vel: 0.0278
+         Mixed/mjwarp/reward/feet_phase: 0.4150
+          Mixed/mjwarp/reward/lin_vel_z: -0.0038
+         Mixed/mjwarp/reward/ang_vel_xy: -0.1410
+        Mixed/mjwarp/reward/base_height: -0.0011
+        Mixed/mjwarp/reward/orientation: -0.0006
+        Mixed/mjwarp/reward/action_rate: -0.5690
+               Mixed/mjwarp/reward/pose: -0.2990
+    Mixed/drake/reward/tracking_lin_vel: 0.8652
+    Mixed/drake/reward/tracking_ang_vel: 0.0326
+          Mixed/drake/reward/feet_phase: 0.4829
+           Mixed/drake/reward/lin_vel_z: -0.0345
+          Mixed/drake/reward/ang_vel_xy: -0.2477
+         Mixed/drake/reward/base_height: -0.0462
+         Mixed/drake/reward/orientation: -0.0043
+         Mixed/drake/reward/action_rate: -0.4262
+                Mixed/drake/reward/pose: -0.2977
+   Mixed/motrix/reward/tracking_lin_vel: 0.4651
+   Mixed/motrix/reward/tracking_ang_vel: 0.0536
+         Mixed/motrix/reward/feet_phase: 0.4779
+          Mixed/motrix/reward/lin_vel_z: -0.0285
+         Mixed/motrix/reward/ang_vel_xy: -0.2959
+        Mixed/motrix/reward/base_height: -0.0196
+        Mixed/motrix/reward/orientation: -0.0080
+        Mixed/motrix/reward/action_rate: -0.5636
+               Mixed/motrix/reward/pose: -0.3432
+ Mixed/isaacgym/reward/tracking_lin_vel: 1.2413
+ Mixed/isaacgym/reward/tracking_ang_vel: 0.0319
+       Mixed/isaacgym/reward/feet_phase: 0.5351
+        Mixed/isaacgym/reward/lin_vel_z: -0.0059
+       Mixed/isaacgym/reward/ang_vel_xy: -0.1805
+      Mixed/isaacgym/reward/base_height: -0.0008
+      Mixed/isaacgym/reward/orientation: -0.0017
+      Mixed/isaacgym/reward/action_rate: -0.4810
+             Mixed/isaacgym/reward/pose: -0.1643
+ Mixed/isaacsim/reward/tracking_lin_vel: 1.2816
+ Mixed/isaacsim/reward/tracking_ang_vel: 0.0468
+       Mixed/isaacsim/reward/feet_phase: 0.4446
+        Mixed/isaacsim/reward/lin_vel_z: -0.0387
+       Mixed/isaacsim/reward/ang_vel_xy: -0.2684
+      Mixed/isaacsim/reward/base_height: -0.0173
+      Mixed/isaacsim/reward/orientation: -0.0048
+      Mixed/isaacsim/reward/action_rate: -0.5313
+             Mixed/isaacsim/reward/pose: -0.3202
+   Mixed/newton/reward/tracking_lin_vel: 1.1374
+   Mixed/newton/reward/tracking_ang_vel: 0.0485
+         Mixed/newton/reward/feet_phase: 0.4614
+          Mixed/newton/reward/lin_vel_z: -0.0302
+         Mixed/newton/reward/ang_vel_xy: -0.1772
+        Mixed/newton/reward/base_height: -0.0101
+        Mixed/newton/reward/orientation: -0.0035
+        Mixed/newton/reward/action_rate: -0.4722
+               Mixed/newton/reward/pose: -0.4076
+  Mixed/genesis/reward/tracking_lin_vel: 0.8293
+  Mixed/genesis/reward/tracking_ang_vel: 0.0372
+        Mixed/genesis/reward/feet_phase: 0.4748
+         Mixed/genesis/reward/lin_vel_z: -0.0316
+        Mixed/genesis/reward/ang_vel_xy: -0.2475
+       Mixed/genesis/reward/base_height: -0.0250
+       Mixed/genesis/reward/orientation: -0.0038
+       Mixed/genesis/reward/action_rate: -0.5417
+              Mixed/genesis/reward/pose: -0.3423
+--------------------------------------------------------------------------------
+                         Iteration time: 0.31s
+                           Time elapsed: 00:00:01
+                                    ETA: 00:00:00
+
+################################################################################
+[1m                             Learning iteration 3/4                             [0m 
+
+                            Total steps: 448 
+                       Steps per second: 385 
+                        Collection time: 0.256s 
+                          Learning time: 0.035s 
+                        Mean value loss: 0.0097
+                    Mean surrogate loss: -0.0715
+                      Mean entropy loss: 41.1794
+                            Mean reward: 0.02
+                    Mean episode length: 2.50
+                        Mean action std: 1.00
+   Mixed/mjwarp/reward/tracking_lin_vel: 1.6706
+   Mixed/mjwarp/reward/tracking_ang_vel: 0.0411
+         Mixed/mjwarp/reward/feet_phase: 0.4112
+          Mixed/mjwarp/reward/lin_vel_z: -0.0961
+         Mixed/mjwarp/reward/ang_vel_xy: -0.5050
+        Mixed/mjwarp/reward/base_height: -0.1528
+        Mixed/mjwarp/reward/orientation: -0.0392
+        Mixed/mjwarp/reward/action_rate: -0.5341
+               Mixed/mjwarp/reward/pose: -0.4677
+    Mixed/drake/reward/tracking_lin_vel: 1.3381
+    Mixed/drake/reward/tracking_ang_vel: 0.0380
+          Mixed/drake/reward/feet_phase: 0.4910
+           Mixed/drake/reward/lin_vel_z: -0.0500
+          Mixed/drake/reward/ang_vel_xy: -1.2167
+         Mixed/drake/reward/base_height: -0.3037
+         Mixed/drake/reward/orientation: -0.0873
+         Mixed/drake/reward/action_rate: -0.5812
+                Mixed/drake/reward/pose: -0.7118
+   Mixed/motrix/reward/tracking_lin_vel: 0.5042
+   Mixed/motrix/reward/tracking_ang_vel: 0.0542
+         Mixed/motrix/reward/feet_phase: 0.4693
+          Mixed/motrix/reward/lin_vel_z: -0.0271
+         Mixed/motrix/reward/ang_vel_xy: -0.4628
+        Mixed/motrix/reward/base_height: -0.1516
+        Mixed/motrix/reward/orientation: -0.0839
+        Mixed/motrix/reward/action_rate: -0.6545
+               Mixed/motrix/reward/pose: -0.8348
+  Mixed/genesis/reward/tracking_lin_vel: 0.7718
+  Mixed/genesis/reward/tracking_ang_vel: 0.0628
+        Mixed/genesis/reward/feet_phase: 0.4847
+         Mixed/genesis/reward/lin_vel_z: -0.0239
+        Mixed/genesis/reward/ang_vel_xy: -0.4593
+       Mixed/genesis/reward/base_height: -0.1291
+       Mixed/genesis/reward/orientation: -0.0348
+       Mixed/genesis/reward/action_rate: -0.6578
+              Mixed/genesis/reward/pose: -0.8341
+ Mixed/isaacgym/reward/tracking_lin_vel: 1.1916
+ Mixed/isaacgym/reward/tracking_ang_vel: 0.0542
+       Mixed/isaacgym/reward/feet_phase: 0.4005
+        Mixed/isaacgym/reward/lin_vel_z: -0.0026
+       Mixed/isaacgym/reward/ang_vel_xy: -0.1963
+      Mixed/isaacgym/reward/base_height: -0.0036
+      Mixed/isaacgym/reward/orientation: -0.0228
+      Mixed/isaacgym/reward/action_rate: -0.6806
+             Mixed/isaacgym/reward/pose: -0.6533
+   Mixed/newton/reward/tracking_lin_vel: 1.1564
+   Mixed/newton/reward/tracking_ang_vel: 0.0809
+         Mixed/newton/reward/feet_phase: 0.4734
+          Mixed/newton/reward/lin_vel_z: -0.0498
+         Mixed/newton/reward/ang_vel_xy: -0.2969
+        Mixed/newton/reward/base_height: -0.1684
+        Mixed/newton/reward/orientation: -0.0190
+        Mixed/newton/reward/action_rate: -0.6269
+               Mixed/newton/reward/pose: -0.7680
+ Mixed/isaacsim/reward/tracking_lin_vel: 1.1548
+ Mixed/isaacsim/reward/tracking_ang_vel: 0.0538
+       Mixed/isaacsim/reward/feet_phase: 0.4399
+        Mixed/isaacsim/reward/lin_vel_z: -0.0577
+       Mixed/isaacsim/reward/ang_vel_xy: -0.5283
+      Mixed/isaacsim/reward/base_height: -0.2246
+      Mixed/isaacsim/reward/orientation: -0.0429
+      Mixed/isaacsim/reward/action_rate: -0.5839
+             Mixed/isaacsim/reward/pose: -0.8874
+--------------------------------------------------------------------------------
+                         Iteration time: 0.29s
+                           Time elapsed: 00:00:01
+                                    ETA: 00:00:00
+

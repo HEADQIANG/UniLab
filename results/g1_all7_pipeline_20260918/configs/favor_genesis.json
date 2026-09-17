@@ -1,0 +1,35 @@
+{
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "backends": {
+    "motrix": {
+      "device": "cpu",
+      "timeout_s": 300
+    },
+    "drake": {
+      "device": "cpu",
+      "timeout_s": 300
+    },
+    "mjwarp": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    },
+    "isaacgym": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    },
+    "isaacsim": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    },
+    "genesis": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    },
+    "newton": {
+      "device": "cuda:0",
+      "timeout_s": 600
+    }
+  }
+}

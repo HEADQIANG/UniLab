@@ -1,0 +1,102 @@
+{
+  "status": "completed",
+  "next_iteration": 4,
+  "backend_counts": {
+    "motrix": 8,
+    "drake": 9,
+    "mjwarp": 2,
+    "isaacgym": 4,
+    "isaacsim": 1,
+    "genesis": 2,
+    "newton": 2
+  },
+  "backend_stats": {
+    "motrix": {
+      "samples": 128.0,
+      "reward_sum": -2.0145524125546217,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.11321193800176843,
+      "interrupted_episodes": 0.0
+    },
+    "drake": {
+      "samples": 144.0,
+      "reward_sum": -1.28290631249547,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.10997866400248313,
+      "interrupted_episodes": 0.0
+    },
+    "mjwarp": {
+      "samples": 32.0,
+      "reward_sum": -0.6892723310738802,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.0536566920018231,
+      "interrupted_episodes": 0.0
+    },
+    "isaacgym": {
+      "samples": 64.0,
+      "reward_sum": -0.4572092918679118,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.7049597640016145,
+      "interrupted_episodes": 0.0
+    },
+    "isaacsim": {
+      "samples": 16.0,
+      "reward_sum": -0.645656886510551,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.8897381380011211,
+      "interrupted_episodes": 0.0
+    },
+    "genesis": {
+      "samples": 32.0,
+      "reward_sum": -0.25424549356102943,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.5292688219960837,
+      "interrupted_episodes": 0.0
+    },
+    "newton": {
+      "samples": 32.0,
+      "reward_sum": -0.284281846601516,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.8420050670010824,
+      "interrupted_episodes": 0.0
+    }
+  },
+  "samples_per_iteration": 112,
+  "mixed_fingerprint": "0d186b575d70541cb10b44114c89f18485382580d86e28cbbf3d554ec142cdbc",
+  "adaptive": null,
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "algo": "ppo",
+  "task": "G1WalkFlat",
+  "sim_backend": "mixed",
+  "log_dir": "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_pipeline_20260918/confirmation/frozen_adaptive/seed_101/train",
+  "start_time_utc": "2026-09-17T16:48:31.246486+00:00",
+  "end_time_utc": "2026-09-17T16:48:46.792297+00:00",
+  "wall_time_sec": 15.545808785998815,
+  "wandb_run_url": null,
+  "configured_seed": 101,
+  "configured_seed_source": "algo.seed",
+  "effective_seed": 101
+}

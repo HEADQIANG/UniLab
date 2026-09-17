@@ -1,0 +1,175 @@
+{
+  "status": "completed",
+  "next_iteration": 4,
+  "backend_counts": {
+    "motrix": 6,
+    "drake": 2,
+    "mjwarp": 1,
+    "isaacgym": 1,
+    "isaacsim": 5,
+    "genesis": 7,
+    "newton": 6
+  },
+  "backend_stats": {
+    "motrix": {
+      "samples": 72.0,
+      "reward_sum": -0.6595714557915926,
+      "episodes": 0.0,
+      "censored_episodes": 1.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.2675763450006343,
+      "interrupted_episodes": 6.0
+    },
+    "drake": {
+      "samples": 40.0,
+      "reward_sum": 0.13259537145495415,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.08915159699427022,
+      "interrupted_episodes": 6.0
+    },
+    "mjwarp": {
+      "samples": 28.0,
+      "reward_sum": 0.3104937048628926,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.06209635200139019,
+      "interrupted_episodes": 5.0
+    },
+    "isaacgym": {
+      "samples": 28.0,
+      "reward_sum": 0.3461141143925488,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.7568879699956597,
+      "interrupted_episodes": 5.0
+    },
+    "isaacsim": {
+      "samples": 68.0,
+      "reward_sum": -0.0002957480028271675,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.9540830240057403,
+      "interrupted_episodes": 7.0
+    },
+    "genesis": {
+      "samples": 108.0,
+      "reward_sum": -0.3284921091981232,
+      "episodes": 0.0,
+      "censored_episodes": 1.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.7761467840027763,
+      "interrupted_episodes": 12.0
+    },
+    "newton": {
+      "samples": 104.0,
+      "reward_sum": 0.25525124929845333,
+      "episodes": 0.0,
+      "censored_episodes": 0.0,
+      "episode_reward_sum": 0.0,
+      "episode_length_sum": 0.0,
+      "step_seconds": 0.9081930759984971,
+      "interrupted_episodes": 14.0
+    }
+  },
+  "samples_per_iteration": 112,
+  "mixed_fingerprint": "0d186b575d70541cb10b44114c89f18485382580d86e28cbbf3d554ec142cdbc",
+  "adaptive": {
+    "version": 1,
+    "config": {
+      "metric": "mean_step_reward",
+      "strategy": "low_reward",
+      "interval": 1,
+      "warmup": 0,
+      "ema_alpha": 0.5,
+      "temperature": 1.0,
+      "min_ratio": 0.05,
+      "max_ratio": 0.5,
+      "smoothing": 1.0,
+      "freeze_after": 3
+    },
+    "names": [
+      "motrix",
+      "drake",
+      "mjwarp",
+      "isaacgym",
+      "isaacsim",
+      "genesis",
+      "newton"
+    ],
+    "total": 28,
+    "ratios": {
+      "motrix": 0.21231175031643817,
+      "drake": 0.05,
+      "mjwarp": 0.05,
+      "isaacgym": 0.05,
+      "isaacsim": 0.18126405314877042,
+      "genesis": 0.23544969402397664,
+      "newton": 0.2209745025108149
+    },
+    "ema": {
+      "motrix": 4.510668804869056e-05,
+      "drake": 0.011826521717011929,
+      "mjwarp": 0.013056496332865208,
+      "isaacgym": 0.011992624262347817,
+      "isaacsim": 0.0009385623561684042,
+      "genesis": -0.0005445284267706382,
+      "newton": -0.000182404043152928
+    },
+    "scale": {
+      "motrix": 0.004368631634861231,
+      "drake": 0.011826521717011929,
+      "mjwarp": 0.013056496332865208,
+      "isaacgym": 0.011992624262347817,
+      "isaacsim": 0.0017596205289009959,
+      "genesis": 0.003754821219546203,
+      "newton": 0.004494416434317828
+    },
+    "sums": {
+      "motrix": 0.0,
+      "drake": 0.0,
+      "mjwarp": 0.0,
+      "isaacgym": 0.0,
+      "isaacsim": 0.0,
+      "genesis": 0.0,
+      "newton": 0.0
+    },
+    "weights": {
+      "motrix": 0.0,
+      "drake": 0.0,
+      "mjwarp": 0.0,
+      "isaacgym": 0.0,
+      "isaacsim": 0.0,
+      "genesis": 0.0,
+      "newton": 0.0
+    },
+    "window_iterations": 0,
+    "last_iteration": 3,
+    "updates": 2,
+    "frozen": true
+  },
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "algo": "ppo",
+  "task": "G1WalkFlat",
+  "sim_backend": "mixed",
+  "log_dir": "logs/adaptive_validation/g1_all7_cleanup_20260918",
+  "start_time_utc": "2026-09-17T16:39:45.995924+00:00",
+  "end_time_utc": "2026-09-17T16:40:46.865035+00:00",
+  "wall_time_sec": 60.869107140999404,
+  "wandb_run_url": null,
+  "configured_seed": 1,
+  "configured_seed_source": "algo.seed",
+  "effective_seed": 1
+}

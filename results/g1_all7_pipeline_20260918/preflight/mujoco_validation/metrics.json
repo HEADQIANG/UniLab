@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "backend": "mujoco",
+  "split": "validation",
+  "seeds": [
+    1001
+  ],
+  "checkpoint_sha256": "43edb6406a0ae5af71128d670cb344db2207ba75130c222496e2e93b53fbae40",
+  "episodes": [
+    {
+      "seed": 1001,
+      "episode": 0,
+      "episode_return": 0.7728768261149526,
+      "length_steps": 54,
+      "survival_fraction": 0.054,
+      "survived_horizon": false,
+      "tracking_lin_vel": 0.6219264960123433,
+      "tracking_ang_vel": 0.1396158955833892
+    }
+  ],
+  "metrics": {
+    "episode_return": 0.7728768261149526,
+    "survival_fraction": 0.054,
+    "tracking_lin_vel": 0.6219264960123433,
+    "tracking_ang_vel": 0.1396158955833892,
+    "survived_horizon": 0
+  },
+  "protocol": "seeded_common_task_deterministic_cpu_policy_complete_episodes",
+  "identity": "63da5dc0e972e687e0e02d981686a744bf83a5a396c1dff3e3b884445a5bc040"
+}

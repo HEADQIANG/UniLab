@@ -1,5 +1,9 @@
 # Mixed PPO validation, 2026-09-14
 
+For the later seven-backend adaptive G1 pipeline and archived evidence, see
+[the 2026-09-18 validation report](adaptive_g1_validation_20260918.md).
+The dated observations below remain a historical record.
+
 This records implementation smoke/regression evidence, not policy convergence,
 sim-to-real transfer, or a claim that every configured backend was executed.
 Operation commands are in [mixed_ppo.md](mixed_ppo.md) and

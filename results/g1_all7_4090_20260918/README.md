@@ -1,14 +1,15 @@
 # G1 七后端正式实验：运行协议与阶段性结果
 
-截至 2026-09-18 04:10:58（Asia/Shanghai），正式训练已完成 **8/131**：
-自适应搜索和 Motrix 单后端的 seed 11、22、33，以及 Drake seed 11、22 均通过训练审计。
+截至 2026-09-18 04:38:36（Asia/Shanghai），正式训练已完成 **10/131**：
+自适应搜索、Motrix 和 Drake 单后端的 seed 11、22、33，以及 MJWarp
+seed 11 均通过训练审计。
 三种子汇总的 `frozen_adaptive` 仍是待重训、待验证候选，不是推荐或最佳比例。
-Motrix 三个训练种子和 Drake seed 11、22 各完成 15 个 MuJoCo validation 回合；
-正式 test 尚未开始。Drake seed 33 正在运行（PID 1519331）；
+Motrix 和 Drake 各三个训练种子、MJWarp seed 11 分别完成 15 个 MuJoCo
+validation 回合；正式 test 尚未开始。MJWarp seed 22 正在运行（PID 4094363）；
 后台启动 PID 1080640 仍存活；
 SSH 断开不会结束作业。目前没有多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、八个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、十个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -180,39 +181,72 @@ for seed in 22 33; do
 done
 ```
 
-## Drake 两个训练 seed 的 validation 结果
+## Drake 三个训练 seed 的 validation 结果
 
-[seed 11 审计](single_drake/seed_11/completed_trial_audit.json) 和
-[seed 22 审计](single_drake/seed_22/completed_trial_audit.json) 分别确认固定
+[seed 11 审计](single_drake/seed_11/completed_trial_audit.json)、
+[seed 22 审计](single_drake/seed_22/completed_trial_audit.json) 和
+[seed 33 审计](single_drake/seed_33/completed_trial_audit.json) 分别确认固定
 224 个 Drake 环境、1200 次连续更新、6,451,200 个实际 transitions。
-两个训练进程退出码均为 0。保存的完整 `config.algo` 和 sim2sim 合同
+三个训练进程退出码均为 0。保存的完整 `config.algo` 和 sim2sim 合同
 分别与同种子的自适应训练完全相等；
 没有比例调整或人工控制事件。
 
-[seed 11 验证记录](single_drake/seed_11/validation/metrics.json) 和
-[seed 22 验证记录](single_drake/seed_22/validation/metrics.json) 都使用
+[seed 11 验证记录](single_drake/seed_11/validation/metrics.json)、
+[seed 22 验证记录](single_drake/seed_22/validation/metrics.json) 和
+[seed 33 验证记录](single_drake/seed_33/validation/metrics.json) 都使用
 validation seeds 3001、3002、3003，每个评估 seed 五个 episode。
-两个评估进程退出码均为 0；checkpoint 身份和逐回合指标均通过复核。
+三个评估进程退出码均为 0；checkpoint 身份和逐回合指标均通过复核。
 
-| 指标 | seed 11 | seed 22 |
-| --- | ---: | ---: |
-| 训练进程耗时（秒） | 1299.5465 | 1305.6420 |
-| 平均 episode return | 18.1274279 | 15.9312872 |
-| 平均存活时间占比 | 66.0933% | 53.4267% |
-| 完整存活 20 秒 | 9/15（60.0000%） | 3/15（20.0000%） |
-| 平均线速度追踪得分 | 0.5719760 | 0.5597717 |
-| 平均角速度追踪得分 | 0.5700145 | 0.5493818 |
+| 指标 | seed 11 | seed 22 | seed 33 |
+| --- | ---: | ---: | ---: |
+| 训练进程耗时（秒） | 1299.5465 | 1305.6420 | 1302.2268 |
+| 平均 episode return | 18.1274279 | 15.9312872 | 14.5622786 |
+| 平均存活时间占比 | 66.0933% | 53.4267% | 48.3467% |
+| 完整存活 20 秒 | 9/15（60.0000%） | 3/15（20.0000%） | 1/15（6.6667%） |
+| 平均线速度追踪得分 | 0.5719760 | 0.5597717 | 0.5604072 |
+| 平均角速度追踪得分 | 0.5700145 | 0.5493818 | 0.5683738 |
 
-目前仅完成两个训练种子的 validation；第三个种子、与其他方案的完整
-跨种子比较及独立确认仍待完成。30 个回合来自两个训练重复，不能作为
-30 次独立训练；完整存活的回合数也存在种子间差异。追踪指标是奖励得分，
+[三种子汇总](single_drake/discovery_validation_summary.json) 按训练种子
+等权计算，平均 return 为 16.2069979，平均存活占比为 55.9556%，
+共 13/45 个回合完整存活 20 秒。这里是 3 个独立训练重复，不能将
+45 个回合当作 45 次独立训练；完整存活的回合数存在明显种子间差异。
+与其他方案的完整比较及新种子的独立确认仍待完成，当前结果不证明
+稳定行走或混合后端优势。追踪指标是奖励得分，
 不是物理单位误差。模型权重仍保存在远端，紧凑归档不包含模型。
 从仓库根目录解压逐轮事件：
 
 ```bash
-for seed in 11 22; do
+for seed in 11 22 33; do
   gzip -dk "results/g1_all7_4090_20260918/single_drake/seed_${seed}/train/mix_events.jsonl.gz"
 done
+```
+
+## 首个完成的 MJWarp 单后端验证：seed 11
+
+[训练及验证审计](single_mjwarp/seed_11/completed_trial_audit.json) 确认固定
+224 个 MJWarp 环境、1200 次连续更新和 6,451,200 个实际 transitions。
+训练进程耗时 293.27605055099775 秒，退出码为 0；完整 `config.algo`
+和 sim2sim 合同与 `adaptive/seed_11` 相等，样本预算和 PPO 条件一致。
+
+[原始 MuJoCo 验证记录](single_mjwarp/seed_11/validation/metrics.json) 使用
+validation seeds 3001、3002、3003，每个 seed 五个 episode。评估进程
+退出码为 0；来源 checkpoint、逐回合身份和全部指标均通过复核。
+
+| 指标 | 结果 |
+| --- | ---: |
+| 平均 episode return | 10.0858040 |
+| 平均存活时间占比 | 32.2133% |
+| 完整存活 20 秒 | 2/15（13.3333%） |
+| 平均线速度追踪得分 | 0.6420331 |
+| 平均角速度追踪得分 | 0.5925886 |
+
+这是一个训练种子的 validation 结果，尚未完成 MJWarp 三种子汇总或
+新种子的独立确认。耗时和质量分别记录；较短训练时间不代表策略质量
+更好，15 个评估回合也不等于 15 次独立训练。追踪指标仍是奖励得分。
+从仓库根目录解压逐轮事件：
+
+```bash
+gzip -dk results/g1_all7_4090_20260918/single_mjwarp/seed_11/train/mix_events.jsonl.gz
 ```
 
 ## 规模校准（独立于正式训练）

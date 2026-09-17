@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "status": "completed_discovery_validation_summary",
+  "study_id": "ecf9ca19ecfb54a9b0e63134a37b0d9c2d1f8b5fc63688b3aafd8632102925b5",
+  "candidate": "single_mjwarp",
+  "training_backend_counts": {
+    "mjwarp": 224
+  },
+  "training_ratios": {
+    "mjwarp": 1.0
+  },
+  "observed_at_utc": "2026-09-17T20:51:17.308971+00:00",
+  "observed_at_local": "2026-09-18T04:51:17.308971+08:00",
+  "split": "validation",
+  "evaluation_backend": "mujoco",
+  "protocol": "seeded_common_task_deterministic_cpu_policy_complete_episodes",
+  "training_seeds": [
+    11,
+    22,
+    33
+  ],
+  "training_replicates": 3,
+  "evaluation_seeds": [
+    3001,
+    3002,
+    3003
+  ],
+  "episodes_per_evaluation_seed_per_policy": 5,
+  "validation_episodes_per_training_seed": 15,
+  "total_validation_episodes": 45,
+  "episode_horizon_seconds": 20.0,
+  "episode_horizon_steps": 1000,
+  "control_dt_seconds": 0.02,
+  "transitions_per_training_seed": 6451200,
+  "total_training_transitions": 19353600,
+  "per_training_seed": [
+    {
+      "training_seed": 11,
+      "training_process_identity": "fd83b145094529e4fa2ebab23b95fd81499538bb44ea0fc1f31999524a6ec0b3",
+      "checkpoint_sha256": "0efc674a969cfe8bb73a77822b48e24c190a7edde10a7b186150fd1f008fbc13",
+      "validation_identity": "6bd5b56f05a4566c31cadebcd6e94da8f3d244ccc7243aefafde06309ac4a040",
+      "training_transitions": 6451200,
+      "training_wall_seconds": 293.27605055099775,
+      "validation_wall_seconds": 8.13557664000109,
+      "validation_episode_count": 15,
+      "full_horizon_episodes": 2,
+      "metrics": {
+        "episode_return": 10.085804034847145,
+        "survival_fraction": 0.3221333333333333,
+        "tracking_lin_vel": 0.6420331092210366,
+        "tracking_ang_vel": 0.5925885578147407,
+        "survived_horizon": 0.13333333333333333
+      },
+      "source_validation_metrics": {
+        "path": "seed_11/validation/metrics.json",
+        "sha256": "45a88a70eaa4623c0efd44596fd23db453da89b024bbb504ff93e001099ba5b4"
+      },
+      "source_trial_audit": {
+        "path": "seed_11/completed_trial_audit.json",
+        "sha256": "f702573e8a73be69b0a410a0025b8fc5d33e3ec6830d8cb9195c8025512c0c2d",
+        "schema": 2
+      }
+    },
+    {
+      "training_seed": 22,
+      "training_process_identity": "83d1422a833627cc4dd65e8927148aacd7fdd369af68428457f6331e70461baa",
+      "checkpoint_sha256": "545a8f171fe28dcf52129e02ee322336a7107c0a7103f73f1e1454f3f4675b1e",
+      "validation_identity": "0bc451196bddd4e1552705bb9b8c77bfaba06ea00d628b20ca524ee0267f14fb",
+      "training_transitions": 6451200,
+      "training_wall_seconds": 292.01692497800104,
+      "validation_wall_seconds": 8.612090071001148,
+      "validation_episode_count": 15,
+      "full_horizon_episodes": 3,
+      "metrics": {
+        "episode_return": 11.692063988279552,
+        "survival_fraction": 0.3559333333333333,
+        "tracking_lin_vel": 0.6134024737970972,
+        "tracking_ang_vel": 0.5934994831234989,
+        "survived_horizon": 0.2
+      },
+      "source_validation_metrics": {
+        "path": "seed_22/validation/metrics.json",
+        "sha256": "7c0fce1fb6f2b6368629713ab451bf2252cb93840bd7f12ec12aeaabe9253313"
+      },
+      "source_trial_audit": {
+        "path": "seed_22/completed_trial_audit.json",
+        "sha256": "1775e2c59abd84456428671f608d32f45e5f0a13476a08d49fc662b00aad05f8",
+        "schema": 2
+      }
+    },
+    {
+      "training_seed": 33,
+      "training_process_identity": "f14b34419239f363a1bd338c9ffe1145e51fbb74efe1c43b4b17f718184f503e",
+      "checkpoint_sha256": "859f09fde51591fc6e7a01a0289e09e0b772c2ce422abdaf2585d0b1739d5ce8",
+      "validation_identity": "ffb98e7992fb51cf8df69c5c099cc4227d8f62fc8cb2b5591c8cdbdf1855f046",
+      "training_transitions": 6451200,
+      "training_wall_seconds": 293.30669661999855,
+      "validation_wall_seconds": 3.548830535997695,
+      "validation_episode_count": 15,
+      "full_horizon_episodes": 0,
+      "metrics": {
+        "episode_return": 1.9562277818409106,
+        "survival_fraction": 0.06093333333333333,
+        "tracking_lin_vel": 0.7241138470549178,
+        "tracking_ang_vel": 0.534995589351948,
+        "survived_horizon": 0
+      },
+      "source_validation_metrics": {
+        "path": "seed_33/validation/metrics.json",
+        "sha256": "7603b24b42286d2ea19cfcbf09b4afdd3b29481d80b712d4866de0e57408b97c"
+      },
+      "source_trial_audit": {
+        "path": "seed_33/completed_trial_audit.json",
+        "sha256": "ff5216b725a219af46c67fb72ca268a5e137f397c34541bab813611954b24f3f",
+        "schema": 2
+      }
+    }
+  ],
+  "aggregate": {
+    "aggregation_unit": "training_seed",
+    "weighting": "Equal weight for each of the three training-seed metric means; each mean contains 15 validation episodes.",
+    "mean_metrics_across_training_seeds": {
+      "episode_return": 7.911365268322536,
+      "survival_fraction": 0.24633333333333332,
+      "tracking_lin_vel": 0.6598498100243505,
+      "tracking_ang_vel": 0.5736945434300625,
+      "survived_horizon": 0.11111111111111112
+    },
+    "sample_standard_deviation_across_training_seeds": {
+      "episode_return": 5.21946018489213,
+      "survival_fraction": 0.1614480721470529,
+      "tracking_lin_vel": 0.057465886948643026,
+      "tracking_ang_vel": 0.033517372082019596,
+      "survived_horizon": 0.10183501544346311
+    },
+    "sample_standard_deviation_ddof": 1,
+    "training_wall_seconds_total": 878.5996721489973,
+    "training_wall_seconds_mean": 292.86655738299913,
+    "full_horizon_episodes_total": 5,
+    "full_horizon_episode_fraction_descriptive": 0.1111111111111111
+  },
+  "checks": {
+    "all_three_trial_training_and_validation_receipts_exit_zero": true,
+    "all_three_trial_canonical_remote_audits_passed": true,
+    "all_three_archives_original_bytes_match_recorded_remote_sha256": true,
+    "all_three_gzip_streams_restore_original_events": true,
+    "all_three_trials_have_1200_contiguous_iterations_of_5376_samples": true,
+    "all_iterations_have_exactly_224_mjwarp_environments": true,
+    "no_adaptive_controller_or_manual_allocation_change": true,
+    "training_and_validation_identities_match_study_and_checkpoints": true,
+    "validation_commands_reference_matching_trial_checkpoints_and_outputs": true,
+    "each_policy_has_five_episodes_for_each_declared_validation_seed": true,
+    "all_per_seed_metrics_recomputed_from_episode_records": true,
+    "aggregate_metrics_recomputed_from_three_training_seed_means": true,
+    "distinct_training_process_identities": 3,
+    "distinct_checkpoint_hashes": 3,
+    "per_trial_audit_schema_versions": {
+      "11": 2,
+      "22": 2,
+      "33": 2
+    },
+    "all_three_schema_2_offline_audits_verified": true,
+    "all_declared_training_seeds_included_without_exclusion": true
+  },
+  "limitations": [
+    "These are discovery-stage validation results for three MJWarp training seeds, not fresh confirmation training or held-out test results.",
+    "The 45 episodes are nested within three trained policies; the training replicate count is three, not 45.",
+    "Evaluation uses the same declared validation seeds across policies; episode observations do not create additional independent training replicates.",
+    "Means and sample standard deviations are descriptive; no confidence interval, significance test, selected winner or mixture comparison is reported.",
+    "Five of 45 episodes survived the complete 20-second horizon; reliable walking across episodes and training seeds is not established.",
+    "No mixed-backend advantage, recommended mixture ratio, global optimum or equal-wall-time policy-quality conclusion is established.",
+    "Checkpoint hashes identify remote models; model weights and external runtimes are omitted from this compact archive.",
+    "All three declared training seeds are included; seed 33 is retained without exclusion from this summary."
+  ]
+}

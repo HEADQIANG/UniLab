@@ -1,15 +1,16 @@
 # G1 七后端正式实验：运行协议与阶段性结果
 
-截至 2026-09-18 04:38:36（Asia/Shanghai），正式训练已完成 **10/131**：
-自适应搜索、Motrix 和 Drake 单后端的 seed 11、22、33，以及 MJWarp
-seed 11 均通过训练审计。
+截至 2026-09-18 04:53:04（Asia/Shanghai），正式训练已完成 **12/131**：
+自适应搜索、Motrix、Drake 和 MJWarp 单后端的 seed 11、22、33
+均通过训练审计。
 三种子汇总的 `frozen_adaptive` 仍是待重训、待验证候选，不是推荐或最佳比例。
-Motrix 和 Drake 各三个训练种子、MJWarp seed 11 分别完成 15 个 MuJoCo
-validation 回合；正式 test 尚未开始。MJWarp seed 22 正在运行（PID 4094363）；
+Motrix、Drake 和 MJWarp 各三个训练种子分别完成 15 个 MuJoCo
+validation 回合，共 9 个策略、135 个回合；正式 test 尚未开始。
+IsaacGym seed 11 正在运行（PID 4102714，已观测到第 861/1200 次更新）；
 后台启动 PID 1080640 仍存活；
 SSH 断开不会结束作业。目前没有多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、十个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、十二个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -221,32 +222,45 @@ for seed in 11 22 33; do
 done
 ```
 
-## 首个完成的 MJWarp 单后端验证：seed 11
+## MJWarp 三个训练 seed 的 validation 结果
 
-[训练及验证审计](single_mjwarp/seed_11/completed_trial_audit.json) 确认固定
+[seed 11 审计](single_mjwarp/seed_11/completed_trial_audit.json)、
+[seed 22 审计](single_mjwarp/seed_22/completed_trial_audit.json) 和
+[seed 33 审计](single_mjwarp/seed_33/completed_trial_audit.json) 分别确认固定
 224 个 MJWarp 环境、1200 次连续更新和 6,451,200 个实际 transitions。
-训练进程耗时 293.27605055099775 秒，退出码为 0；完整 `config.algo`
-和 sim2sim 合同与 `adaptive/seed_11` 相等，样本预算和 PPO 条件一致。
+三个训练进程退出码均为 0；完整 `config.algo` 和 sim2sim 合同分别与
+同种子的自适应训练相等，样本预算和 PPO 条件一致。
 
-[原始 MuJoCo 验证记录](single_mjwarp/seed_11/validation/metrics.json) 使用
-validation seeds 3001、3002、3003，每个 seed 五个 episode。评估进程
-退出码为 0；来源 checkpoint、逐回合身份和全部指标均通过复核。
+[seed 11 验证记录](single_mjwarp/seed_11/validation/metrics.json)、
+[seed 22 验证记录](single_mjwarp/seed_22/validation/metrics.json) 和
+[seed 33 验证记录](single_mjwarp/seed_33/validation/metrics.json) 都使用
+validation seeds 3001、3002、3003，每个评估 seed 五个 episode。
+三个评估进程退出码均为 0；来源 checkpoint、逐回合身份和全部指标均通过复核。
 
-| 指标 | 结果 |
-| --- | ---: |
-| 平均 episode return | 10.0858040 |
-| 平均存活时间占比 | 32.2133% |
-| 完整存活 20 秒 | 2/15（13.3333%） |
-| 平均线速度追踪得分 | 0.6420331 |
-| 平均角速度追踪得分 | 0.5925886 |
+| 指标 | seed 11 | seed 22 | seed 33 |
+| --- | ---: | ---: | ---: |
+| 训练进程耗时（秒） | 293.2761 | 292.0169 | 293.3067 |
+| 平均 episode return | 10.0858040 | 11.6920640 | 1.9562278 |
+| 平均存活时间占比 | 32.2133% | 35.5933% | 6.0933% |
+| 完整存活 20 秒 | 2/15（13.3333%） | 3/15（20.0000%） | 0/15（0.0000%） |
+| 平均线速度追踪得分 | 0.6420331 | 0.6134025 | 0.7241138 |
+| 平均角速度追踪得分 | 0.5925886 | 0.5934995 | 0.5349956 |
 
-这是一个训练种子的 validation 结果，尚未完成 MJWarp 三种子汇总或
-新种子的独立确认。耗时和质量分别记录；较短训练时间不代表策略质量
-更好，15 个评估回合也不等于 15 次独立训练。追踪指标仍是奖励得分。
+[三种子汇总](single_mjwarp/discovery_validation_summary.json) 按训练种子
+等权计算，平均 return 为 7.9113653（种子间样本标准差 5.2194602），
+平均存活占比为 24.6333%（样本标准差 16.1448 个百分点）。
+45 个回合中 5 个完整存活 20 秒；这里只包含 **3 个独立训练重复**。
+seed 33 的低回报和 0/15 完整存活结果原样保留，没有排除任何训练种子。
+这些 discovery validation 结果尚不能证明稳定行走；混合候选的共同验证
+和新种子的独立确认仍未完成，没有比例推荐或多后端优势结论。
+耗时和质量分别记录，较短训练时间不代表策略质量更好；追踪指标是奖励得分。
+模型权重保留在远端，紧凑归档不包含模型。
 从仓库根目录解压逐轮事件：
 
 ```bash
-gzip -dk results/g1_all7_4090_20260918/single_mjwarp/seed_11/train/mix_events.jsonl.gz
+for seed in 11 22 33; do
+  gzip -dk "results/g1_all7_4090_20260918/single_mjwarp/seed_${seed}/train/mix_events.jsonl.gz"
+done
 ```
 
 ## 规模校准（独立于正式训练）

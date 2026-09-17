@@ -1,16 +1,17 @@
 # G1 七后端正式实验：运行协议与阶段性结果
 
-截至 2026-09-18 05:14:01（Asia/Shanghai），正式训练已完成 **15/131**：
+截至 2026-09-18 05:33:28（Asia/Shanghai），正式训练已完成 **16/131**：
 自适应搜索、Motrix、Drake、MJWarp 和 IsaacGym 单后端的 seed 11、22、33
-均通过训练审计。
+以及 IsaacSim seed 11 均通过训练审计。
 三种子汇总的 `frozen_adaptive` 仍是待重训、待验证候选，不是推荐或最佳比例。
 Motrix、Drake、MJWarp 和 IsaacGym 各三个训练种子分别完成 15 个 MuJoCo
-validation 回合，共 12 个策略、180 个回合；正式 test 尚未开始。
-IsaacSim seed 11 正在运行（PID 4122519，已观测到第 129/1200 次更新）；
+validation 回合；IsaacSim seed 11 也完成相同验证，
+共 13 个策略、195 个回合；正式 test 尚未开始。
+IsaacSim seed 22 正在运行（PID 4140009）；
 后台启动 PID 1080640 仍存活；
 SSH 断开不会结束作业。目前没有多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、十五个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、十六个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -301,6 +302,36 @@ validation seeds 3001、3002、3003，每个 seed 五个 episode。
 for seed in 11 22 33; do
   gzip -dk "results/g1_all7_4090_20260918/single_isaacgym/seed_${seed}/train/mix_events.jsonl.gz"
 done
+```
+
+## 首个完成的 IsaacSim 单后端验证：seed 11
+
+[训练及验证审计](single_isaacsim/seed_11/completed_trial_audit.json) 确认
+固定 224 个 IsaacSim 环境、1200 次连续更新和 6,451,200 个实际 transitions。
+训练进程退出码为 0，完整耗时 1296.4367480879991 秒；完整 `config.algo`
+和 sim2sim 合同与 `adaptive/seed_11` 相等。
+
+[原始 MuJoCo 验证记录](single_isaacsim/seed_11/validation/metrics.json) 使用
+validation seeds 3001、3002、3003，每个 seed 五个 episode。
+评估进程退出码为 0，耗时 14.114304655002343 秒；来源 checkpoint、
+逐回合身份、样本预算和均值均通过核验。
+
+| 指标 | 结果 |
+| --- | ---: |
+| 平均 episode return | 19.8721170 |
+| 平均存活时间占比 | 67.0267% |
+| 完整存活 20 秒 | 9/15（60.0000%） |
+| 平均线速度追踪得分 | 0.5204924 |
+| 平均角速度追踪得分 | 0.5887044 |
+
+这里只包含一个训练重复，15 个验证回合不是 15 个独立训练种子。
+IsaacSim 的另外两个 discovery seed、混合候选验证和新种子的独立确认
+仍待完成，当前结果不支持跨种子稳定性或多后端优势结论。
+追踪指标是奖励得分，不是物理单位误差。模型权重保留在远端；
+从仓库根目录解压逐轮训练事件：
+
+```bash
+gzip -dk results/g1_all7_4090_20260918/single_isaacsim/seed_11/train/mix_events.jsonl.gz
 ```
 
 ## 规模校准（独立于正式训练）

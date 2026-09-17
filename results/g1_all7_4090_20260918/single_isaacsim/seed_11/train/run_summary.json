@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "next_iteration": 1200,
+  "backend_counts": {
+    "isaacsim": 224
+  },
+  "backend_stats": {
+    "isaacsim": {
+      "samples": 6451200.0,
+      "reward_sum": -4164.352118944749,
+      "episodes": 149279.0,
+      "censored_episodes": 224.0,
+      "episode_reward_sum": -4122.543629340653,
+      "episode_length_sum": 6403483.0,
+      "step_seconds": 1158.6087496121872,
+      "interrupted_episodes": 0.0
+    }
+  },
+  "samples_per_iteration": 5376,
+  "mixed_fingerprint": "81548f6e87b67b586b9b3a9b5c6c82eae52b511e03a973ff1488768ec07b7d87",
+  "adaptive": null,
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "algo": "ppo",
+  "task": "G1WalkFlat",
+  "sim_backend": "mixed",
+  "log_dir": "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_4090_20260918/single_isaacsim/seed_11/train",
+  "start_time_utc": "2026-09-17T21:11:36.152397+00:00",
+  "end_time_utc": "2026-09-17T21:33:10.547403+00:00",
+  "wall_time_sec": 1294.3950022280005,
+  "wandb_run_url": null,
+  "configured_seed": 11,
+  "configured_seed_source": "algo.seed",
+  "effective_seed": 11
+}

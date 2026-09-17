@@ -1,14 +1,14 @@
 # G1 七后端正式实验：运行协议与阶段性结果
 
-截至 2026-09-18 03:48:51（Asia/Shanghai），正式训练已完成 **7/131**：
-自适应搜索和 Motrix 单后端的 seed 11、22、33，以及 Drake seed 11 均通过训练审计。
+截至 2026-09-18 04:10:58（Asia/Shanghai），正式训练已完成 **8/131**：
+自适应搜索和 Motrix 单后端的 seed 11、22、33，以及 Drake seed 11、22 均通过训练审计。
 三种子汇总的 `frozen_adaptive` 仍是待重训、待验证候选，不是推荐或最佳比例。
-Motrix 三个训练种子和 Drake seed 11 各完成 15 个 MuJoCo validation 回合；
-正式 test 尚未开始。Drake seed 22 正在运行（PID 3099963）；
+Motrix 三个训练种子和 Drake seed 11、22 各完成 15 个 MuJoCo validation 回合；
+正式 test 尚未开始。Drake seed 33 正在运行（PID 1519331）；
 后台启动 PID 1080640 仍存活；
 SSH 断开不会结束作业。目前没有多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、七个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、八个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -180,33 +180,39 @@ for seed in 22 33; do
 done
 ```
 
-## 首个完成的 Drake 单后端验证：seed 11
+## Drake 两个训练 seed 的 validation 结果
 
-[训练及验证审计](single_drake/seed_11/completed_trial_audit.json) 确认固定
-224 个 Drake 环境、1200 次连续更新、6,451,200 个实际 transitions，
-训练进程退出码为 0，完整耗时 1299.5464852119985 秒。保存的完整
-`config.algo` 和 sim2sim 合同与 `adaptive/seed_11` 完全相等；
+[seed 11 审计](single_drake/seed_11/completed_trial_audit.json) 和
+[seed 22 审计](single_drake/seed_22/completed_trial_audit.json) 分别确认固定
+224 个 Drake 环境、1200 次连续更新、6,451,200 个实际 transitions。
+两个训练进程退出码均为 0。保存的完整 `config.algo` 和 sim2sim 合同
+分别与同种子的自适应训练完全相等；
 没有比例调整或人工控制事件。
 
-[原始 MuJoCo 验证记录](single_drake/seed_11/validation/metrics.json) 使用
-相同的 validation seeds 3001、3002、3003，每个 seed 五个 episode。
-评估进程退出码为 0；checkpoint 身份和逐回合指标均通过复核。
+[seed 11 验证记录](single_drake/seed_11/validation/metrics.json) 和
+[seed 22 验证记录](single_drake/seed_22/validation/metrics.json) 都使用
+validation seeds 3001、3002、3003，每个评估 seed 五个 episode。
+两个评估进程退出码均为 0；checkpoint 身份和逐回合指标均通过复核。
 
-| 指标 | 结果 |
-| --- | ---: |
-| 平均 episode return | 18.1274279 |
-| 平均存活时间占比 | 66.0933% |
-| 完整存活 20 秒 | 9/15（60.0000%） |
-| 平均线速度追踪得分 | 0.5719760 |
-| 平均角速度追踪得分 | 0.5700145 |
+| 指标 | seed 11 | seed 22 |
+| --- | ---: | ---: |
+| 训练进程耗时（秒） | 1299.5465 | 1305.6420 |
+| 平均 episode return | 18.1274279 | 15.9312872 |
+| 平均存活时间占比 | 66.0933% | 53.4267% |
+| 完整存活 20 秒 | 9/15（60.0000%） | 3/15（20.0000%） |
+| 平均线速度追踪得分 | 0.5719760 | 0.5597717 |
+| 平均角速度追踪得分 | 0.5700145 | 0.5493818 |
 
-这是单个训练种子的 validation 结果；与其他方案的跨种子比较及独立确认
-仍待完成，不能将 15 个回合当作 15 次独立训练。追踪指标是奖励得分，
+目前仅完成两个训练种子的 validation；第三个种子、与其他方案的完整
+跨种子比较及独立确认仍待完成。30 个回合来自两个训练重复，不能作为
+30 次独立训练；完整存活的回合数也存在种子间差异。追踪指标是奖励得分，
 不是物理单位误差。模型权重仍保存在远端，紧凑归档不包含模型。
 从仓库根目录解压逐轮事件：
 
 ```bash
-gzip -dk results/g1_all7_4090_20260918/single_drake/seed_11/train/mix_events.jsonl.gz
+for seed in 11 22; do
+  gzip -dk "results/g1_all7_4090_20260918/single_drake/seed_${seed}/train/mix_events.jsonl.gz"
+done
 ```
 
 ## 规模校准（独立于正式训练）

@@ -1,17 +1,16 @@
 # G1 七后端正式实验：运行协议与阶段性结果
 
-截至 2026-09-18 05:03:40（Asia/Shanghai），正式训练已完成 **14/131**：
-自适应搜索、Motrix、Drake 和 MJWarp 单后端的 seed 11、22、33
-以及 IsaacGym seed 11、22 均通过训练审计。
+截至 2026-09-18 05:14:01（Asia/Shanghai），正式训练已完成 **15/131**：
+自适应搜索、Motrix、Drake、MJWarp 和 IsaacGym 单后端的 seed 11、22、33
+均通过训练审计。
 三种子汇总的 `frozen_adaptive` 仍是待重训、待验证候选，不是推荐或最佳比例。
-Motrix、Drake 和 MJWarp 各三个训练种子分别完成 15 个 MuJoCo
-validation 回合；IsaacGym seed 11、22 也完成相同验证，
-共 11 个策略、165 个回合；正式 test 尚未开始。
-IsaacGym seed 33 正在运行（PID 4115989）；
+Motrix、Drake、MJWarp 和 IsaacGym 各三个训练种子分别完成 15 个 MuJoCo
+validation 回合，共 12 个策略、180 个回合；正式 test 尚未开始。
+IsaacSim seed 11 正在运行（PID 4122519，已观测到第 129/1200 次更新）；
 后台启动 PID 1080640 仍存活；
 SSH 断开不会结束作业。目前没有多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、十四个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、十五个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -264,36 +263,42 @@ for seed in 11 22 33; do
 done
 ```
 
-## IsaacGym 单后端验证：已完成 seed 11、22
+## IsaacGym 三个训练 seed 的 validation 结果
 
-[seed 11 审计](single_isaacgym/seed_11/completed_trial_audit.json) 和
-[seed 22 审计](single_isaacgym/seed_22/completed_trial_audit.json) 分别确认
+[seed 11 审计](single_isaacgym/seed_11/completed_trial_audit.json)、
+[seed 22 审计](single_isaacgym/seed_22/completed_trial_audit.json) 和
+[seed 33 审计](single_isaacgym/seed_33/completed_trial_audit.json) 分别确认
 固定 224 个 IsaacGym 环境、1200 次连续更新和 6,451,200 个实际 transitions。
-两个训练进程退出码均为 0；完整 `config.algo` 和 sim2sim 合同分别与
+三个训练进程退出码均为 0；完整 `config.algo` 和 sim2sim 合同分别与
 同种子的自适应训练相等。
 
-[seed 11 验证记录](single_isaacgym/seed_11/validation/metrics.json) 和
-[seed 22 验证记录](single_isaacgym/seed_22/validation/metrics.json) 都使用
+[seed 11 验证记录](single_isaacgym/seed_11/validation/metrics.json)、
+[seed 22 验证记录](single_isaacgym/seed_22/validation/metrics.json) 和
+[seed 33 验证记录](single_isaacgym/seed_33/validation/metrics.json) 都使用
 validation seeds 3001、3002、3003，每个 seed 五个 episode。
-两个评估进程退出码均为 0；来源 checkpoint、逐回合身份和指标均通过核验。
+三个评估进程退出码均为 0；来源 checkpoint、逐回合身份和指标均通过核验。
 
-| 指标 | seed 11 | seed 22 |
-| --- | ---: | ---: |
-| 训练进程耗时（秒） | 472.3726 | 470.1375 |
-| 平均 episode return | 21.2529341 | 21.1222248 |
-| 平均存活时间占比 | 79.2400% | 68.9267% |
-| 完整存活 20 秒 | 10/15（66.6667%） | 9/15（60.0000%） |
-| 平均线速度追踪得分 | 0.5176847 | 0.5641866 |
-| 平均角速度追踪得分 | 0.5485756 | 0.5740212 |
+| 指标 | seed 11 | seed 22 | seed 33 |
+| --- | ---: | ---: | ---: |
+| 训练进程耗时（秒） | 472.3726 | 470.1375 | 469.1011 |
+| 平均 episode return | 21.2529341 | 21.1222248 | 13.1358678 |
+| 平均存活时间占比 | 79.2400% | 68.9267% | 40.1667% |
+| 完整存活 20 秒 | 10/15（66.6667%） | 9/15（60.0000%） | 1/15（6.6667%） |
+| 平均线速度追踪得分 | 0.5176847 | 0.5641866 | 0.5681762 |
+| 平均角速度追踪得分 | 0.5485756 | 0.5740212 | 0.5719129 |
 
-这里只包含两个训练重复，30 个验证回合不是 30 个独立训练种子。
-IsaacGym 的 discovery seed 33、混合候选验证和新种子的独立确认
-仍待完成，当前结果不支持跨种子稳定性或多后端优势结论。
+[三种子汇总](single_isaacgym/discovery_validation_summary.json) 按训练种子
+等权计算，平均 return 为 18.5036756（种子间样本标准差 4.6491172），
+平均存活占比为 62.7778%（样本标准差 20.2494 个百分点）。
+45 个回合中 20 个完整存活 20 秒；这里只包含 **3 个独立训练重复**。
+三个种子全部纳入统计，seed 33 的较低回报和 1/15 完整存活结果原样保留。
+这些是 discovery validation 结果，不能证明跨种子可靠行走。
+混合候选验证及新种子的独立确认仍待完成，没有比例推荐或多后端优势结论。
 追踪指标是奖励得分，不是物理单位误差。模型权重保留在远端；
 从仓库根目录解压逐轮训练事件：
 
 ```bash
-for seed in 11 22; do
+for seed in 11 22 33; do
   gzip -dk "results/g1_all7_4090_20260918/single_isaacgym/seed_${seed}/train/mix_events.jsonl.gz"
 done
 ```

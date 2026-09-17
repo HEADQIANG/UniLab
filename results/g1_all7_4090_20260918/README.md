@@ -1,17 +1,17 @@
 # G1 七后端正式实验：运行协议与阶段性结果
 
-截至 2026-09-18 04:57:17（Asia/Shanghai），正式训练已完成 **13/131**：
+截至 2026-09-18 05:03:40（Asia/Shanghai），正式训练已完成 **14/131**：
 自适应搜索、Motrix、Drake 和 MJWarp 单后端的 seed 11、22、33
-以及 IsaacGym seed 11 均通过训练审计。
+以及 IsaacGym seed 11、22 均通过训练审计。
 三种子汇总的 `frozen_adaptive` 仍是待重训、待验证候选，不是推荐或最佳比例。
 Motrix、Drake 和 MJWarp 各三个训练种子分别完成 15 个 MuJoCo
-validation 回合；IsaacGym seed 11 也完成相同验证，
-共 10 个策略、150 个回合；正式 test 尚未开始。
-IsaacGym seed 22 正在运行（PID 4109366，已观测到第 257/1200 次更新）；
+validation 回合；IsaacGym seed 11、22 也完成相同验证，
+共 11 个策略、165 个回合；正式 test 尚未开始。
+IsaacGym seed 33 正在运行（PID 4115989）；
 后台启动 PID 1080640 仍存活；
 SSH 断开不会结束作业。目前没有多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、十三个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、十四个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -264,34 +264,38 @@ for seed in 11 22 33; do
 done
 ```
 
-## 首个完成的 IsaacGym 单后端验证：seed 11
+## IsaacGym 单后端验证：已完成 seed 11、22
 
-[训练及验证审计](single_isaacgym/seed_11/completed_trial_audit.json) 确认
+[seed 11 审计](single_isaacgym/seed_11/completed_trial_audit.json) 和
+[seed 22 审计](single_isaacgym/seed_22/completed_trial_audit.json) 分别确认
 固定 224 个 IsaacGym 环境、1200 次连续更新和 6,451,200 个实际 transitions。
-训练进程退出码为 0，完整耗时 472.37262538699724 秒；完整 `config.algo`
-和 sim2sim 合同与 `adaptive/seed_11` 相等。
+两个训练进程退出码均为 0；完整 `config.algo` 和 sim2sim 合同分别与
+同种子的自适应训练相等。
 
-[原始 MuJoCo 验证记录](single_isaacgym/seed_11/validation/metrics.json) 使用
+[seed 11 验证记录](single_isaacgym/seed_11/validation/metrics.json) 和
+[seed 22 验证记录](single_isaacgym/seed_22/validation/metrics.json) 都使用
 validation seeds 3001、3002、3003，每个 seed 五个 episode。
-评估进程退出码为 0，耗时 16.58925605799959 秒；来源 checkpoint、
-逐回合身份和指标均通过核验。
+两个评估进程退出码均为 0；来源 checkpoint、逐回合身份和指标均通过核验。
 
-| 指标 | 结果 |
-| --- | ---: |
-| 平均 episode return | 21.2529341 |
-| 平均存活时间占比 | 79.2400% |
-| 完整存活 20 秒 | 10/15（66.6667%） |
-| 平均线速度追踪得分 | 0.5176847 |
-| 平均角速度追踪得分 | 0.5485756 |
+| 指标 | seed 11 | seed 22 |
+| --- | ---: | ---: |
+| 训练进程耗时（秒） | 472.3726 | 470.1375 |
+| 平均 episode return | 21.2529341 | 21.1222248 |
+| 平均存活时间占比 | 79.2400% | 68.9267% |
+| 完整存活 20 秒 | 10/15（66.6667%） | 9/15（60.0000%） |
+| 平均线速度追踪得分 | 0.5176847 | 0.5641866 |
+| 平均角速度追踪得分 | 0.5485756 | 0.5740212 |
 
-这里只包含一个训练重复，15 个验证回合不是 15 个独立训练种子。
-IsaacGym 的另外两个 discovery seed、混合候选验证和新种子的独立确认
+这里只包含两个训练重复，30 个验证回合不是 30 个独立训练种子。
+IsaacGym 的 discovery seed 33、混合候选验证和新种子的独立确认
 仍待完成，当前结果不支持跨种子稳定性或多后端优势结论。
 追踪指标是奖励得分，不是物理单位误差。模型权重保留在远端；
 从仓库根目录解压逐轮训练事件：
 
 ```bash
-gzip -dk results/g1_all7_4090_20260918/single_isaacgym/seed_11/train/mix_events.jsonl.gz
+for seed in 11 22; do
+  gzip -dk "results/g1_all7_4090_20260918/single_isaacgym/seed_${seed}/train/mix_events.jsonl.gz"
+done
 ```
 
 ## 规模校准（独立于正式训练）

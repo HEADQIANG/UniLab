@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "next_iteration": 1200,
+  "backend_counts": {
+    "isaacgym": 224
+  },
+  "backend_stats": {
+    "isaacgym": {
+      "samples": 6451200.0,
+      "reward_sum": 13523.60269654356,
+      "episodes": 123900.0,
+      "censored_episodes": 224.0,
+      "episode_reward_sum": 12933.000761167466,
+      "episode_length_sum": 6375452.0,
+      "step_seconds": 348.05629354637495,
+      "interrupted_episodes": 0.0
+    }
+  },
+  "samples_per_iteration": 5376,
+  "mixed_fingerprint": "81548f6e87b67b586b9b3a9b5c6c82eae52b511e03a973ff1488768ec07b7d87",
+  "adaptive": null,
+  "held_out_backends": [
+    "mujoco"
+  ],
+  "algo": "ppo",
+  "task": "G1WalkFlat",
+  "sim_backend": "mixed",
+  "log_dir": "/home/hpf/yuelk/UniLab/logs/mix_studies/g1_all7_4090_20260918/single_isaacgym/seed_22/train",
+  "start_time_utc": "2026-09-17T20:55:32.721838+00:00",
+  "end_time_utc": "2026-09-17T21:03:20.816876+00:00",
+  "wall_time_sec": 468.09503380599926,
+  "wandb_run_url": null,
+  "configured_seed": 22,
+  "configured_seed_source": "algo.seed",
+  "effective_seed": 22
+}

@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "status": "adaptive_search_candidate_generated_pending_refit_and_validation",
+  "observed_at_utc": "2026-09-17T19:11:08.282772+00:00",
+  "observed_at_local": "2026-09-18T03:11:08.282772+08:00",
+  "study_id": "ecf9ca19ecfb54a9b0e63134a37b0d9c2d1f8b5fc63688b3aafd8632102925b5",
+  "training_seeds_in_source_order": [11, 22, 33],
+  "training_transitions_per_seed": 6451200,
+  "adaptive_search_transitions_total": 19353600,
+  "num_envs_per_seed": 224,
+  "all_three_canonical_training_result_audits_passed": true,
+  "all_three_final_checkpoint_hashes_recomputed_on_remote": true,
+  "all_three_states_frozen_with_ten_updates": true,
+  "archived_original_source_files_verified_against_remote": 18,
+  "source_trials": {
+    "11": {
+      "archive": "adaptive/seed_11/completed_trial_audit.json",
+      "checkpoint_sha256": "7b6357f4345c04b2c932b6449cb547edcea32a4428bdc2e840fe2402c6f62836",
+      "final_counts": {"motrix": 28, "drake": 26, "mjwarp": 25, "isaacgym": 27, "isaacsim": 53, "genesis": 37, "newton": 28}
+    },
+    "22": {
+      "archive": "adaptive/seed_22/completed_trial_audit.json",
+      "checkpoint_sha256": "0e016be94beecb9fa44f69f162e276ad103a536f6507d8bb7cbf3c87d93b34f1",
+      "final_counts": {"motrix": 29, "drake": 32, "mjwarp": 26, "isaacgym": 31, "isaacsim": 40, "genesis": 18, "newton": 48}
+    },
+    "33": {
+      "archive": "adaptive/seed_33/completed_trial_audit.json",
+      "checkpoint_sha256": "0c85ca107134b963b1fba551fb413c91a4a177510c57c1289717597b62a23a65",
+      "final_counts": {"motrix": 27, "drake": 20, "mjwarp": 25, "isaacgym": 29, "isaacsim": 60, "genesis": 42, "newton": 21}
+    }
+  },
+  "candidate_file": {
+    "path": "frozen_candidate.json",
+    "original_bytes_preserved": true,
+    "bytes": 536,
+    "sha256": "f472e4e54b1f90ebe1bcf5b44f8287d4a73bcde356d35fd11b9bb96d70d9874d",
+    "matches_remote_original_sha256": true,
+    "generated_by": "Existing running benchmark orchestrator; the archiving task did not invoke freeze_candidate or write remote files."
+  },
+  "ratio_check": {
+    "recipe": "Arithmetic mean across seeds 11, 22, 33 of each final realized count divided by 224; equal weight per search seed.",
+    "summed_final_counts": {"motrix": 84, "drake": 78, "mjwarp": 76, "isaacgym": 87, "isaacsim": 153, "genesis": 97, "newton": 97},
+    "denominator": 672,
+    "independently_recomputed_ratios": {
+      "motrix": 0.125,
+      "drake": 0.11607142857142858,
+      "mjwarp": 0.1130952380952381,
+      "isaacgym": 0.12946428571428573,
+      "isaacsim": 0.22767857142857142,
+      "genesis": 0.14434523809523808,
+      "newton": 0.14434523809523808
+    },
+    "matches_candidate_with_absolute_tolerance": 1e-15,
+    "all_seven_backends_present_and_positive": true,
+    "ratios_sum_to_one_with_absolute_tolerance": 1e-15,
+    "source_checkpoint_hashes_match_in_seed_order": true,
+    "mujoco_feedback_used_to_generate_candidate": false
+  },
+  "study_state_observed": {
+    "completed_training_trials": 3,
+    "planned_training_trials": 131,
+    "active_candidate": "single_motrix",
+    "active_training_seed": 11,
+    "active_training_pid": 503077,
+    "active_launcher_pid": 1080640,
+    "both_pids_verified_live": true,
+    "formal_validation_metric_files": 0,
+    "formal_test_metric_files": 0,
+    "candidate_refit_complete": false,
+    "ratio_selected_by_validation": false,
+    "ratio_recommendation_available": false
+  },
+  "supervising_task_source_identity_check": {
+    "attribution": "Reported by the supervising task after a read-only source_identity call using the existing Drake --run wrapper and uv run --no-sync.",
+    "when": "After seed33 final reconfiguration and before its completion.",
+    "compared_against": "Original immutable study.source_identity, field by field.",
+    "passed": true,
+    "source_sha256": {
+      "unilab": "0059e7bcc2e8b1655da9103804c7439e7c361b21efd94619bb0e4ca8b7764d65",
+      "uni_rl": "c46551251bfa75cba880d03429b9f548024a000a055120e31d31fb56a4b31cf7",
+      "unisim": "c193490b915245e2af13a88b00c2c40ff7901406d1d906f151932a6ede4bb93f",
+      "drake_uni": "fc91cfbf6a5ed3b0c7c8eec00676e6e4a9116c56fcbb4f6e8fd2535843df01a6"
+    },
+    "scope_limit": "This is not a complete fingerprint or revalidation of the external Isaac environments, system shared libraries, GPU drivers, JIT caches or assets."
+  },
+  "supervising_task_followup_observations": {
+    "attribution": "Reported by the supervising task from separate read-only checks after three-seed discovery; the active Motrix trial was not archived as a completed result.",
+    "seed33_console_patterns_checked": ["Traceback", "resource_tracker:", "leaked shared_memory"],
+    "seed33_console_matching_lines": 0,
+    "motrix_trial": "single_motrix/seed_11",
+    "motrix_last_observed_iteration": 799,
+    "motrix_was_still_running": true,
+    "comparison_trial": "adaptive/seed_11",
+    "all_config_algo_fields_equal": true,
+    "contract_snapshot_equal": true,
+    "common_num_envs": 224,
+    "common_rollout_steps": 24,
+    "common_iterations": 1200,
+    "common_actor_hidden_dims": [512, 256, 128],
+    "common_critic_hidden_dims": [512, 256, 128],
+    "scope_limit": "This point-in-time configuration comparison does not establish baseline completion, equal realized samples, evaluation success or policy quality."
+  },
+  "limitations": [
+    "frozen_adaptive is an unvalidated candidate, not a recommended, best or globally optimal ratio.",
+    "All fixed-ratio refits, common validation comparisons and independent confirmation remain necessary before any advantage claim.",
+    "The study has completed three of 131 training runs at the observation time.",
+    "Model weights are omitted; recorded endpoint hashes cannot be recomputed from this compact archive alone.",
+    "The original study manifest, source code, configuration and live training were not changed by this archiving task."
+  ]
+}

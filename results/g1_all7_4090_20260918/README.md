@@ -1,12 +1,13 @@
-# G1 七后端正式实验：运行协议与前置校准
+# G1 七后端正式实验：运行协议与阶段性结果
 
-截至 2026-09-18 02:27:12（Asia/Shanghai），正式训练已完成 **2/131**：
-自适应搜索 seed 11、22 通过退出、采样预算、比例事件和最终 checkpoint 审计。
-seed 33 正在运行（PID 204532），后台启动 PID 1080640 仍存活；SSH 断开
-不会结束作业。此时尚无正式 MuJoCo validation/test 评估，没有比例推荐或
-多后端优势结论。原始工件在远程 UniLab 的
+截至 2026-09-18 03:20:42（Asia/Shanghai），正式训练已完成 **4/131**：
+自适应搜索 seed 11、22、33 和 Motrix 单后端 seed 11 均通过训练审计。
+三种子汇总的 `frozen_adaptive` 仍是待重训、待验证候选，不是推荐或最佳比例。
+Motrix seed 11 已完成 15 个 MuJoCo validation 回合；正式 test 尚未开始。
+Motrix seed 22 正在运行（PID 507805），后台启动 PID 1080640 仍存活；
+SSH 断开不会结束作业。目前没有多后端优势结论。原始工件在远程 UniLab 的
 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录保存不可变 [study.json](study.json)、两个已完成 trial 的紧凑证据
+本目录保存不可变 [study.json](study.json)、四个已完成 trial 的紧凑证据
 及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
@@ -26,7 +27,7 @@ seed 33 正在运行（PID 204532），后台启动 PID 1080640 仍存活；SSH 
 
 末尾实际环境数按 Motrix/Drake/MJWarp/IsaacGym/IsaacSim/Genesis/Newton
 顺序为 `28/26/25/27/53/37/28`，总计 224。这是该搜索轨迹的最后一次分配，
-还没有经过三个搜索 seed 的汇总、固定比例重训或独立确认，不能当作推荐比例。
+三种子汇总候选见下节；固定比例重训和独立确认仍待完成，不能当作推荐比例。
 
 [completed_trial_audit.json](adaptive/seed_11/completed_trial_audit.json)
 保存观测时间、现有 `training_result` 审计结果、原始文件 SHA-256、事件计数
@@ -58,7 +59,7 @@ gzip -dk results/g1_all7_4090_20260918/adaptive/seed_11/train/mix_events.jsonl.g
 
 末尾实际环境数按同一后端顺序为 `29/32/26/31/40/18/48`，总计 224。
 这仍是单条自适应搜索轨迹的最终分配，不是经独立确认的推荐比例。
-截至本次观测，正式 MuJoCo validation/test 工件均未产生。
+seed 22 归档观测时（02:27:12），正式 MuJoCo validation/test 工件均未产生。
 
 [完成审计](adaptive/seed_22/completed_trial_audit.json) 保存带时间的远程
 `training_result` 检查、checkpoint hash 和六个原始文件的完整校验值。
@@ -70,6 +71,83 @@ gzip -dk results/g1_all7_4090_20260918/adaptive/seed_11/train/mix_events.jsonl.g
 gzip -dc results/g1_all7_4090_20260918/adaptive/seed_22/train/mix_events.jsonl.gz | sha256sum
 # f71639ba01fc448b1749b07c2733d949408180b1cd02729f3cf15b958fed65a6
 gzip -dk results/g1_all7_4090_20260918/adaptive/seed_22/train/mix_events.jsonl.gz
+```
+
+## 第三个完成的正式 trial：adaptive / seed 33
+
+[进程回执](adaptive/seed_33/process.json) 记录退出码 0，完整进程耗时
+2631.6879797209986 秒。训练摘要与逐轮事件再次独立确认 1200 次 PPO 更新、
+6,451,200 个实际 transitions；每轮 5376 个样本，七个后端始终正采样。
+控制器完成 10 次更新、9 次实际重配置并冻结，末尾实际环境数为
+`27/20/25/29/60/42/21`，总计 224。
+
+[完成审计](adaptive/seed_33/completed_trial_audit.json) 保存观测时间、现有
+`training_result` 审计、最终模型 hash 及原始文件校验值；模型仍留在远程。
+[事件原文压缩包](adaptive/seed_33/train/mix_events.jsonl.gz) 保留全部 1230
+条记录，3,061,398 字节压缩为 451,227 字节。校验和解压命令如下：
+
+```bash
+gzip -dc results/g1_all7_4090_20260918/adaptive/seed_33/train/mix_events.jsonl.gz | sha256sum
+# 0c3ebaad95cf17c085dea314e25eccf70f5b2b71b2ab53881d532e7b979c14c1
+gzip -dk results/g1_all7_4090_20260918/adaptive/seed_33/train/mix_events.jsonl.gz
+```
+
+## 三个搜索 seed 的汇总候选
+
+[frozen_candidate.json](frozen_candidate.json) 是调度器生成文件的原始字节，
+没有手工改写。它依次引用 seed 11、22、33 最终模型的 SHA-256，均已在
+远程重新核对。候选比例按三个 seed 末尾实际整数环境数除以 224 后取算术
+平均，等价于各列环境数之和除以 672；未用 MuJoCo 评估反馈选择这些权重。
+
+| 后端 | seed 11 环境数 | seed 22 环境数 | seed 33 环境数 | 汇总候选比例（%） |
+| --- | ---: | ---: | ---: | ---: |
+| Motrix | 28 | 29 | 27 | 12.5000 |
+| Drake | 26 | 32 | 20 | 11.6071 |
+| MuJoCo-Warp | 25 | 26 | 25 | 11.3095 |
+| IsaacGym | 27 | 31 | 29 | 12.9464 |
+| IsaacSim | 53 | 40 | 60 | 22.7679 |
+| Genesis | 37 | 18 | 42 | 14.4345 |
+| Newton | 28 | 48 | 21 | 14.4345 |
+
+完整未舍入比例、三模型来源及复算步骤见 [discovery_audit.json](discovery_audit.json)。
+三次搜索共采集 19,353,600 transitions；它们只完成了自适应候选生成阶段。
+`frozen_adaptive` 还需要从头固定比例重训，并与其他混合候选及七个单后端
+完成共同 validation 比较；后续才选择比例并开展独立确认测试。当前候选
+不能称为推荐比例、最佳比例或多后端优势证据。
+
+监督任务在 seed 33 最后重配置后、结束前，使用现有 Drake 包装器只读核对
+主项目、算法、UniSim 和 Drake 的源码/原生库指纹仍与原协议一致；此项
+不覆盖完整的外部 Isaac 环境、系统共享库和 GPU 驱动。原始 study 未修改。
+
+## 首个已完成的单后端验证：Motrix / seed 11
+
+[训练及验证审计](single_motrix/seed_11/completed_trial_audit.json) 对应固定
+224 个 Motrix 环境、1200 次更新和 6,451,200 个实际 transitions。
+训练进程退出码为 0，完整耗时 307.2626294429974 秒；没有自适应比例调整。
+保存的全部 `config.algo` 字段及 sim2sim 合同快照与 `adaptive/seed_11`
+完全相等，包括 24 步 rollout 和 `[512,256,128]` actor/critic 网络。
+
+[原始 MuJoCo 验证记录](single_motrix/seed_11/validation/metrics.json) 使用
+validation seeds 3001、3002、3003，每个 seed 五个完整 episode；
+[评估进程回执](single_motrix/seed_11/validation/process.json) 记录退出码 0。
+15 个回合的来源 checkpoint、评估 identity 和逐回合指标均通过复核：
+
+| 指标 | 结果 |
+| --- | ---: |
+| 平均 episode return | 22.1336813 |
+| 平均存活时间占比 | 73.5467% |
+| 完整存活 20 秒 | 8/15（53.3333%） |
+| 平均线速度追踪得分 | 0.5365561 |
+| 平均角速度追踪得分 | 0.5857145 |
+
+追踪得分不是 m/s 或 rad/s 误差，指标口径见
+[实验说明](../../docs/g1_4090_study.md)。这是一个训练 seed 的 validation
+结果，15 个回合不是 15 次独立训练重复；尚不能据此推断跨 seed 稳定性、
+固定比例优劣或多后端优势，也不是独立确认 test 的结果。
+完整逐轮训练事件仍以 gzip 原文保存；解压命令为：
+
+```bash
+gzip -dk results/g1_all7_4090_20260918/single_motrix/seed_11/train/mix_events.jsonl.gz
 ```
 
 ## 规模校准（独立于正式训练）

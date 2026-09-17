@@ -392,6 +392,11 @@ def play_rsl_rl(cfg: DictConfig, device: str) -> str | None:
 
 @hydra.main(version_base="1.3", config_path="../conf/ppo", config_name="config")
 def main(cfg: DictConfig) -> None:
+    if str(cfg.training.sim_backend) == "mixed":
+        from unilab.training.mixed_ppo import run_mixed_training
+
+        run_mixed_training(cfg)
+        return
     devices = resolve_dp_topology(cfg.training.devices)
     rank = current_torch_distributed_rank()
     local_rank = current_torch_distributed_local_rank()

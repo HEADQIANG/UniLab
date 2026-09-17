@@ -1,0 +1,22 @@
+# @package _global_
+# Keep the shared G1 policy contract and PPO defaults. Drake-specific learning
+# hyperparameters have not been established by a convergence experiment.
+defaults:
+  - /task/g1_walk_flat/mujoco
+  - _self_
+
+training:
+  sim_backend: drake
+  device: cpu
+
+env:
+  drake_backend_mode: batch
+  drake_nthread: 0
+  events:
+    # The Drake batch adapter does not expose reset randomization capabilities.
+    reset_root_state_uniform: null
+    pd_gains: null
+
+reward:
+  # Contact force semantics differ across adapters; use the common G1 reward.
+  feet_air_time: null

@@ -1,0 +1,16 @@
+# @package _global_
+defaults:
+  - /task/g1_walk_flat/mixed
+  - _self_
+
+training:
+  sim_backend: mjwarp
+  no_play: false
+  play_render_mode: record
+
+algo:
+  runtime_resolver: null
+
+env:
+  mjwarp_nconmax: 128
+  mjwarp_njmax: 256

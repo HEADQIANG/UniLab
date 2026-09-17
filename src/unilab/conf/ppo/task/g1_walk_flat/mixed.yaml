@@ -1,0 +1,26 @@
+# @package _global_
+# Shared MuJoCo policy contract; do not inherit single-backend Motrix tuning.
+defaults:
+  - /task/g1_walk_flat/mujoco
+  - _self_
+
+training:
+  sim_backend: mixed
+  no_play: true
+  play_render_mode: none
+  mix_task: g1_walk_flat
+  mix_ratios: null
+  mix_config: null
+
+algo:
+  runtime_resolver: uni_rl.algos.mixed_ppo:resolve_mixed_ppo_runtime
+
+env:
+  events:
+    # Observation noise and command sampling remain identical on every backend.
+    reset_root_state_uniform: null
+    pd_gains: null
+
+reward:
+  # Contact-frame force semantics are not shared by all supported backends.
+  feet_air_time: null

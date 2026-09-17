@@ -1,0 +1,21 @@
+# @package _global_
+defaults:
+  - /task/g1_walk_flat/mixed
+  - _self_
+
+training:
+  sim_backend: isaacsim
+  no_play: false
+  play_render_mode: auto
+
+algo:
+  runtime_resolver: null
+
+env:
+  isaacsim_device_id: 0
+  isaacsim_worker_timeout_s: 120.0
+  isaacsim_render_width: 1280
+  isaacsim_render_height: 720
+
+play_profile:
+  enabled: false

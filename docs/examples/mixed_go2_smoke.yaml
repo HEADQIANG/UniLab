@@ -1,0 +1,8 @@
+backends:
+  mujoco: {device: cpu, timeout_s: 120}
+  motrix: {device: cpu, timeout_s: 120}
+stages:
+  - iteration: 1
+    ratios: {mujoco: 0.25, motrix: 0.75}
+  - iteration: 3
+    ratios: {mujoco: 0.75, motrix: 0.25}

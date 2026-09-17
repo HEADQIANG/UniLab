@@ -1,0 +1,15 @@
+# @package _global_
+defaults:
+  - /task/g1_walk_flat/mixed
+  - _self_
+
+training:
+  sim_backend: isaacgym
+  no_play: false
+  play_render_mode: auto
+
+algo:
+  runtime_resolver: null
+
+env:
+  isaacgym_device_id: 0

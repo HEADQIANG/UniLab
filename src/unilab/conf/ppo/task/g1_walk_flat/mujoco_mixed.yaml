@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - /task/g1_walk_flat/mixed
+  - _self_
+
+training:
+  sim_backend: mujoco
+  no_play: false
+  play_render_mode: auto
+
+algo:
+  runtime_resolver: null

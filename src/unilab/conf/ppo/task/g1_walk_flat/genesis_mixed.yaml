@@ -1,0 +1,16 @@
+# @package _global_
+defaults:
+  - /task/g1_walk_flat/mixed
+  - _self_
+
+training:
+  sim_backend: genesis
+  no_play: false
+  play_render_mode: auto
+
+algo:
+  runtime_resolver: null
+
+env:
+  genesis_device_id: 0
+  genesis_integrator: implicitfast

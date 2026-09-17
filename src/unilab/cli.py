@@ -338,17 +338,81 @@ def build_command(
     mode: str,
     algo: str,
     task: str,
-    sim: str,
+    sim: str | None,
     overrides: Sequence[str],
     profile: str | None = None,
     load_run: str | None = None,
     render_mode: str | None = None,
     root: Path | None = None,
+    sim_mix: str | None = None,
+    mix_config: str | None = None,
 ) -> list[str]:
     selected_root = root or package_root()
     _check_task_name(task)
     _check_profile(profile)
     _check_reserved_overrides(overrides)
+    if sim_mix is not None:
+        if sim is not None or mode != "train" or algo != "ppo" or profile is not None:
+            raise SystemExit(
+                "--sim-mix requires PPO training, and cannot be combined with --sim or --profile"
+            )
+        from hydra.core.override_parser.types import Quote, QuotedString
+        from uni_rl.ipc.mix_schedule import parse_mix
+
+        from unilab.training.mixed_config import check_mix_task
+
+        try:
+            ratios = parse_mix(sim_mix)
+            check_mix_task(task, ratios)
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        reserved = {
+            "training.mix_ratios",
+            "training.mix_config",
+            "training.mix_task",
+            "algo.runtime_resolver",
+            "algo.runtime_impl",
+        }
+        if any(_override_key(value) in reserved for value in overrides):
+            raise SystemExit(
+                "Mixed routing fields must be selected with --sim-mix and --mix-config"
+            )
+        for backend in ratios:
+            _check_runtime_requirements(algo, backend)
+        owner_path = selected_root / "conf" / "ppo" / "task" / task / "mixed.yaml"
+        if not owner_path.is_file():
+            raise SystemExit(f"Mixed task owner not found: {owner_path}")
+        generated = [
+            f"task={task}/mixed",
+            f"training.mix_task={task}",
+            f"training.mix_ratios={QuotedString(sim_mix, Quote.double).with_quotes()}",
+        ]
+        if mix_config is not None:
+            config_path = Path(mix_config).expanduser().resolve()
+            if not config_path.is_file():
+                raise SystemExit(f"Mix config not found: {config_path}")
+            generated.append(
+                "training.mix_config=" + QuotedString(str(config_path), Quote.double).with_quotes()
+            )
+        return [
+            sys.executable,
+            str(selected_root / "scripts" / "train_rsl_rl.py"),
+            *generated,
+            *overrides,
+        ]
+    if mix_config is not None:
+        raise SystemExit("--mix-config requires --sim-mix")
+    if sim is None:
+        raise SystemExit("Select --sim or --sim-mix")
+    if profile == "mixed":
+        if algo != "ppo":
+            raise SystemExit("--profile mixed requires PPO")
+        from unilab.training.mixed_config import check_mix_task
+
+        try:
+            check_mix_task(task, {sim: 1.0})
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
     _check_runtime_requirements(algo, sim)
 
     route = build_route(algo, task, sim, profile, root=selected_root)
@@ -377,7 +441,7 @@ def build_command(
     sim_backend_override: str | None = None
     owner_yaml = _owner_yaml_path(route, selected_root)
     if not owner_yaml.is_file():
-        if mode != "eval":
+        if mode != "eval" or profile == "mixed":
             raise SystemExit(
                 f"No owner config exists for algo={algo}, task={task}, sim={sim}: {owner_yaml}"
             )
@@ -448,7 +512,15 @@ def _train_eval_parser(*, mode: str) -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument("--task", required=True)
-    parser.add_argument("--sim", required=True, choices=SUPPORTED_SIMS)
+    simulation = parser.add_mutually_exclusive_group(required=True)
+    simulation.add_argument("--sim", choices=SUPPORTED_SIMS)
+    if mode == "train":
+        simulation.add_argument(
+            "--sim-mix", help="PPO backend sample weights, e.g. mujoco=0.7,motrix=0.3"
+        )
+        parser.add_argument(
+            "--mix-config", help="YAML with backend process settings and ratio stages"
+        )
     parser.add_argument("--profile", default=None)
     parser.add_argument("--render-mode", choices=SUPPORTED_RENDER_MODES, default=None)
     if mode == "eval":
@@ -477,6 +549,8 @@ def _run_train_eval(mode: str, argv: Sequence[str] | None = None) -> int:
         overrides=overrides,
         load_run=getattr(args, "load_run", None),
         render_mode=args.render_mode,
+        sim_mix=getattr(args, "sim_mix", None),
+        mix_config=getattr(args, "mix_config", None),
     )
     return subprocess.run(command, check=False).returncode
 

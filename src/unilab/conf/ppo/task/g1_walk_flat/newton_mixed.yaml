@@ -1,0 +1,21 @@
+# @package _global_
+defaults:
+  - /task/g1_walk_flat/mixed
+  - _self_
+
+training:
+  sim_backend: newton
+  no_play: false
+  play_render_mode: auto
+
+algo:
+  runtime_resolver: null
+
+env:
+  newton_device: null
+  newton_nconmax: 320
+  newton_njmax: 512
+  newton_capacity_check_steps: 1
+
+play_profile:
+  enabled: false

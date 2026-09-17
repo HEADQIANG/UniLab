@@ -101,6 +101,20 @@ the [training guide](https://unilabsim.github.io/UniLab-doc/en/2-user_guide/1-tr
 [backend guide](https://unilabsim.github.io/UniLab-doc/en/2-user_guide/3-backends/0-index.html),
 and [support matrix](https://unilabsim.github.io/UniLab-doc/en/5-reference/5-support_matrix.html).
 
+## Adaptive mixed-backend PPO
+
+This fork includes a shared-policy G1 PPO experiment using Motrix, Drake,
+MuJoCo-Warp, IsaacGym, IsaacSim, Genesis, and Newton, with reward-based sample
+allocation and a separate MuJoCo sim2sim evaluator. The comparison workflow
+matches training budgets against every single backend and confirms the selected
+fixed ratio using new training seeds and held-out evaluation seeds.
+
+The algorithm source is included in `vendor/unilab-rl`; no sibling checkout is
+required. Use the [source installation and reproduction guide](docs/reproduce_mixed_study.md)
+for this fork, including external simulator setup, tests, and experiment commands.
+The [experiment protocol](docs/mix_benchmark.md) explains selection, uncertainty,
+and why a completed experiment may still find no multi-backend advantage.
+
 ## Ecosystem
 
 UniLab is designed to be a shared task and training surface for robot-specific

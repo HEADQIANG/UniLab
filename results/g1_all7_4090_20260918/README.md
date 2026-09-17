@@ -48,3 +48,19 @@ IsaacGym/IsaacSim/Genesis/Newton = `6/2/1/1/5/7/6`。恢复后的采样事件与
 
 本目录不包含模型权重、完整 stdout、TensorBoard 或下载的仿真运行库。
 这些仍保存在远程原始目录；重新训练需要按复现指南安装相同依赖和资产。
+
+## 外部 Isaac 运行环境补充记录
+
+正式训练启动后以只读方式记录了外部环境的安装清单：
+[IsaacGym](external_runtime/isaacgym_packages.json) 使用 Python 3.8.20、
+IsaacGym 1.0rc4、Torch 2.0.1+cu118；
+[IsaacSim](external_runtime/isaacsim_packages.json) 使用 Python 3.11.15、
+IsaacSim 5.1.0.0、IsaacLab 0.54.3、Torch 2.7.0+cu128。
+外部 worker 只负责仿真；共享 PPO learner 使用主项目的 Torch 2.8.0+cu128。
+
+[主机与选定源文件记录](external_runtime/host_and_selected_sources.json)
+包含驱动 580.159.03、IsaacLab Git 提交及其 tracked 工作树状态，以及
+七个 IsaacGym 源文件/核心原生绑定的 SHA-256。安装包清单通过
+`importlib.metadata` 读取，没有导入模拟器、安装软件包或修改环境。
+这些是带采集时间的补充证据，不是外部环境/系统库/JIT 缓存/资产的完整
+指纹，也不替代或修改原始不可变 study ID。

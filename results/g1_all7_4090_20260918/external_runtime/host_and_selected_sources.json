@@ -1,0 +1,48 @@
+{
+  "recorded_utc": "2026-09-17T17:11:06.397408+00:00",
+  "gpu_query": "NVIDIA GeForce RTX 4090, 580.159.03, 24564 MiB",
+  "kernel": "Linux 7.0.0-29-generic x86_64 GNU/Linux",
+  "isaaclab": {
+    "path": "/home/hpf/atec/IsaacLab",
+    "git_commit": "090aed18163b2194d5551c7919f7539283677743",
+    "tracked_status_porcelain": ""
+  },
+  "isaacgym_selected_files": [
+    {
+      "path": "/home/hpf/atec/MAPush/isaacgym/python/isaacgym/__init__.py",
+      "bytes": 111,
+      "sha256": "1bd02dc4c4d73315e2f1f77f68236bf6bf7e318e5596ebe3d27e8a9a2fce02ec"
+    },
+    {
+      "path": "/home/hpf/atec/MAPush/isaacgym/python/isaacgym/gymapi.py",
+      "bytes": 3631,
+      "sha256": "9e41bdbc911633c2ec8b647eeedc1d2e3aef919e438f1a730cc9c261a338bdd8"
+    },
+    {
+      "path": "/home/hpf/atec/MAPush/isaacgym/python/isaacgym/gymutil.py",
+      "bytes": 24469,
+      "sha256": "d0a6dcd9b4092627ced3401dc957a9b980304f3f0419cd4240bf4b76db5a1e30"
+    },
+    {
+      "path": "/home/hpf/atec/MAPush/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so",
+      "bytes": 31544864,
+      "sha256": "447166f3a11439b39c71284f9ba6c3a40e34e29a9f556f549469a439ff2717a5"
+    },
+    {
+      "path": "/home/hpf/atec/MAPush/isaacgym/python/isaacgym/_bindings/linux-x86_64/rlgpu_38.so",
+      "bytes": 3113168,
+      "sha256": "206ae5560b064c99ca2b50e64edd60f2cf1da5844a649f7f1fdee729f836e4e7"
+    },
+    {
+      "path": "/home/hpf/atec/MAPush/isaacgym/python/isaacgym/_bindings/linux-x86_64/libcarb.gym.plugin.so",
+      "bytes": 66211816,
+      "sha256": "c1bef07dc97d13cb3b4691309ff9818d69439a444fa083492202eb37c5b352dd"
+    },
+    {
+      "path": "/home/hpf/atec/MAPush/isaacgym/python/isaacgym/_bindings/linux-x86_64/libPhysXGpu_64.so",
+      "bytes": 48245048,
+      "sha256": "2a475f5710f2ace40ab0f2342c363415ad94726418af7412186d8b7f161c1dce"
+    }
+  ],
+  "coverage": "Supplemental read-only inventory after study start. Selected IsaacGym source/native files, IsaacLab tracked Git state, installed distributions and driver only; not a complete fingerprint of external runtimes, system libraries, JIT caches or assets. The original immutable study fingerprint is unchanged."
+}

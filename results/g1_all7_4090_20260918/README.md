@@ -1,10 +1,13 @@
 # G1 七后端正式实验：运行协议与前置校准
 
-截至 2026-09-18 01:02（Asia/Shanghai），正式实验正在远程运行，尚无最终
-比例推荐或单后端优势结论。后台启动 PID 为 1080640；SSH 断开不会结束
-作业。原始工件在远程 UniLab 的 `logs/mix_studies/g1_all7_4090_20260918/`。
-本目录暂时保存不可变 [study.json](study.json) 和已完成的前置校准；
-正式训练完成并通过审计后再加入报告，不能把此文件当作已完成实验结果。
+截至 2026-09-18 01:46:48（Asia/Shanghai），正式训练已完成 **1/131**：
+自适应搜索 seed 11 通过退出、采样预算、比例事件和最终 checkpoint 审计。
+seed 22 正在运行（PID 2555679），后台启动 PID 1080640 仍存活；SSH 断开
+不会结束作业。此时尚无正式 MuJoCo validation/test 评估，没有比例推荐或
+多后端优势结论。原始工件在远程 UniLab 的
+`logs/mix_studies/g1_all7_4090_20260918/`。
+本目录保存不可变 [study.json](study.json)、首个已完成 trial 的紧凑证据
+及前置校准；不能把这个带观测时间的状态当作全部实验已完成的结果。
 
 [执行步骤和完整预算](../../docs/g1_4090_study.md)：51 次搜索/冻结重训加
 80 次独立确认，每次 6,451,200 transitions，总训练预算 845,107,200。
@@ -12,6 +15,39 @@
 代码实现提交为 `31be361fb0f172626bf5de2027ca7000a15bd809`，本次提交另加
 固定实验配置和记录。远程仍保留原基线上的工作树，实际实现由协议中的
 源码 SHA-256 绑定。没有把失败或未完成训练计为结果。
+
+## 首个完成的正式 trial：adaptive / seed 11
+
+[进程回执](adaptive/seed_11/process.json) 记录退出码 0，完整进程耗时
+2651.506030005001 秒；[训练摘要](adaptive/seed_11/train/run_summary.json)
+记录 1200 次 PPO 更新和 6,451,200 个实际 transitions。逐轮事件复算也得到
+相同采样总数：每轮 5376 个样本、全部七个后端始终正采样。
+控制器产生 10 次更新、9 次实际重配置，最终保持冻结。
+
+末尾实际环境数按 Motrix/Drake/MJWarp/IsaacGym/IsaacSim/Genesis/Newton
+顺序为 `28/26/25/27/53/37/28`，总计 224。这是该搜索轨迹的最后一次分配，
+还没有经过三个搜索 seed 的汇总、固定比例重训或独立确认，不能当作推荐比例。
+
+[completed_trial_audit.json](adaptive/seed_11/completed_trial_audit.json)
+保存观测时间、现有 `training_result` 审计结果、原始文件 SHA-256、事件计数
+及最终 checkpoint 的校验值。模型留在远程，未复制进此结果目录。
+监督任务另以只读方式验证 checkpoint 可安全加载、浮点参数有限且相对
+初期 checkpoint 已变化；这仅是数值/更新检查，不能代替正式 MuJoCo 评估。
+
+比例事件原文采用 [mix_events.jsonl.gz](adaptive/seed_11/train/mix_events.jsonl.gz)
+归档，以避免每个 trial 的逐轮 JSONL 膨胀。使用 `gzip -n -9` 压缩；原始
+3,056,138 字节变为 451,129 字节，解压后的字节和 SHA-256 与远程原文一致。
+从仓库根目录校验或解压（`-k` 保留压缩文件）：
+
+```bash
+gzip -dc results/g1_all7_4090_20260918/adaptive/seed_11/train/mix_events.jsonl.gz | sha256sum
+# 8f14d32a35003ccc6b355967087f8a1557f502c29f9eb609a59dc193f84790ff
+gzip -dk results/g1_all7_4090_20260918/adaptive/seed_11/train/mix_events.jsonl.gz
+```
+
+归档还保留原始 `run_config.json`、`mixed_config.json` 和 `adaptive_mix.json`。
+缺少模型及完整运行目录时，不能对本地紧凑归档直接重跑完整 checkpoint
+审计或恢复训练；上述解压只恢复比例事件文件，不补回省略的工件。
 
 ## 规模校准（独立于正式训练）
 
